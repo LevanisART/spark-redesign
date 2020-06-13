@@ -1,0 +1,10 @@
+.btn.btn-primary {
+  background: #ffc324 none repeat scroll 0 0;
+  border-color: #ffc324;
+  color: #3b3b3b;
+  font-weight: bold;
+}
+
+.brand img {
+  margin-top: -40px;
+}
