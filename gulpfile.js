@@ -26,10 +26,6 @@ function styles() {
     .pipe(sass())
     .pipe(cleanCSS())
     // pass in options to the stream
-    .pipe(rename({
-      basename: 'style',
-      suffix: '.min'
-    }))
     .pipe(autoprefixer({
       cascade: false
     }))

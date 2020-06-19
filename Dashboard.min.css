@@ -152,9 +152,19 @@ div.responsive-calendar div.days div.day.today a {
   height: 90%
 }
 
-.bg-white .stats-title,
+.bg-white .stats-title {
+  color: #85A5C2 !important;
+  font-weight: 500;
+}
+
 .bg-white .stats-desc {
-  color: #000 !important
+  font-size: 12px;
+  font-weight: 400;
+  color: #93B0C8;
+}
+
+.bg-white .stats-number {
+  color: #5d6f88;
 }
 
 .col-xs-5ths,
