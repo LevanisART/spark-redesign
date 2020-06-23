@@ -4,6 +4,49 @@ Version: 1.7.0
 Author: Sean Ngu
 Website: http://www.seantheme.com/color-admin-v1.7/admin/
 */
+@media(max-width: 1198.98px) {
+  .header > .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    .navbar-header {
+      width: 100%;
+      padding: 0 0 20px 20px;
+    }
+    .navbar-form {
+      padding-left: 0;
+      width: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-right: 0;
+      margin-left: 0;
+      border: 0;
+      box-shadow: none;
+      .form-group {
+        margin-bottom: 0;
+        vertical-align: middle;
+        .form-control {
+          display: inline-block;
+          width: auto;
+          vertical-align: middle;
+        }
+      }
+    }
+    .nav.navbar-nav.navbar-right {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      width: 1150px;
+      overflow-x: scroll;
+    }
+  }
+  .sidebar {
+    padding-top: 185px;
+  }
+  .content {
+    padding-top: 165px;
+  }
+}
+
 @media(max-width: 979px) {
   .form-horizontal.form-bordered .form-group {
       border-bottom:1px solid #eee
@@ -293,7 +336,7 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
 
   .content {
       margin-left: 0;
-      padding: 20px
+      padding: 95px 20px 20px;
   }
 
   .breadcrumb {
