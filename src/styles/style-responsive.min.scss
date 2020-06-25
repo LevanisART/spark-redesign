@@ -9,7 +9,7 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
     display: flex;
     flex-wrap: wrap;
     .navbar-header {
-      width: 100%;
+      width: calc(100% + 30px);
       padding: 0 0 20px 20px;
     }
     .navbar-form {
@@ -36,7 +36,6 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
       display: flex;
       align-items: center;
       width: 1150px;
-      overflow-x: scroll;
     }
   }
   .sidebar {
@@ -45,9 +44,19 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
   .content {
     padding-top: 165px;
   }
+  .single-chart {
+    width: 25% !important;
+  }
 }
 
 @media(max-width: 979px) {
+  .nav.navbar-nav.navbar-right {
+    overflow-x: scroll;
+    > li {
+      position: unset !important;
+    }
+  }
+
   .form-horizontal.form-bordered .form-group {
       border-bottom:1px solid #eee
   }
@@ -117,6 +126,10 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
 
   .theme-panel .control-label.double-line {
       line-height: 30px
+  }
+
+  .single-chart {
+    width: 33.33333333% !important;
   }
 }
 
@@ -547,6 +560,28 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
   }
 }
 
+@media(max-width: 575.98px) {
+  .alert.alert-danger {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .btn {
+      width: 125px !important;
+    }
+    .close {
+      opacity: 1;
+      font-size: 25px;
+      position: absolute;
+      right: 13px;
+      top: unset;
+      transform: unset;
+    }
+  }
+  .single-chart {
+    width: 50% !important;
+  }
+}
+
 @media(max-width: 480px) {
   .media.media-lg .pull-left {
       float:none!important;
@@ -601,6 +636,9 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
 @media (max-width: 340px) {
   .navbar-form .form-control,.navbar-form .form-control:focus {
       width:140px!important
+  }
+  .single-chart {
+    width: 100% !important;
   }
 }
 

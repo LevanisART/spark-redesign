@@ -12,14 +12,20 @@
 .taskTable td {
   padding: 5px;
   padding-bottom: 15px;
-  padding-top: 15px
+  padding-top: 15px;
+  color: #1B2734;
+}
+
+.taskTable .btn.btn-inverse {
+  background: #4DA1FF;
+  border-color: #4DA1FF;
 }
 
 .taskTable .leftCol {
   width: 30px
 }
 
-cur .taskTable .rightCol,
+.taskTable .rightCol,
 .leftCol {
   vertical-align: top
 }
@@ -53,7 +59,15 @@ cur .taskTable .rightCol,
 }
 
 .taskTable tr {
-  border-bottom: 1px solid #E2E9F1;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.taskTable th {
+  background: #F9FAFC;
+  padding: 17px 12px;
+  color: #9CA8B8;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .taskCommentTop {
@@ -255,15 +269,21 @@ div.responsive-calendar div.days div.day.today a {
 
 .flex-wrapper {
   display: flex;
-  flex-flow: row nowrap;
+  justify-content: space-around;
+  flex-flow: row wrap;
   background-color: #FFF !important;
   border-radius: 10px !important;
-  padding: 20px !important;
+  padding: 20px 20px 35px 20px !important;
+  position: relative;
 }
 
 .single-chart {
-  width: 33%;
-  justify-content: space-around;
+  width: 14.25%;
+}
+
+.single-chart a {
+  position: absolute;
+  bottom: 17px;
 }
 
 .single-chart > div {
@@ -316,8 +336,16 @@ div.responsive-calendar div.days div.day.today a {
 }
 
 .percentage {
-  fill: #666;
-  font-family: sans-serif;
-  font-size: .5em;
-  text-anchor: middle
+  fill: #FF9F00;
+  text-anchor: middle;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+#circleStatsNewMembershipsPercentage {
+  fill: #4CC790;
+}
+
+#circleStatsUpgradesPercentage {
+  fill: #3C9EE5;
 }
