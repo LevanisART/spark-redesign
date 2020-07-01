@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,300);
 body {
 	font-family: 'Montserrat', sans-serif !important;
-	background: #F6F6F6 !important;
+	background: #F6F7F8 !important;
 	/*color: #6e768f;*/
 }
 p {
@@ -84,14 +84,6 @@ ul.icons li > .glyphicon {
 
 .panel-default {
   border: none;
-  >.panel-heading {
-    background: none !important;
-    border: none !important;
-    font-weight: 700;
-    color: #282828;
-    font-size: 18px;
-    text-align: left;
-  }
 }
 
 @media (max-width:768px) {
