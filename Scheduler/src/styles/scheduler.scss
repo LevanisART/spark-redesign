@@ -1,0 +1,278 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,300);
+
+body {
+  background: #F6F7F8;
+  font-family: Montserrat, sans-serif!important;
+}
+
+.topBar {
+  border-bottom: 1px solid #EEF1F6 !important;
+  padding: 30px !important;
+  h5 {
+    font-weight: 500 !important;
+  }
+}
+
+.container {
+  background: #FFF;
+  padding: 30px;
+  box-shadow: 0px 5px 10px rgba(0, 133, 255, 0.05);
+  margin-bottom: 80px;
+  @media(max-width: 575.98px) {
+    padding: 20px;
+  }
+  .col {
+    flex-basis: unset;
+    h4 {
+      font: {
+        size: 20px;
+        weight: 700 !important;
+      }
+      @media(max-width: 575.98px) {
+        font-size: 17px;
+      }
+    }
+    strong {
+      font-weight: 600;
+    }
+    p {
+      color: #4C566B;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.pricing-header {
+  h1 {
+    font-weight: 600;
+    font-size: 2.25rem;
+    @media (max-width: 991.98px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 767.98px) {
+      font-size: 1.75rem;
+    }
+    @media (max-width: 575.98px) {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+  }
+  @media (min-width: 768px) {
+    padding-bottom: 2rem!important;
+  }
+}
+
+#chooseAppointment {
+  .row {
+    display: flex;
+    flex-direction: column;
+    > .col-md-4:first-child {
+      margin-top: 20px;
+    }
+  }
+  #appointmentList {
+    margin-top: 40px;
+    h4 {
+      margin-bottom: 30px;
+    }
+    .list-group-item {
+      border: none;
+      cursor: unset;
+      &:first-child {
+        color: #000;
+        background: #FFF !important;
+        padding-left: 5px;
+        &:hover {
+          color: #000;
+        }
+      }
+      &:nth-child(2) {
+        font-weight: 500;
+        font-size: 13px;
+        padding: 1rem 1.25rem;
+        margin-top: 3px;
+        color: #E84035;
+        &:hover {
+          color: #E84035;
+        }
+        border-radius: 5px;
+        background: #FFF0F0 !important;
+      }
+    }
+    p > a:not(.btn-primary) {
+      background: none;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      color: #3482E9;
+      margin: 15px 0;
+      &:hover {
+        text-decoration: none;
+      }
+      &::before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        content: "\f053";
+        margin-right: 10px;
+      }
+    }
+    p > a.btn-primary {
+      background: #f7faff;
+      border: 1px solid #e6efff;
+      color: #3482E9;
+      padding: 22px;
+      margin-top: 25px;
+      white-space: unset;
+      &::before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        content: "\f017";
+        margin-right: 5px;
+      }
+      font-weight: 500;
+    }
+  }
+}
+
+.responsive-calendar {
+  margin-top: 30px;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+  hr {
+    border-color: #f4f4f4;
+  }
+  .controls {
+    padding: 20px 15px 5px;
+    .btn-primary {
+      background: none;
+      border: none;
+      color: #000;
+      &:hover, &:focus {
+        background: none;
+      }
+    }
+  }
+  .day-headers, .days {
+    padding: 5px 10px 10px;
+  }
+  .day.header {
+    border: none !important;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+}
+
+#chooseTimeZone {
+  .btn.btn-default {
+    margin-bottom: 15px;
+  }
+  select {
+    border: none;
+    background: #f5f7fa;
+    padding: .75rem 1rem;
+    font-size: .85rem;
+    height: unset;
+  }
+}
+
+#appointmentForm {
+  h4 {
+    margin-top: 40px;
+    @media(max-width: 575.98px) {
+      font-size: 18px;
+    }
+  }
+  .form {
+    margin-top: 25px;
+    div span {
+      margin: 5px 0;
+      @media(max-width: 575.98px) {
+        font-size: 13px;
+      }
+    }
+  }
+  #confirmationTime, #confirmationTimeZone, #confirmationDate {
+    &::before {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      margin-right: 6px;
+    }
+  }
+  #calendarName {
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+  }
+  #confirmationDate::before {
+    content: "\f073";
+  }
+  // #confirmationTime::before {
+  //   content: "\f017";
+  // }
+  #confirmationTimeZone::before {
+    content: "\f017";
+  }
+}
+
+#appointmentForm, #chooseTimeZone {
+  .btn-primary {
+    padding: 9px 20px;
+    font-weight: 600;
+  }
+} 
+
+#appointmentConfirmed {
+  h1 {
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 600!important;
+    color: #15b239;
+    &::before {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      content: "\f00c";
+      margin-right: 8px;
+    }
+    @media(max-width: 575.98px) {
+      font-size: 17px;
+    }
+  }
+  #addToCalendar h3 {
+    font-size: 16px;
+    margin-top: 6px;
+    @media(max-width: 575.98px) {
+      font-size: 14px;
+    }
+  }
+}
+
+#redirectURLSection h3 {
+  font-size: 20px;
+  font-weight: 700!important;
+}
+
+.row .col > .btn:first-child, .row .col-md-4 > .btn:first-child, #chooseTimeZone .btn.btn-default:first-child {
+  background: #E84035;
+  color: #FFF;
+  padding: 9px 20px;
+}
+
+.form-group .form-control {
+  border: none;
+  background: #f5f7fa;
+  padding: .75rem 1rem;
+  font-size: .85rem;
+}

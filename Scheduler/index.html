@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <title>
+    </title>
+    <style>
+      body {
+      background-color: #fbfbfb;
+      }
+      .logoImg {
+      max-height: 74px;
+      }
+      /*#appointmentConfirmed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 30;
+      width: 100%;
+      height: 100%;
+      background-color: #fbfbfb;
+      -ms-border-radius: 4px;
+      border-radius: 4px;
+      padding: 18px;
+      text-align: center;
+      }
+      #bookAppointment h1, #appointmentConfirmed h1 {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 400;
+      margin-top: 70px;
+      margin-bottom: 10px;
+      }*/
+    </style>
+    <link rel="stylesheet" href="assets/css/scheduler.css">
+  </head>
+  <body>
+    <form method="post" action="./?l=rt&amp;cal=FZd&amp;c=&amp;s=" id="form1">
+      <div class="aspNetHidden">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="8n16EuqOsuN9rf0MrYpvKZQlZWz6og5CbgsBuMS/8IsKdkEzC7RigO3D7gLjVmXySXkMbokVLP16Op519cx/5/kYExNJztx1Nyh3v+mEDRJANDGTCrxrbDSC/+3fz7jY5fEg0yEgUuar3+A66z7TP1uiYl1qfv+SSZtKBq71cV6PJT0sfMvzhk4wdh78idM80q5XQqpTRpZmYSV8N/dP9wr97i6nDIv+cJ2sLv6aZ/gU3xEQSI6g31x67RuvLONEPKBrZhq9d6N33M5dGQPJJi8oYpx2v4PDOtnh5jnT/8tn9RsUhxeybdqtJ8P9YrB5BXzl0fho6iMPhgXjoAT/yVrzorc972gYxZfviA8boFIsvgTOuUMWT7iAudrNSh1hrMX6u/XLcg9BOklTpJzvhH/XWaHZTZPC/5wMFeerCsRk3bCytLatlxD1PFVRJnCXUGGH3KNcLzkE2QSWxPTwtEgEuqQ=" />
+      </div>
+      <div class="aspNetHidden">
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0692F61B" />
+        <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="zTLtF7gLSnd1Z1qN/8ZOdE+YHOyTh2bQ48ld8eWaIlGicJPSMa/zfoU/fmn/J+IEVOPlPZgP2bnzOz9nlc2atAouB14tvh0QS/gB1JOxdtZKI1cCmSjamjrFYVOIIjqN4ZpILP6V84qzM+8jZkTapmamUL2vgEGdc5vtbLYNpJPCfkt5G3Yc3N1UbUP2GUkHeKyvb6iLX0tcCNBQvA2wwpmlbKsGm7FhGaGnjWWCEseCbElsqh5O6JSr4ouQFSQvymx5i2qOPy/ORXS50fiedf3rPdani21oLWOgxRgocGu4Ft3Gk/d79nwCDTEdFTFgxB1BQ6tsx2VTa29CKCGvaKyjpoKfrY9+QTXxJVttc+Csv/RzdsXDMhG70NsSFjX0uXX7nmCXT2RJTHbjR0kcnh51FNo=" />
+      </div>
+      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow topBar">
+        <h5 class="my-0 mr-md-auto font-weight-normal">
+          Clark's Martial Arts
+        </h5>
+        <!--
+          <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="#">Features</a>
+            <a class="p-2 text-dark" href="#">Enterprise</a>
+            <a class="p-2 text-dark" href="#">Support</a>
+            <a class="p-2 text-dark" href="#">Pricing</a>
+          </nav>
+          <a class="btn btn-outline-primary" href="#">Sign up</a>
+            -->
+      </div>
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Welcome to the Scheduler</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h4 class="my-0 font-weight-normal">
+              Ignite | In-Person | BJJ
+            </h4>
+            <p>
+              Let's schedule your appointment!
+            </p>
+            <span id="topCalendarType"></span>
+            <div id="chooseCalendar" style="display: none;">
+              <h4 class="my-0 font-weight-normal">Choose Schedule</h4>
+              <br>
+              <div style="max-width: 492px;">
+              </div>
+            </div>
+            <div id="chooseTimeZone" style="max-width: 492px;">
+              <a href="javascript:;" onclick="startOver();" class="btn btn-sm btn-default"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;Start Over</a><br>
+              <h4 class="my-0 font-weight-normal">Choose Time Zone</h4>
+              <br>
+              <select name="timezone_offset" id="timezone-offset" class="form-control">
+                <option></option>
+                <option value="Etc/GMT+12">(GMT-12:00) International Date Line West</option>
+                <option value="Pacific/Midway">(GMT-11:00) Midway Island, Samoa</option>
+                <option value="Pacific/Honolulu">(GMT-10:00) Hawaii</option>
+                <option value="US/Alaska">(GMT-09:00) Alaska</option>
+                <option value="America/Los_Angeles">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                <option value="America/Tijuana">(GMT-08:00) Tijuana, Baja California</option>
+                <option value="US/Arizona">(GMT-07:00) Arizona</option>
+                <option value="America/Chihuahua">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+                <option value="US/Mountain">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                <option value="America/Managua">(GMT-06:00) Central America</option>
+                <option value="US/Central">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                <option value="America/Mexico_City">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+                <option value="Canada/Saskatchewan">(GMT-06:00) Saskatchewan</option>
+                <option value="America/Bogota">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+                <option value="US/Eastern">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                <option value="US/East-Indiana">(GMT-05:00) Indiana (East)</option>
+                <option value="Canada/Atlantic">(GMT-04:00) Atlantic Time (Canada)</option>
+                <option value="America/Caracas">(GMT-04:00) Caracas, La Paz</option>
+                <option value="America/Manaus">(GMT-04:00) Manaus</option>
+                <option value="America/Santiago">(GMT-04:00) Santiago</option>
+                <option value="Canada/Newfoundland">(GMT-03:30) Newfoundland</option>
+                <option value="America/Sao_Paulo">(GMT-03:00) Brasilia</option>
+                <option value="America/Argentina/Buenos_Aires">(GMT-03:00) Buenos Aires, Georgetown</option>
+                <option value="America/Godthab">(GMT-03:00) Greenland</option>
+                <option value="America/Montevideo">(GMT-03:00) Montevideo</option>
+                <option value="America/Noronha">(GMT-02:00) Mid-Atlantic</option>
+                <option value="Atlantic/Cape_Verde">(GMT-01:00) Cape Verde Is.</option>
+                <option value="Atlantic/Azores">(GMT-01:00) Azores</option>
+                <option value="Africa/Casablanca">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+                <option value="Europe/London">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+                <option value="Europe/Amsterdam">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+                <option value="Europe/Belgrade">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+                <option value="Europe/Brussels">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+                <option value="Europe/Sarajevo">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+                <option value="Africa/Lagos">(GMT+01:00) West Central Africa</option>
+                <option value="Asia/Amman">(GMT+02:00) Amman</option>
+                <option value="Europe/Athens">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+                <option value="Asia/Beirut">(GMT+02:00) Beirut</option>
+                <option value="Africa/Cairo">(GMT+02:00) Cairo</option>
+                <option value="Africa/Harare">(GMT+02:00) Harare, Pretoria</option>
+                <option value="Europe/Helsinki">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+                <option value="Asia/Jerusalem">(GMT+02:00) Jerusalem</option>
+                <option value="Europe/Minsk">(GMT+02:00) Minsk</option>
+                <option value="Africa/Windhoek">(GMT+02:00) Windhoek</option>
+                <option value="Asia/Kuwait">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+                <option value="Europe/Moscow">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+                <option value="Africa/Nairobi">(GMT+03:00) Nairobi</option>
+                <option value="Asia/Tbilisi">(GMT+03:00) Tbilisi</option>
+                <option value="Asia/Tehran">(GMT+03:30) Tehran</option>
+                <option value="Asia/Muscat">(GMT+04:00) Abu Dhabi, Muscat</option>
+                <option value="Asia/Baku">(GMT+04:00) Baku</option>
+                <option value="Asia/Yerevan">(GMT+04:00) Yerevan</option>
+                <option value="Asia/Kabul">(GMT+04:30) Kabul</option>
+                <option value="Asia/Yekaterinburg">(GMT+05:00) Yekaterinburg</option>
+                <option value="Asia/Karachi">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+                <option value="Asia/Calcutta">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+                <option value="Asia/Calcutta">(GMT+05:30) Sri Jayawardenapura</option>
+                <option value="Asia/Katmandu">(GMT+05:45) Kathmandu</option>
+                <option value="Asia/Almaty">(GMT+06:00) Almaty, Novosibirsk</option>
+                <option value="Asia/Dhaka">(GMT+06:00) Astana, Dhaka</option>
+                <option value="Asia/Rangoon">(GMT+06:30) Yangon (Rangoon)</option>
+                <option value="Asia/Bangkok">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+                <option value="Asia/Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
+                <option value="Asia/Hong_Kong">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+                <option value="Asia/Kuala_Lumpur">(GMT+08:00) Kuala Lumpur, Singapore</option>
+                <option value="Asia/Irkutsk">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+                <option value="Australia/Perth">(GMT+08:00) Perth</option>
+                <option value="Asia/Taipei">(GMT+08:00) Taipei</option>
+                <option value="Asia/Tokyo">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+                <option value="Asia/Seoul">(GMT+09:00) Seoul</option>
+                <option value="Asia/Yakutsk">(GMT+09:00) Yakutsk</option>
+                <option value="Australia/Adelaide">(GMT+09:30) Adelaide</option>
+                <option value="Australia/Darwin">(GMT+09:30) Darwin</option>
+                <option value="Australia/Brisbane">(GMT+10:00) Brisbane</option>
+                <option value="Australia/Canberra">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+                <option value="Australia/Hobart">(GMT+10:00) Hobart</option>
+                <option value="Pacific/Guam">(GMT+10:00) Guam, Port Moresby</option>
+                <option value="Asia/Vladivostok">(GMT+10:00) Vladivostok</option>
+                <option value="Asia/Magadan">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+                <option value="Pacific/Auckland">(GMT+12:00) Auckland, Wellington</option>
+                <option value="Pacific/Fiji">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+                <option value="Pacific/Tongatapu">(GMT+13:00) Nuku'alofa</option>
+              </select>
+              <br>
+              <a href="javascript:;" onclick="chooseTimeZone();" class="btn btn-primary">Continue</a>
+            </div>
+            <div id="chooseAppointment">
+              <div class="row">
+                <!-- Mini Calendar -->
+                <div class="col-md-4" style="max-width: 492px;">
+                  <a href="javascript:;" onclick="startOver();" class="btn btn-sm btn-default"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;Start Over</a><br>
+                  <div class="responsive-calendar Calenderdiv">
+                    <div class="controls">
+                      <a class="float-left" data-go="prev">
+                        <div class="btn btn-sm btn-primary"><i class="fa fa-chevron-left"></i></div>
+                      </a>
+                      <h4><span data-head-month="">July</span>&nbsp;<span data-head-year="">2020</span></h4>
+                      <a class="float-right" data-go="next">
+                        <div class="btn btn-sm btn-primary"><i class="fa fa-chevron-right"></i></div>
+                      </a>
+                    </div>
+                    <hr>
+                    <div class="day-headers">
+                      <div class="day header">Sun</div>
+                      <div class="day header">Mon</div>
+                      <div class="day header">Tue</div>
+                      <div class="day header">Wed</div>
+                      <div class="day header">Thu</div>
+                      <div class="day header">Fri</div>
+                      <div class="day header">Sat</div>
+                    </div>
+                    <div class="days" data-group="days">
+                      <div class="day sun past not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0s;"><a data-day="28" data-month="6" data-year="2020">28</a></div>
+                      <div class="day mon past not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.01s;"><a data-day="29" data-month="6" data-year="2020">29</a></div>
+                      <div class="day tue past not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.02s;"><a data-day="30" data-month="6" data-year="2020">30</a></div>
+                      <div class="day wed today" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.03s;"><a data-day="1" data-month="7" data-year="2020">1</a></div>
+                      <div class="day thu future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.04s;"><a data-day="2" data-month="7" data-year="2020">2</a></div>
+                      <div class="day fri future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.05s;"><a data-day="3" data-month="7" data-year="2020">3</a></div>
+                      <div class="day sat future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.06s;"><a data-day="4" data-month="7" data-year="2020">4</a></div>
+                      <div class="day sun future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.07s;"><a data-day="5" data-month="7" data-year="2020">5</a></div>
+                      <div class="day mon future active" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.08s;"><a data-day="6" data-month="7" data-year="2020">6</a><span class="badge">1</span></div>
+                      <div class="day tue future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.09s;"><a data-day="7" data-month="7" data-year="2020">7</a></div>
+                      <div class="day wed future active" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.1s;"><a data-day="8" data-month="7" data-year="2020">8</a><span class="badge">1</span></div>
+                      <div class="day thu future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.11s;"><a data-day="9" data-month="7" data-year="2020">9</a></div>
+                      <div class="day fri future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.12s;"><a data-day="10" data-month="7" data-year="2020">10</a></div>
+                      <div class="day sat future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.13s;"><a data-day="11" data-month="7" data-year="2020">11</a></div>
+                      <div class="day sun future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.14s;"><a data-day="12" data-month="7" data-year="2020">12</a></div>
+                      <div class="day mon future active" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.15s;"><a data-day="13" data-month="7" data-year="2020">13</a><span class="badge">1</span></div>
+                      <div class="day tue future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.16s;"><a data-day="14" data-month="7" data-year="2020">14</a></div>
+                      <div class="day wed future active" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.17s;"><a data-day="15" data-month="7" data-year="2020">15</a><span class="badge">1</span></div>
+                      <div class="day thu future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.18s;"><a data-day="16" data-month="7" data-year="2020">16</a></div>
+                      <div class="day fri future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.19s;"><a data-day="17" data-month="7" data-year="2020">17</a></div>
+                      <div class="day sat future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.2s;"><a data-day="18" data-month="7" data-year="2020">18</a></div>
+                      <div class="day sun future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.21s;"><a data-day="19" data-month="7" data-year="2020">19</a></div>
+                      <div class="day mon future active" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.22s;"><a data-day="20" data-month="7" data-year="2020">20</a><span class="badge">1</span></div>
+                      <div class="day tue future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.23s;"><a data-day="21" data-month="7" data-year="2020">21</a></div>
+                      <div class="day wed future active" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.24s;"><a data-day="22" data-month="7" data-year="2020">22</a><span class="badge">1</span></div>
+                      <div class="day thu future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.25s;"><a data-day="23" data-month="7" data-year="2020">23</a></div>
+                      <div class="day fri future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.26s;"><a data-day="24" data-month="7" data-year="2020">24</a></div>
+                      <div class="day sat future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.27s;"><a data-day="25" data-month="7" data-year="2020">25</a></div>
+                      <div class="day sun future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.28s;"><a data-day="26" data-month="7" data-year="2020">26</a></div>
+                      <div class="day mon future active" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.29s;"><a data-day="27" data-month="7" data-year="2020">27</a><span class="badge">1</span></div>
+                      <div class="day tue future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.3s;"><a data-day="28" data-month="7" data-year="2020">28</a></div>
+                      <div class="day wed future active" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.31s;"><a data-day="29" data-month="7" data-year="2020">29</a><span class="badge">1</span></div>
+                      <div class="day thu future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.32s;"><a data-day="30" data-month="7" data-year="2020">30</a></div>
+                      <div class="day fri future" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.33s;"><a data-day="31" data-month="7" data-year="2020">31</a></div>
+                      <div class="day sat future not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.34s;"><a data-day="1" data-month="8" data-year="2020">1</a></div>
+                      <div class="day sun future not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.35s;"><a data-day="2" data-month="8" data-year="2020">2</a></div>
+                      <div class="day mon future not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.36s;"><a data-day="3" data-month="8" data-year="2020">3</a></div>
+                      <div class="day tue future not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.37s;"><a data-day="4" data-month="8" data-year="2020">4</a></div>
+                      <div class="day wed future not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.38s;"><a data-day="5" data-month="8" data-year="2020">5</a></div>
+                      <div class="day thu future not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.39s;"><a data-day="6" data-month="8" data-year="2020">6</a></div>
+                      <div class="day fri future not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.4s;"><a data-day="7" data-month="8" data-year="2020">7</a></div>
+                      <div class="day sat future not-current" style="transform: rotateY(0deg); backface-visibility: hidden; transition: -webkit-transform 0.5s ease 0.41s;"><a data-day="8" data-month="8" data-year="2020">8</a></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end Mini Calendar -->
+                <!--Appointment Times -->
+                <div class="col my-auto Calenderdiv">
+                  <div id="appointmentList">
+                    <!-- <h4>&nbsp;Choose a Date On The Calendar</h4> -->
+                    <div class="col-md-4" id="Massagediv" style="display: none;">
+                      <h1 class="display-5">No Appointments Available</h1>
+                    </div>
+    
+                    <h4>Now Choose A Time:</h4>
+                    <strong>Appointments for Wednesday, July 15th, 2020</strong>
+                    <p>Times shown in (GMT-08:00) Pacific Time (US &amp; Canada)<br>
+                      <a href="javascript:;" onclick="changeTimeZones();">change time zone</a>
+                    </p>
+                    
+                    <p style="max-width: 492px;">
+                      <a href="javascript:;" onclick="setAppointment(4899010,' 7:45 PM - Wednesday, 15 July 2020','');" class="btn btn-primary btn-block"> 7:45 PM - Wednesday, 15 July 2020</a>
+                    </p>
+                  </div>
+                </div>
+                <!-- end Appointment Times -->
+              </div>
+            </div>
+            <div id="appointmentForm" style="display: none;">
+              <div class="row">
+                <div class="col">
+                  <a href="javascript:;" onclick="startOver();" class="btn btn-sm btn-default"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;Start Over</a><br>
+                  <h4>Provide your information</h4>
+                  <div class="form">
+                    <div class="form-group">
+                      <label for="txtName">First &amp; Last Name of the participant:</label>
+                      <input id="txtName" class="form-control validate[required]" type="text" name="name" placeholder="John Smith">
+                    </div>
+                    <div class="form-group">
+                      <label for="txtEmail">Email address</label>
+                      <input id="txtEmail" class="form-control validate[required,custom[email]]" type="text" name="name" placeholder="Your email address" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="txtMobile">Mobile phone</label>
+                      <input id="txtMobile" class="form-control validate[required]" type="text" name="name" placeholder="Your mobile phone" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="txtComments">Any comments?</label>
+                      <textarea id="txtComments" name="txtComments" class="form-control"></textarea><br>
+                    </div>
+                    <h4>Appointment Information</h4>
+                    <div id="calendarName">Ignite | In-Person | BJJ</div>
+                    <div>
+                      <span id="confirmationDate">Wednesday, July 22nd, 2020</span>&nbsp;<span id="confirmationTime"></span><br>
+                      <span id="confirmationTimeZone">(GMT-08:00) Pacific Time (US &amp; Canada)</span>
+                    </div>
+                    <br>
+                    <a href="javascript:;" onclick="bookit()" class="btn btn-primary">BOOK IT</a>
+                  </div>
+                </div>
+              </div>
+              <div id="appointmentConfirmed">
+                <h1>Appointment Confirmed</h1>
+                <h2 class="appointmentDate"></h2>
+                <h3 class="appointmentTimeZone"></h3>
+                <div id="addToCalendar">
+                  <h3>Add This To Your Calendar</h3>
+                  <br>
+                  <div title="" class="addeventatc" id="addeventatc1" aria-haspopup="true" aria-expanded="false" tabindex="0" translate="no" data-loaded="true" style="visibility: visible;">
+                    Add to Calendar
+                    <span class="start atc_node notranslate">06/27/2017 09:00 AM</span>
+                    <span class="end atc_node notranslate">06/27/2017 11:00 AM</span>
+                    <span class="timezone atc_node notranslate">America/New_York</span>
+                    <span class="title atc_node notranslate">Summary of the event</span>
+                    <span class="description atc_node notranslate">Description of the event<br class="atc_node">
+                    Example of a new line</span>
+                    <span class="location atc_node notranslate">Location of the event</span>
+                    <span class="organizer atc_node notranslate">Organizer</span>
+                    <span class="organizer_email atc_node notranslate">Organizer e-mail</span>
+                    <span class="facebook_event atc_node notranslate">https://www.facebook.com/events/703782616363133</span>
+                    <span class="all_day_event atc_node notranslate">false</span>
+                    <span class="date_format atc_node notranslate">MM/DD/YYYY</span>
+                    <span class="client atc_node notranslate">aZAwctIXbzjUqsSeGmKv16703</span>
+                    <span class="addeventatc_icon atc_node notranslate"></span>
+                  </div>
+                </div>
+                
+                <div id="redirectURLSection">
+                  <h3>Important Next Step!</h3>
+                  <p>After you add the appointment to your schedule, let's take care of the next step.</p>
+                  <a href="#" class="btn btn-primary" id="redirectURL">Continue <i class="fa fa-arrow-circle-o-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+      <input type="hidden" name="hEventTypeID" id="hEventTypeID" value="15355" />
+      <input type="hidden" name="hTimeZone" id="hTimeZone" />
+      <!-- their timezone -->
+      <input type="hidden" name="hTimeZoneOlson" id="hTimeZoneOlson" value="America/Los_Angeles" />
+      <!-- our timezone -->
+      <input type="hidden" name="hStartDate" id="hStartDate" value="2020-07" />
+      <input type="hidden" name="hAllowComments" id="hAllowComments" value="True" />
+      <input type="hidden" name="hEventID" id="hEventID" />
+      <input type="hidden" name="hLocationID" id="hLocationID" value="1195" />
+      <input type="hidden" name="hReplacementID" id="hReplacementID" value="-1" />
+      <input type="hidden" name="hContactID" id="hContactID" />
+      <input type="hidden" name="hEmail" id="hEmail" />
+      <input type="hidden" name="hFullName" id="hFullName" />
+      <input type="hidden" name="hMobile" id="hMobile" />
+      <input type="hidden" name="hRedirectURL" id="hRedirectURL" />
+      <input type="hidden" name="hShowOnlyNextXDaysAvailableAppointments" id="hShowOnlyNextXDaysAvailableAppointments" value="9999" />
+      <input type="hidden" name="hOnlineSchedulerShowTimezone" id="hOnlineSchedulerShowTimezone" value="False" />
+      <script>function skipForSingle() {chooseCalendar(15355,'Ignite | In-Person | BJJ');}window.onload = skipForSingle;</script>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://sparkpages.io/plugins/responsive-calendar/0.9/css/responsive-calendar.min.css" rel="stylesheet" />
+    <script src="https://sparkpages.io/plugins/responsive-calendar/0.9/js/responsive-calendar.min.js"></script>
+    <script src="https://sparkpages.io/invoice/assets/plugins/moment/moment.min.js"></script>
+    <link href="https://sparkpages.io/plugins/jQuery-Validation-Engine/css/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="https://sparkpages.io/plugins/jQuery-Validation-Engine/js/languages/jquery.validationEngine-en.js"></script>
+    <script src="https://sparkpages.io/plugins/jQuery-Validation-Engine/js/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <script src="https://sparkpages.io/abundance-common.min.js"></script>
+    <script src="https://sparkpages.io/scheduler5/cal5.min.js?v=20200619a"></script>
+  </body>
+</html>
