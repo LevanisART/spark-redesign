@@ -93,9 +93,18 @@ hr {
 }
 
 #paymentInfo {
+  display: block !important;
   margin-bottom: 20px;
   .lead {
     margin-top: 30px;
+  }
+  .form-group {
+    label {
+      width: unset;
+    }
+    input {
+      width: 100%;
+    }
   }
 }
 
@@ -273,18 +282,6 @@ footer {
   display: block
 }
 
-#paymentInfo {
-  display: block !important;
-  .form-group {
-    label {
-      width: unset;
-    }
-    input {
-      width: 100%;
-    }
-  }
-}
-
 #PanelPaymentInfo > .row .form-group:last-child {
   margin-bottom: 0;
 }
@@ -338,3 +335,44 @@ footer {
     font-size: 18px;
   }
 }
+
+.btn-group-lg>.btn, .btn-lg {
+  background: #E84035 !important;
+  border-color: #E84035 !important;
+  color: #FFF;
+  &:hover, &:focus {
+    color: #FFF;
+  }
+  &:active {
+    &:focus, &:hover {
+      color: #FFF;
+    }
+  }
+}
+
+#couponSection .row {
+  display: flex;
+  .form-group {
+    input {
+      width: 100%;
+    }
+  }
+  .form-group:nth-child(2) {
+    padding-left: 0;
+    width: auto !important;
+    .btn-group-lg>.btn, .btn-lg {
+      padding: 14px 34px;
+      font: {
+        size: 14px;
+        weight: 500;
+      }
+    }
+  }
+}
+
+#form-signup > .table tr td:nth-child(2) {
+  width: 100% !important;
+  padding-left: 10px;
+}
+
+iframe {max-width: 100% !important;}

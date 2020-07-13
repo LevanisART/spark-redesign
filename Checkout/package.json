@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "@babel/core": "^7.10.3",
+    "clean-css": "^4.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
