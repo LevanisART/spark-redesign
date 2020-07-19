@@ -1226,9 +1226,9 @@ legend {
 .alert.alert-danger {
   color: #ff2e42;
   background-color: #ffffff;
-  border: 2px solid #f4f4f4;
   border-radius: 8px;
   padding-right: 50px;
+  position: relative;
   .btn {
     width: auto !important;
     margin-right: 10px;
