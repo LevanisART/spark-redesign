@@ -354,13 +354,13 @@ label {
   @media(min-width: 1520px) {
     width: 500px !important;
   }
-  width: 250px;
+  width: auto !important;
   color: #707C97;
   border: none;
   border-radius: 30px;
 }
 
-@media(min-width: 1400px) {
+@media(min-width: 1200px) {
   .navbar-right {
     position: relative;
     width: calc(100% - 300px);
