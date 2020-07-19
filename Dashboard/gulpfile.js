@@ -8,6 +8,10 @@ var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 
 var paths = {
+  mainStyles: {
+    src: 'src/main-styles/**/*.scss',
+    dest: './'
+  },
   styles: {
     src: 'src/styles/**/*.scss',
     dest: 'assets/css/'
@@ -32,6 +36,17 @@ function styles() {
     .pipe(gulp.dest(paths.styles.dest));
 }
 
+function mainStyles() {
+  return gulp.src(paths.mainStyles.src)
+    .pipe(sass())
+    .pipe(cleanCSS())
+    // pass in options to the stream
+    .pipe(autoprefixer({
+      cascade: false
+    }))
+    .pipe(gulp.dest(paths.mainStyles.dest));
+}
+
 function scripts() {
   return gulp.src(paths.scripts.src, { sourcemaps: true })
     .pipe(babel())
@@ -43,6 +58,7 @@ function scripts() {
 function watch() {
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.mainStyles.src, mainStyles);
 }
 
 /*
@@ -54,6 +70,7 @@ var build = gulp.series(gulp.parallel(styles, scripts));
  * You can use CommonJS `exports` module notation to declare tasks
  */
 exports.styles = styles;
+exports.mainStyles = mainStyles;
 exports.scripts = scripts;
 exports.watch = watch;
 exports.build = build;
