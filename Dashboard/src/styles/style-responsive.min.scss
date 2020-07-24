@@ -39,7 +39,7 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
     }
   }
   .sidebar {
-    padding-top: 110px;
+    padding-top: 70px;
   }
   .content {
     padding-top: 72px;
@@ -136,12 +136,9 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
 @media (max-width: 767px) {
   .header {
     > .container-fluid {
-      .nav.navbar-nav.navbar-right {
-        margin-top: 10px;
-      }
       .navbar-header {
         width: calc(100% + 30px);
-        padding: 0 0 20px 20px;
+        padding: 5px;
       }
       .navbar-form {
         padding-left: 0;
@@ -324,8 +321,6 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
   .page-sidebar-toggled .sidebar {
     left: 0;
     animation: sidebarSlideInLeft .2s;
-    -webkit-animation: sidebarSlideInLeft .2s;
-    background: #FFF;
     box-shadow: 5px 0 40px rgba(0, 0, 0, .15);
   }
 
@@ -352,7 +347,7 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
   }
 
   .sidebar-bg {
-      left: -220px;
+      left: -300px;
       z-index: 1020
   }
 
