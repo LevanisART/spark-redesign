@@ -341,8 +341,7 @@ label {
   display: flex;
   align-items: center;
   background: #FFF;
-  border: 1px solid #f0eff3;
-  box-shadow: 0px 4px 4px rgba(118, 128, 158, 0.1);
+  border: 1px solid #F0EFF3;
   padding: 5px;
   height: 38px;
   border-radius: 30px;
@@ -353,10 +352,6 @@ label {
 }
 
 .navbar-form .form-control {
-  @media(min-width: 1520px) {
-    width: 500px !important;
-  }
-  width: auto !important;
   color: #707C97;
   border: none;
   border-radius: 30px;
