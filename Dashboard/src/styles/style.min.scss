@@ -4979,7 +4979,6 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 .widget-stats .stats-title,
 .widget-stats .stats-desc {
   color: #fff;
-  color: rgba(255, 255, 255, .6)
 }
 
 .widget-stats .stats-desc {
@@ -5002,8 +5001,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 }
 
 .widget-stats .stats-progress .progress-bar {
-  background: #fff;
-  background-color: #B5C8D9 !important;
+  background-color: #FFF !important;
   opacity: .3;
 }
 
@@ -7984,11 +7982,11 @@ body.flat-black {
 }
 
 .statBoxNewContacts::before {
-  background: #244893;
+  background: #63C7FF;
 }
 
 .statBoxContacts::before {
-  background: #3A465E;
+  background: #A66DD4;
 }
 
 .statBoxAttendance30::before {
@@ -7996,7 +7994,7 @@ body.flat-black {
 }
 
 .statBoxAttendance7::before {
-  background: #BC405A;
+  background: #5D3FC5;
 }
 
 .icheckbox_flat, .iradio_flat {
