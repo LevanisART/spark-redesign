@@ -16,7 +16,7 @@
     <link rel="icon" href="https://app.sparkmembership.com/favicon.ico" type="image/x-icon" />
     <noscript>
       <!-- javascript detect -->
-      <meta http-equiv="refresh" content="0;url=/javascriptDisabled.aspx" />
+      <meta http-equiv="refresh" content="0;url=/javascriptDisabled.html" />
     </noscript>
     <script src="https://app.sparkmembership.com/js/abundance-common.min.js?v=637304953041430818"></script>
     <script type="text/javascript">
@@ -217,7 +217,7 @@
           <div class="container-fluid">
             <!-- begin mobile sidebar expand / collapse button -->
             <div class="navbar-header">
-              <a href="Dashboard.aspx"><span class="navbar-logo-abundance">
+              <a href="Dashboard.html"><span class="navbar-logo-abundance">
               <img id="imgLogo" src="https://app.sparkmembership.com/img/Spark-Logo-Top-Left.png" /></span></a>
               <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
               <span class="icon-bar"></span>
@@ -239,11 +239,11 @@
                 </div>
               </li>
               <li><a href="javascript:;" onclick="topMenuQuickAddContact()" data-toggle="tooltip" data-placement="bottom" title="Add Contact" id="topBarQuickAddContactTour"><i class="fa fa-user-plus"></i></a></li>
-              <li><a href="Contacts.aspx" data-toggle="tooltip" data-placement="bottom" title="View All Contacts"><i class="fa fa-group"></i></a></li>
-              <li><a href="Register.aspx" data-toggle="tooltip" data-placement="bottom" title="Point of Sale"><i class="fa fa-bank"></i></a></li>
+              <li><a href="Contacts.html" data-toggle="tooltip" data-placement="bottom" title="View All Contacts"><i class="fa fa-group"></i></a></li>
+              <li><a href="Register.html" data-toggle="tooltip" data-placement="bottom" title="Point of Sale"><i class="fa fa-bank"></i></a></li>
               <li><a href="javascript:;" onclick="openCalendar('')" data-toggle="tooltip" data-placement="bottom" title="Calendar" id="topBarCalendarTour"><i class="fa fa-calendar-o"></i></a></li>
               <li><a href="javascript:;" onclick="topBarPageIntakeForm('Eastern Standard Time')" data-toggle="tooltip" data-placement="bottom" title="Intake/Checkin Screen" id="topBarPageIntakeForm"><i class="fa fa fa-handshake-o"></i></a></li>
-              <li><a href="SMSMessages.aspx" data-toggle="tooltip" data-placement="bottom" title="View SMS Messages" id="topBarPageSMS"><i class="fa fa-comments"></i></a></li>
+              <li><a href="SMSMessages.html" data-toggle="tooltip" data-placement="bottom" title="View SMS Messages" id="topBarPageSMS"><i class="fa fa-comments"></i></a></li>
               <li><a href="javascript:;" onclick="getTodaysCheckins();" data-toggle="tooltip" data-placement="bottom" title="Today's Attendance"><i class="fa fa-list-alt" style="color: gray;"></i></a></li>
               <li><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="Help" id="topBarPageHelpTour" data-elevio-article="index"><i class="fa fa-question-circle"></i></a></li>
               <li class="dropdown">
@@ -254,7 +254,7 @@
                 <ul class="dropdown-menu media-list pull-right animated fadeInDown" id="notificationsUL">
                   <li class="dropdown-header" id="notificationsTopLine">Notifications (26)</li>
                   <li class="media">
-                    <a href="SMSMessages.aspx">
+                    <a href="SMSMessages.html">
                       <div class="media-left">			<i class="fa fa-comments media-object bg-red"></i>		</div>
                       <div class="media-body">
                         <h6 class="media-heading">26 Unread Text Messages</h6>
@@ -290,7 +290,7 @@
                   <li><a href="javascript:;" onclick="openCalendar('')">Calendar</a></li>
                   <li><a href="javascript:;" data-click="reset-local-storage">Reset Dashboard</a></li>
                   <li class="divider"></li>
-                  <li><a href="logout.aspx">Log Out</a></li>
+                  <li><a href="logout.html">Log Out</a></li>
                 </ul>
               </li>
             </ul>
@@ -329,7 +329,7 @@
                   <li><a href="javascript:;" onclick="reinstateOnboardingChecklist()">Onboarding Checklist</a></li>
                 </ul>
               </li>
-              <li><a href="Contact_Add.aspx"><i class="fa fa-user"></i><span>ADD A NEW CONTACT</span></a></li>
+              <li><a href="Contact_Add.html"><i class="fa fa-user"></i><span>ADD A NEW CONTACT</span></a></li>
               <li class="has-sub">
                 <a href="javascript:;">
                 <b class="caret pull-right"></b>
@@ -337,10 +337,10 @@
                 <span>Contacts</span>
                 </a>
                 <ul class="sub-menu">
-                  <li><a href="Contact_Add.aspx">ADD A NEW CONTACT</a></li>
-                  <li><a href="Contacts.aspx">All Contacts</a></li>
-                  <li><a href="Trial_Member_Maximizer.aspx">Lead & Trials Maximizer<sup>TM</sup></a></li>
-                  <li><a href="New_Member_Maximizer.aspx">New Member Maximizer<sup>TM</sup></a></li>
+                  <li><a href="Contact_Add.html">ADD A NEW CONTACT</a></li>
+                  <li><a href="Contacts.html">All Contacts</a></li>
+                  <li><a href="Trial_Member_Maximizer.html">Lead & Trials Maximizer<sup>TM</sup></a></li>
+                  <li><a href="New_Member_Maximizer.html">New Member Maximizer<sup>TM</sup></a></li>
                   <li><a href="Contacts.aspx?contactType=P">Prospects</a></li>
                   <li><a href="Contacts.aspx?contactType=T">Trials</a></li>
                   <li><a href="Contacts.aspx?contactType=U">Former Trials</a></li>
@@ -362,19 +362,19 @@
                 <span>Attendance</span>
                 </a>
                 <ul class="sub-menu">
-                  <li><a href="Attendance_Scan_Barcode.aspx">Scan Barcode</a></li>
-                  <li><a href="Attendance_Rosters_Add_Attendance.aspx">Add by Roster</a></li>
-                  <li><a href="Attendance_Guided_Access.aspx" target="_blank">Self Check-In/Membership</a></li>
-                  <li><a href="Self_Checkin_Roster.aspx" target="_blank">Self Check-In/Roster</a></li>
-                  <li><a href="Attendance_Rosters.aspx">Roster Setup</a></li>
-                  <li><a href="Attendance_Rosters_All_by_Date.aspx">Roster Report</a></li>
-                  <li><a href="Attendance_Rosters_Contacts.aspx">Roster Contacts</a></li>
-                  <li><a href="Report_Attendance_Who_Attended.aspx">Attendance Report</a></li>
-                  <li><a href="Report_Attendance_Count.aspx">Attendance Counts</a></li>
-                  <li><a href="Report_Attendance_Rosters2.aspx">Attendance by Roster</a></li>
-                  <li><a href="Report_Perfect_Attendance.aspx">Perfect Attendance Report</a></li>
-                  <li><a href="Report_MIA.aspx">MIA Maximizer</a></li>
-                  <li><a href="MailingLabels_AttendanceBarcodes_Avery_5160_Membership.aspx">Print Barcodes</a></li>
+                  <li><a href="Attendance_Scan_Barcode.html">Scan Barcode</a></li>
+                  <li><a href="Attendance_Rosters_Add_Attendance.html">Add by Roster</a></li>
+                  <li><a href="Attendance_Guided_Access.html" target="_blank">Self Check-In/Membership</a></li>
+                  <li><a href="Self_Checkin_Roster.html" target="_blank">Self Check-In/Roster</a></li>
+                  <li><a href="Attendance_Rosters.html">Roster Setup</a></li>
+                  <li><a href="Attendance_Rosters_All_by_Date.html">Roster Report</a></li>
+                  <li><a href="Attendance_Rosters_Contacts.html">Roster Contacts</a></li>
+                  <li><a href="Report_Attendance_Who_Attended.html">Attendance Report</a></li>
+                  <li><a href="Report_Attendance_Count.html">Attendance Counts</a></li>
+                  <li><a href="Report_Attendance_Rosters2.html">Attendance by Roster</a></li>
+                  <li><a href="Report_Perfect_Attendance.html">Perfect Attendance Report</a></li>
+                  <li><a href="Report_MIA.html">MIA Maximizer</a></li>
+                  <li><a href="MailingLabels_AttendanceBarcodes_Avery_5160_Membership.html">Print Barcodes</a></li>
                 </ul>
               </li>
               <li class="has-sub">
@@ -384,14 +384,14 @@
                 <span>Ranks</span>
                 </a>
                 <ul class="sub-menu">
-                  <li><a href="Rank_System_Mass_Promotions.aspx">Mass Rank Promote</a></li>
-                  <li><a href="Report_Current_Ranks.aspx">Report: Current Ranks</a></li>
-                  <li><a href="Report_Rank_History.aspx">Report: Rank History</a></li>
-                  <li><a href="Settings_Rank_Systems.aspx">Rank/Style Setup</a></li>
+                  <li><a href="Rank_System_Mass_Promotions.html">Mass Rank Promote</a></li>
+                  <li><a href="Report_Current_Ranks.html">Report: Current Ranks</a></li>
+                  <li><a href="Report_Rank_History.html">Report: Rank History</a></li>
+                  <li><a href="Settings_Rank_Systems.html">Rank/Style Setup</a></li>
                 </ul>
               </li>
-              <li><a href="Tasks.aspx"><i class="fa fa-check-square-o"></i><span>Tasks</span></a></li>
-              <li><a href="Register.aspx" id="sideNavigationTour"><i class="fa fa-bank"></i><span>Cash Register / Invoices</span></a></li>
+              <li><a href="Tasks.html"><i class="fa fa-check-square-o"></i><span>Tasks</span></a></li>
+              <li><a href="Register.html" id="sideNavigationTour"><i class="fa fa-bank"></i><span>Cash Register / Invoices</span></a></li>
               <li class="has-sub">
                 <a href="javascript:;">
                 <b class="caret pull-right"></b>
@@ -399,15 +399,15 @@
                 <span>Point of Sale Settings</span>
                 </a>
                 <ul class="sub-menu">
-                  <li><a href="Reports_POS_OpenInvoices.aspx">POS: Unpaid Invoices</a></li>
-                  <li><a href="Report_Scheduled_Payments.aspx">POS: Scheduled Payments</a></li>
-                  <li><a href="Settings_POS_Suppliers.aspx">POS: Suppliers</a></li>
-                  <li><a href="Settings_POS_Income_Categories.aspx">POS: Income Categories</a>
-                  <li><a href="Settings_POS_Product_Categories.aspx">POS: Product Categories</a></li>
-                  <li><a href="Settings_POS_Products.aspx">POS: Products</a></li>
-                  <li><a href="Settings_POS_Packages.aspx">POS: Packages</a></li>
-                  <li><a href="Settings_POS.aspx">POS: Settings</a></li>
-                  <li><a href="Settings_POS_Quick_Inventory.aspx">POS: Adjust Inventory</a></li>
+                  <li><a href="Reports_POS_OpenInvoices.html">POS: Unpaid Invoices</a></li>
+                  <li><a href="Report_Scheduled_Payments.html">POS: Scheduled Payments</a></li>
+                  <li><a href="Settings_POS_Suppliers.html">POS: Suppliers</a></li>
+                  <li><a href="Settings_POS_Income_Categories.html">POS: Income Categories</a>
+                  <li><a href="Settings_POS_Product_Categories.html">POS: Product Categories</a></li>
+                  <li><a href="Settings_POS_Products.html">POS: Products</a></li>
+                  <li><a href="Settings_POS_Packages.html">POS: Packages</a></li>
+                  <li><a href="Settings_POS.html">POS: Settings</a></li>
+                  <li><a href="Settings_POS_Quick_Inventory.html">POS: Adjust Inventory</a></li>
                 </ul>
               </li>
               <li class="has-sub">
@@ -417,22 +417,22 @@
                 <span>Communication Center</span>
                 </a>
                 <ul class="sub-menu">
-                  <li><a href="EmailCampaigns.aspx">Email Campaign</a></li>
-                  <li><a href="Email_Logs.aspx">Email Logs</a></li>
-                  <li><a href="Email_Unsubscribers.aspx">Email Unsubscribers</a></li>
-                  <li><a href="SMSCampaigns.aspx">SMS Text Message Campaign</a></li>
+                  <li><a href="EmailCampaigns.html">Email Campaign</a></li>
+                  <li><a href="Email_Logs.html">Email Logs</a></li>
+                  <li><a href="Email_Unsubscribers.html">Email Unsubscribers</a></li>
+                  <li><a href="SMSCampaigns.html">SMS Text Message Campaign</a></li>
                   <li><a href="SMSMessages.aspx?action=veiwLogs">SMS Logs</a></li>
                   <li>
                     <!-- <a href="javascript:;" onclick="beta()">Print Letters</a> -->
                   </li>
                 </ul>
               </li>
-              <li><a href="SalesPages.aspx"><i class="fa fa-shopping-cart"></i><span>Checkout Pages</span></a></li>
-              <li><a href="Funnels.aspx"><i class="fa fa-filter"></i><span>Funnels <span class="label label-theme m-l-5">NEW</span></span></a></li>
-              <li><a href="SparkPageBuilder.aspx" target="_blank"><i class="fa fa-filter"></i><span>Spark Page Builder</span></a></li>
-              <li><a href="Automation.aspx"><i class="fa fa-bolt"></i><span>Automation</span></a></li>
-              <li><a href="SparkIgnite.aspx">🔥 <span>Spark Ignite</span></a></li>
-              <li><a href="Projects.aspx"><i class="fa fa-list-alt"></i><span>Projects</span></a></li>
+              <li><a href="SalesPages.html"><i class="fa fa-shopping-cart"></i><span>Checkout Pages</span></a></li>
+              <li><a href="Funnels.html"><i class="fa fa-filter"></i><span>Funnels <span class="label label-theme m-l-5">NEW</span></span></a></li>
+              <li><a href="SparkPageBuilder.html" target="_blank"><i class="fa fa-filter"></i><span>Spark Page Builder</span></a></li>
+              <li><a href="Automation.html"><i class="fa fa-bolt"></i><span>Automation</span></a></li>
+              <li><a href="SparkIgnite.html">🔥 <span>Spark Ignite</span></a></li>
+              <li><a href="Projects.html"><i class="fa fa-list-alt"></i><span>Projects</span></a></li>
               <li class="has-sub">
                 <a href="javascript:;">
                 <b class="caret pull-right"></b>
@@ -440,41 +440,41 @@
                 <span>Reports</span>
                 </a>
                 <ul class="sub-menu">
-                  <li><a href="Report_Financial_Transactions.aspx">Financial Transactions</a></li>
-                  <li><a href="Report_Financial_Income_Category.aspx">Transactions by Category</a></li>
-                  <li><a href="Report_Financial_Enrollment.aspx">Transactions by Membership</a></li>
-                  <li><a href="Report_Financial_Forecast.aspx">Financial Forecast Report</a></li>
-                  <li><a href="Report_Financial_Refunds.aspx">Financial Refund Report</a></li>
-                  <li><a href="Report_Gross_Income_History.aspx">Gross Financial History (chart)</a></li>
-                  <li><a href="Report_autoCharge.aspx">autoCharge Report</a></li>
-                  <li><a href=" Report_Extrenal_Billing_Company_Update.aspx">External Billing Report</a></li>
-                  <li><a href="Report_Returned_ACH.aspx">autoCharge EFT Status</a></li>
-                  <li><a href="Report_Scheduled_Payments.aspx">POS: Scheduled Payments</a></li>
-                  <li><a href="Report_Staff_Activity.aspx">Staff Activity Logs</a></li>
-                  <li><a href="Report_TimeSlips.aspx">Staff Time Slips</a></li>
-                  <li><a href="Report_Tax_Detail.aspx">Sales Tax Report</a></li>
-                  <li><a href="Report_POS_Daily_Renconcile.aspx">POS Daily Reconcile</a></li>
-                  <li><a href="Reports_POS_OpenInvoices.aspx">POS: Unpaid Invoices</a></li>
-                  <li><a href="POS_Orders_To_Place.aspx">POS: Orders to Place</a></li>
-                  <li><a href="Report_Inventory_Reorder.aspx">POS: Inventory Reorder Report</a></li>
-                  <li><a href="Report_Inventory_Onhand.aspx">POS: On Hand Inventory Report</a></li>
-                  <li><a href="Report_Items_Sold.aspx">POS: Items Sold</a></li>
-                  <li><a href="Report_Items_Sold_Sum.aspx">POS: Sold Items Summary</a></li>
-                  <li><a href="Report_Memberships.aspx">All Memberships</a></li>
-                  <li><a href="Report_Memberships_Missing_Digital_Agreements.aspx">Missing Digital Agreements</a></li>
-                  <li><a href="Report_Members_No_Membership.aspx">Students Without Memberships</a></li>
-                  <li><a href="Report_Memberships_Autorenew.aspx">Auto-Renew Memberships</a></li>
-                  <li><a href="Report_Cancelled_Memberships.aspx">Cancelled Memberships</a></li>
-                  <li><a href="Report_Memberships_On_Hold.aspx">On Hold Memberships</a></li>
-                  <li><a href="Report_Referrals.aspx">Referrals</a></li>
-                  <li><a href="Report_ATAExpiration.aspx">ATA Expirations</a></li>
-                  <li><a href="Report_Marketing_Sources.aspx">Marketing Sources</a></li>
-                  <li><a href="Report_UTM.aspx">Marketing UTM Codes</a></li>
-                  <li><a href=" Report_Attendance_Who_Attended.aspx">Attendance Report</a></li>
-                  <li><a href="Report_MIA.aspx">MIA Maximizer</a></li>
-                  <li><a href="Report_On_Vacation.aspx">Vacations</a></li>
-                  <li><a href="Report_Last4_Credit_Card.aspx">Credit Card Search</a></li>
-                  <li><a href="Report_NeedToSee.aspx">Need to See</a></li>
+                  <li><a href="Report_Financial_Transactions.html">Financial Transactions</a></li>
+                  <li><a href="Report_Financial_Income_Category.html">Transactions by Category</a></li>
+                  <li><a href="Report_Financial_Enrollment.html">Transactions by Membership</a></li>
+                  <li><a href="Report_Financial_Forecast.html">Financial Forecast Report</a></li>
+                  <li><a href="Report_Financial_Refunds.html">Financial Refund Report</a></li>
+                  <li><a href="Report_Gross_Income_History.html">Gross Financial History (chart)</a></li>
+                  <li><a href="Report_autoCharge.html">autoCharge Report</a></li>
+                  <li><a href=" Report_Extrenal_Billing_Company_Update.html">External Billing Report</a></li>
+                  <li><a href="Report_Returned_ACH.html">autoCharge EFT Status</a></li>
+                  <li><a href="Report_Scheduled_Payments.html">POS: Scheduled Payments</a></li>
+                  <li><a href="Report_Staff_Activity.html">Staff Activity Logs</a></li>
+                  <li><a href="Report_TimeSlips.html">Staff Time Slips</a></li>
+                  <li><a href="Report_Tax_Detail.html">Sales Tax Report</a></li>
+                  <li><a href="Report_POS_Daily_Renconcile.html">POS Daily Reconcile</a></li>
+                  <li><a href="Reports_POS_OpenInvoices.html">POS: Unpaid Invoices</a></li>
+                  <li><a href="POS_Orders_To_Place.html">POS: Orders to Place</a></li>
+                  <li><a href="Report_Inventory_Reorder.html">POS: Inventory Reorder Report</a></li>
+                  <li><a href="Report_Inventory_Onhand.html">POS: On Hand Inventory Report</a></li>
+                  <li><a href="Report_Items_Sold.html">POS: Items Sold</a></li>
+                  <li><a href="Report_Items_Sold_Sum.html">POS: Sold Items Summary</a></li>
+                  <li><a href="Report_Memberships.html">All Memberships</a></li>
+                  <li><a href="Report_Memberships_Missing_Digital_Agreements.html">Missing Digital Agreements</a></li>
+                  <li><a href="Report_Members_No_Membership.html">Students Without Memberships</a></li>
+                  <li><a href="Report_Memberships_Autorenew.html">Auto-Renew Memberships</a></li>
+                  <li><a href="Report_Cancelled_Memberships.html">Cancelled Memberships</a></li>
+                  <li><a href="Report_Memberships_On_Hold.html">On Hold Memberships</a></li>
+                  <li><a href="Report_Referrals.html">Referrals</a></li>
+                  <li><a href="Report_ATAExpiration.html">ATA Expirations</a></li>
+                  <li><a href="Report_Marketing_Sources.html">Marketing Sources</a></li>
+                  <li><a href="Report_UTM.html">Marketing UTM Codes</a></li>
+                  <li><a href=" Report_Attendance_Who_Attended.html">Attendance Report</a></li>
+                  <li><a href="Report_MIA.html">MIA Maximizer</a></li>
+                  <li><a href="Report_On_Vacation.html">Vacations</a></li>
+                  <li><a href="Report_Last4_Credit_Card.html">Credit Card Search</a></li>
+                  <li><a href="Report_NeedToSee.html">Need to See</a></li>
                 </ul>
               </li>
               <li class="has-sub">
@@ -484,14 +484,14 @@
                 <span>University</span>
                 </a>
                 <ul class="sub-menu">
-                  <li><a href="University_Courses.aspx">Courses</a></li>
-                  <li><a href="University_Authors.aspx">Authors</a></li>
+                  <li><a href="University_Courses.html">Courses</a></li>
+                  <li><a href="University_Authors.html">Authors</a></li>
                 </ul>
               </li>
-              <li><a href="StudentApp_Dashboard.aspx"><i class="fa fa-mobile"></i><span>Member App <span class="label label-theme m-l-5">NEW!</span></span></a></li>
-              <li><a href="Tags.aspx"><i class="fa fa-tags"></i><span>Tags</span></a></li>
-              <li><a href="Forms.aspx"><i class="fa fa-list-ul"></i><span>Forms & Surveys</span></a></li>
-              <li><a href="LandingPages.aspx"><i class="fa fa-globe"></i><span>Landing Pages</span></a></li>
+              <li><a href="StudentApp_Dashboard.html"><i class="fa fa-mobile"></i><span>Member App <span class="label label-theme m-l-5">NEW!</span></span></a></li>
+              <li><a href="Tags.html"><i class="fa fa-tags"></i><span>Tags</span></a></li>
+              <li><a href="Forms.html"><i class="fa fa-list-ul"></i><span>Forms & Surveys</span></a></li>
+              <li><a href="LandingPages.html"><i class="fa fa-globe"></i><span>Landing Pages</span></a></li>
               <li class="has-sub">
                 <a href="javascript:;">
                 <b class="caret pull-right"></b>
@@ -499,33 +499,33 @@
                 <span>Settings</span>
                 </a>
                 <ul class="sub-menu">
-                  <li><a href="Settings_General.aspx">General Settings</a></li>
-                  <li><a href="Settings_Api_Key.aspx">API Key / Tracking Codes</a></li>
-                  <li><a href="Settings_Attendance.aspx">Attendance</a></li>
-                  <li><a href="Settings_Calendar.aspx">Calendar</a></li>
-                  <li><a href="Settings_Collection_Companies.aspx">Collection Companies</a></li>
-                  <li><a href="Settings_Groups.aspx">Contact Groups</a></li>
-                  <li><a href="Settings_LeadManager_Phases.aspx">Contact Phases</a></li>
-                  <li><a href="Settings_Custom_Fields.aspx">Custom Fields</a></li>
-                  <li><a href="Settings_Optin_Forms.aspx">Email Capture Forms</a></li>
-                  <li><a href="Settings_Email_Templates.aspx">Email Templates</a></li>
-                  <li><a href="Goals_You_Set_Are_Goals_You_Get.aspx">Goals</a></li>
-                  <li><a href="ImageManager.aspx">Image Manager</a></li>
-                  <li><a href="Settings_Marketing_Sources.aspx">Marketing Sources</a></li>
-                  <li><a href="Settings_Add_MemberShipType.aspx">Memberships</a></li>
-                  <li><a href="Settings_Optin_Forms.aspx">Opt-In WebForms</a></li>
-                  <li><a href="Settings_PaymentGateway.aspx">Payment Gateway</a></li>
-                  <li><a href="Settings_POS.aspx">POS: Settings</a></li>
-                  <li><a href="Settings_Refer_A_Friend.aspx">Refer-A-Friend</a></li>
-                  <li><a href="Settings_Rank_Systems.aspx">Rank/Style Setup</a></li>
-                  <li><a href="Settings_SmartLinks.aspx">smartLinks</a></li>
-                  <li><a href="Settings_SMS_BuyNumber.aspx">SMS Phone Number</a></li>
-                  <li><a href="SMS_Saved_Replies.aspx">SMS Saved Replies</a></li>
-                  <li><a href="Settings_Users.aspx">Staff Logins</a></li>
-                  <li><a href="Tags.aspx">Tags</a></li>
-                  <li><a href="Settings_Global_Merge_Tags.aspx">Global Merge Tags</a></li>
-                  <li><a href="WordTemplateManager.aspx">Word Doc Template Manager</a></li>
-                  <li><a href="ImportContacts.aspx">Import Contacts</a></li>
+                  <li><a href="Settings_General.html">General Settings</a></li>
+                  <li><a href="Settings_Api_Key.html">API Key / Tracking Codes</a></li>
+                  <li><a href="Settings_Attendance.html">Attendance</a></li>
+                  <li><a href="Settings_Calendar.html">Calendar</a></li>
+                  <li><a href="Settings_Collection_Companies.html">Collection Companies</a></li>
+                  <li><a href="Settings_Groups.html">Contact Groups</a></li>
+                  <li><a href="Settings_LeadManager_Phases.html">Contact Phases</a></li>
+                  <li><a href="Settings_Custom_Fields.html">Custom Fields</a></li>
+                  <li><a href="Settings_Optin_Forms.html">Email Capture Forms</a></li>
+                  <li><a href="Settings_Email_Templates.html">Email Templates</a></li>
+                  <li><a href="Goals_You_Set_Are_Goals_You_Get.html">Goals</a></li>
+                  <li><a href="ImageManager.html">Image Manager</a></li>
+                  <li><a href="Settings_Marketing_Sources.html">Marketing Sources</a></li>
+                  <li><a href="Settings_Add_MemberShipType.html">Memberships</a></li>
+                  <li><a href="Settings_Optin_Forms.html">Opt-In WebForms</a></li>
+                  <li><a href="Settings_PaymentGateway.html">Payment Gateway</a></li>
+                  <li><a href="Settings_POS.html">POS: Settings</a></li>
+                  <li><a href="Settings_Refer_A_Friend.html">Refer-A-Friend</a></li>
+                  <li><a href="Settings_Rank_Systems.html">Rank/Style Setup</a></li>
+                  <li><a href="Settings_SmartLinks.html">smartLinks</a></li>
+                  <li><a href="Settings_SMS_BuyNumber.html">SMS Phone Number</a></li>
+                  <li><a href="SMS_Saved_Replies.html">SMS Saved Replies</a></li>
+                  <li><a href="Settings_Users.html">Staff Logins</a></li>
+                  <li><a href="Tags.html">Tags</a></li>
+                  <li><a href="Settings_Global_Merge_Tags.html">Global Merge Tags</a></li>
+                  <li><a href="WordTemplateManager.html">Word Doc Template Manager</a></li>
+                  <li><a href="ImportContacts.html">Import Contacts</a></li>
                   <li><a href="javascript:;" onclick="resetTours()">Reset Tours</a></li>
                 </ul>
               </li>
@@ -545,7 +545,7 @@
         <div id="content" class="content">
           <!-- begin breadcrumb -->
           <ol class="breadcrumb pull-right">
-            <li><a href="Dashboard.aspx">Home</a></li>
+            <li><a href="Dashboard.html">Home</a></li>
             <li class="active">Profile Page</li>
           </ol>
           <!-- end breadcrumb -->

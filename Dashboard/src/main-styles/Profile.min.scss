@@ -260,30 +260,6 @@ div.tooltip-inner {
   border-radius: 3px
 }
 
-.tags {
-  .label {
-    font-size: 100% !important;
-    padding: 9px 13px;
-    font: {
-      size: 12px !important;
-      weight: 600;
-    }
-  }
-  i {
-    color: #FFF !important;
-  }
-  > div {
-    display: flex;
-  }
-  a {
-    margin-right: 5px;
-    display: flex;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
 #camera {
   display: inline-block;
   background-color: #eee;
