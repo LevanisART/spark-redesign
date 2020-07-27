@@ -587,6 +587,9 @@ input, select {
   margin-top: -1px;
   color: #9298ba;
   opacity: .45;
+  &.fa.fa-star {
+    opacity: 1 !important;
+  }
 }
 
 .sidebar .nav>li>a i[class*="ion-"] {
