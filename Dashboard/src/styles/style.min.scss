@@ -2017,6 +2017,11 @@ table {
   }
 }
 
+.col-md-2.pull-right .multiselect-native-select .multiselect-container.dropdown-menu {
+  left: unset;
+  right: 0;
+}
+
 .btn-group .btn.btn-primary:not(.active)+.btn.btn-primary,
 .input-group-btn .btn.btn-primary:not(.active)+.btn.btn-primary {
   border-left-color: #2a72b5
