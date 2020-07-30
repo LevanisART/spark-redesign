@@ -1,0 +1,118 @@
+@import '../styles/variables';
+
+.taskTable {
+  width: 100%;
+  font-family: Arial;
+  border-collapse: collapse
+}
+
+.taskTable .task {
+  color: #000
+}
+
+.taskTable td {
+  padding: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px
+}
+
+.taskTable .leftCol {
+  width: 30px
+}
+
+.taskTable .rightCol,
+.leftCol {
+  vertical-align: top
+}
+
+.taskTable .taskAssignments {
+  font-size: 12px;
+  color: $textColor;
+  display: flex;
+  padding-top: 7px;
+  strong {
+    margin-right: 4px;
+  }
+  strong:not(:first-child) {
+    margin-left: 8px;
+  }
+}
+
+.taskTable hr.style-six {
+  border: 0;
+  height: 0;
+  border-top: none;
+  border-bottom: 1px solid #f5f5f5;
+  width: 100%
+}
+
+.taskTable .taskDetails {
+  color: $textColor;
+  font-size: 12px
+}
+
+.taskTable .taskDetails small {
+  color: $red;
+  font-size: 12px;
+  position: static;
+  margin-left: 20px
+}
+
+.taskTable tr {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.taskCommentTop {
+  position: relative;
+  top: 5px;
+  left: 15px;
+  padding-bottom: 10px
+}
+
+.taskComment {
+  font-size: 12px;
+  font-weight: bolder;
+  color: #000
+}
+
+.commentBubble {
+  position: relative;
+  min-height: 65px;
+  padding: 5px;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: #7f7f7f solid 2px;
+  color: #000
+}
+
+.commentBubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 14px 0;
+  border-color: #fff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  bottom: -15px;
+  left: 41px
+}
+
+.commentBubble:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 16px 15px 0;
+  border-color: #7f7f7f transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  bottom: -18px;
+  left: 40px
+}
+
+.taskHistory {
+  display: none
+}

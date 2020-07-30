@@ -36,6 +36,12 @@
   color: #76809E;
   display: flex;
   padding-top: 7px;
+  strong {
+    margin-right: 4px;
+  }
+  strong:not(:first-child) {
+    margin-left: 8px;
+  }
 }
 
 .taskTable hr.style-six {
