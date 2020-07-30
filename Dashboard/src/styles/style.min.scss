@@ -8083,7 +8083,7 @@ body.flat-black {
   border-radius: 10px;
   background: #FFF;
   padding: 28px;
-  > h2 {
+  > h2, .row > h2 {
     line-height: 29px;
     font-size: 19px;
     font-weight: 700;
