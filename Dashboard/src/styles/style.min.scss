@@ -2274,9 +2274,13 @@ table {
   }
 }
 
-#contentPageHolder_btnGo.btn.btn-primary {
+.col-md-3 #contentPageHolder_btnGo.btn.btn-primary {
   margin: 24px 0;
   padding: 10px 15px;
+}
+
+#RankReport {
+  margin-top: 15px;
 }
 
 .panel-with-tabs.panel-default .panel-heading {
