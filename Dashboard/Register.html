@@ -1,0 +1,2495 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+  <title>
+    SPARK
+  </title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <meta name="description" />
+  <meta name="author" />
+  <link rel="shortcut icon" href="https://app.sparkmembership.com/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="https://app.sparkmembership.com/favicon.ico" type="image/x-icon" />
+  <noscript>
+    <!-- javascript detect -->
+    <meta http-equiv="refresh" content="0;url=/javascriptDisabled.html" />
+  </noscript>
+  <script src="https://app.sparkmembership.com/js/abundance-common.min.js?v=637317424992872164"></script>
+  <script type="text/javascript">
+    var locationID = getUserInfoCookie("locationID");
+    var appInsights =
+      window.appInsights ||
+      (function (a) {
+        function b(a) {
+          c[a] = function () {
+            var b = arguments;
+            c.queue.push(function () {
+              c[a].apply(c, b);
+            });
+          };
+        }
+        var c = { config: a },
+          d = document,
+          e = window;
+        setTimeout(function () {
+          var b = d.createElement("script");
+          (b.src = a.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"), d.getElementsByTagName("script")[0].parentNode.appendChild(b);
+        });
+        try {
+          c.cookie = d.cookie;
+        } catch (a) {}
+        c.queue = [];
+        for (var f = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; f.length; ) b("track" + f.pop());
+        if ((b("setAuthenticatedUserContext"), b("clearAuthenticatedUserContext"), b("startTrackEvent"), b("stopTrackEvent"), b("startTrackPage"), b("stopTrackPage"), b("flush"), !a.disableExceptionTracking)) {
+          (f = "onerror"), b("_" + f);
+          var g = e[f];
+          e[f] = function (a, b, d, e, h) {
+            var i = g && g(a, b, d, e, h);
+            return !0 !== i && c["_" + f](a, b, d, e, h), i;
+          };
+        }
+        return c;
+      })({
+        instrumentationKey: "6135f29f-c7cb-4863-bf40-d10e672bad7a",
+        accountId: locationID,
+      });
+
+    (window.appInsights = appInsights), appInsights.queue && 0 === appInsights.queue.length && appInsights.trackPageView();
+  </script>
+
+  <!-- BEGIN TRACKJS -->
+  <script type="text/javascript">
+    window._trackJs = { token: "a82d752d41374ff5aa6b02fb6af75b23" };
+  </script>
+  <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+  <!-- END TRACKJS -->
+
+  <!-- ================== BEGIN BASE CSS STYLE ==========w======== -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/css/animate.min.css?v20190920a" rel="stylesheet" />
+  <link href="assets/css/style.min.css?v=637317424992872164" rel="stylesheet" />
+  <link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+  <link href="assets/css/theme/red.css?v=637317424992872164" rel="stylesheet" id="theme" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+
+  <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+  <link href="https://app.sparkmembership.com/assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/gritter/css/jquery.gritter.min.css?v=20190125a" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/morris/morris.css" rel="stylesheet" />
+  <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+
+  <script src="https://app.sparkmembership.com/assets/plugins/jquery/jquery-1.12.0.min.js?v=637317424992872164"></script>
+  <script src="https://app.sparkmembership.com/assets/plugins/jquery/jquery-migrate-1.3.0.min.js?v=637317424992872164"></script>
+  <script src="https://app.sparkmembership.com/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+
+  <!-- ================== END BASE JS ================== -->
+
+  <link href="https://app.sparkmembership.com/plugins/jquery-typeahead-2.0.0-rc.6/dist/jquery.typeahead.min.css" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/jquery-typeahead-2.0.0-rc.6/dist/jquery.typeahead.min.js"></script>
+  <!--
+  <link href="https://app.sparkmembership.com/plugins/jquery-typeahead-2.10.6/dist/jquery.typeahead.min.css" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/jquery-typeahead-2.10.6/dist/jquery.typeahead.min.js"></script>
+    -->
+  <style>
+    .typeahead-list {
+      max-height: 600px !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+  </style>
+
+  <!-- fancybox2 -->
+  <!--
+  <link href="https://app.sparkmembership.com/plugins/fancybox2/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/fancybox2/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="https://app.sparkmembership.com/plugins/fancybox2/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+  -->
+
+  <!-- SweetAlert2 -->
+  <link href="https://app.sparkmembership.com/plugins/sweetalert2/dist/sweetalert2.css?v=637317424992872164" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/sweetalert2/src/sweetalert2.js?v=637317424992872164"></script>
+
+  <!-- Bootstrap DatePicker -->
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+  <!-- Page Level CSS -->
+  <link href="Normal.Master.min.css?v=637317424992872164" rel="stylesheet" />
+
+  <!-- Tipso -->
+  <link href="https://app.sparkmembership.com/plugins/tipso/src/tipso.min.css" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/tipso/src/tipso.min.js"></script>
+
+  <!-- iCheck -->
+  <link href="https://app.sparkmembership.com/plugins/icheck-1.x/skins/flat/flat.css" rel="stylesheet" />
+
+  <!-- moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+
+  <!-- Select2 -->
+  <link href="https://app.sparkmembership.com/plugins/select2-4.0.0/dist/css/select2.min.css?v=637317424992872164" rel="stylesheet" />
+
+  <!-- Bootstrap Tour -->
+  <link href="https://app.sparkmembership.com/plugins/bootstrap-tour-0.10.2/build/css/bootstrap-tour.min.css" rel="stylesheet" />
+
+  <!-- Keep the session alive so no logouts -->
+  <script src="https://app.sparkmembership.com/SessionKeepAlive.js"></script>
+
+  <link href="https://app.sparkmembership.com/assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/plugins/tinymce/skins/lightgray/skin.min.css" rel="stylesheet" />
+
+  <!-- Page level CSS -->
+  <link href="Register.min.css" rel="stylesheet" />
+
+  <style>
+    .favButton {
+      height: 100px;
+      line-height: 105%;
+      margin-bottom: 20px;
+    }
+
+    .favButton small {
+      color: #ffc324;
+      line-height: 92%;
+    }
+
+    .stripeError {
+      display: none;
+    }
+
+    .stripeError.visible {
+      color: red;
+      display: block;
+    }
+
+    #txtPOSSearch {
+      height: 50px;
+      font-size: 18px;
+    }
+
+    #startHereBubble {
+      z-index: 100 !important;
+    }
+
+    ul#membershipFound {
+      list-style-type: disc;
+    }
+  </style>
+
+  <script>
+    var userName = getUserInfoCookie("userName");
+    var userEmail = getUserInfoCookie("userEmail");
+    var userID = getUserInfoCookie("userID");
+
+    var plan = getUserInfoCookie("plan");
+    var locName = getUserInfoCookie("locationName");
+    var startDate = getUserInfoCookie("startDate");
+    var theDate = Math.round(new Date(startDate).getTime(startDate) / 1000);
+    var siteName = "SPARK";
+    var datepickerDateFormat;
+
+    switch (getUserInfoCookie("df")) {
+      case "DMY":
+        datepickerDateFormat = "dd/mm/yyyy";
+        break;
+
+      case "YMD":
+        datepickerDateFormat = "yyyy/mm/dd";
+        break;
+
+      case "MDY":
+        datepickerDateFormat = "mm/dd/yyyy";
+        break;
+
+      default:
+        datepickerDateFormat = "mm/dd/yyyy";
+        break;
+    }
+  </script>
+
+  <script>
+    trackJs.addMetadata("locationID", locationID);
+    trackJs.addMetadata("userName", userName);
+    trackJs.addMetadata("userID", userID);
+    trackJs.addMetadata("plan", plan);
+    trackJs.addMetadata("locName", locName);
+  </script>
+  <link href="Spark.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="calendarModal" class="calendarContainer" style="display: none;">
+    <div class="frameLoading">Please wait</div>
+    <div class="navbar-logo-abundance" style="left: 10px !important;">
+      <img id="imgLogoCalendar" src="https://app.sparkmembership.com/img/Spark-Logo-Top-Left.png" />
+    </div>
+    <div id="calendarClose"><i class="fa fa-3x fa-times-circle"></i></div>
+    <iframe width="630" height="700" src="" seamless="seamless" frameborder="0"></iframe>
+  </div>
+  <form method="post" action="./Register.html" id="form1">
+    <div class="aspNetHidden">
+      <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+      <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+      <input
+        type="hidden"
+        name="__VIEWSTATE"
+        id="__VIEWSTATE"
+        value="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"
+      />
+    </div>
+
+    <script type="text/javascript">
+      //<![CDATA[
+      var theForm = document.forms["form1"];
+      if (!theForm) {
+        theForm = document.form1;
+      }
+      function __doPostBack(eventTarget, eventArgument) {
+        if (!theForm.onsubmit || theForm.onsubmit() != false) {
+          theForm.__EVENTTARGET.value = eventTarget;
+          theForm.__EVENTARGUMENT.value = eventArgument;
+          theForm.submit();
+        }
+      }
+      //]]>
+    </script>
+
+    <script src="https://app.sparkmembership.com/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZIP9G2H5IG4X1Ql--AlM4lJIcYGjRS4Dlem_eYSOW9Uog_9kOA2&amp;t=637248193626673092" type="text/javascript"></script>
+
+    <script
+      src="https://app.sparkmembership.com/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvjkQUIkPNfEe2IfmNXJ83NIqNk_BH0ou1r9VSaAk0eCK9TVp3RKzjnodmyZ6zWgpXWK8rh3_x0sOF0TCsIJomTb2cOLWcCkVeo3LaG58pbHYBhhSThjUDNHcEWvCurEgVxJuoso1&amp;t=ffffffffecf19baa"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://app.sparkmembership.com/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8ONDQI1R8KfFOQGz88gDUQz8gcZgM-ZBgkzRlkqFrgvtAy8ZbXkfgDN6MzaXaL4MfJ9d4LTIujvs6rl5cJqEqx8F6B8IRD3tNmvvosIXEPuxoA_bCa3Ji6rVJTdOtox0yXK3v1J41&amp;t=ffffffffecf19baa"
+      type="text/javascript"
+    ></script>
+    <div class="aspNetHidden">
+      <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="799CC77D" />
+      <input
+        type="hidden"
+        name="__EVENTVALIDATION"
+        id="__EVENTVALIDATION"
+        value="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"
+      />
+    </div>
+    <script type="text/javascript">
+      //<![CDATA[
+      Sys.WebForms.PageRequestManager._initialize("ctl00$ctl31", "form1", [], [], [], 90, "ctl00");
+      //]]>
+    </script>
+
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+      <!-- begin #header -->
+      <div id="header" class="header navbar navbar-default navbar-fixed-top">
+        <!-- begin container-fluid -->
+        <div class="container-fluid">
+          <!-- begin mobile sidebar expand / collapse button -->
+          <div class="navbar-header">
+            <a href="index.html">
+              <span class="navbar-logo-abundance"> <img id="imgLogo" src="https://app.sparkmembership.com/img/Spark-Logo-Top-Left.png" /></span>
+            </a>
+            <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!-- end mobile sidebar expand / collapse button -->
+
+          <!-- begin header navigation right -->
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <div class="navbar-form full-width">
+                <div class="form-group">
+                  <div class="typeahead-container"><input type="text" class="form-control" placeholder="Search contacts" id="txtTopSearch" autocomplete="off" /><br /></div>
+                  <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="topMenuQuickAddContact()" data-toggle="tooltip" data-placement="bottom" title="Add Contact" id="topBarQuickAddContactTour"><i class="fa fa-user-plus"></i></a>
+            </li>
+            <li>
+              <a href="Contacts.html" data-toggle="tooltip" data-placement="bottom" title="View All Contacts"><i class="fa fa-group"></i></a>
+            </li>
+            <li>
+              <a href="Register.html" data-toggle="tooltip" data-placement="bottom" title="Point of Sale"><i class="fa fa-bank"></i></a>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="openCalendar('')" data-toggle="tooltip" data-placement="bottom" title="Calendar" id="topBarCalendarTour"><i class="fa fa-calendar-o"></i></a>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="topBarPageIntakeForm('Eastern Standard Time')" data-toggle="tooltip" data-placement="bottom" title="Intake/Checkin Screen" id="topBarPageIntakeForm"><i class="fa fa fa-handshake-o"></i></a>
+            </li>
+
+            <li>
+              <a href="SMSMessages.html" data-toggle="tooltip" data-placement="bottom" title="View SMS Messages" id="topBarPageSMS"><i class="fa fa-comments"></i></a>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="getTodaysCheckins();" data-toggle="tooltip" data-placement="bottom" title="Today's Attendance"><i class="fa fa-list-alt" style="color: gray;"></i></a>
+            </li>
+
+            <li>
+              <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="Help" id="topBarPageHelpTour" data-elevio-article="index"><i class="fa fa-question-circle"></i></a>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle f-s-14" id="topBarNotificationsTour">
+                <i class="fa fa-bell-o"></i>
+
+                <span class="label animated infinite pulse slower" id="notificationsCount">24</span>
+              </a>
+              <ul class="dropdown-menu media-list pull-right animated fadeInDown" id="notificationsUL">
+                <li class="dropdown-header" id="notificationsTopLine">Notifications (24)</li>
+                <li class="media">
+                  <a href="SMSMessages.html">
+                    <div class="media-left"><i class="fa fa-comments media-object bg-red"></i></div>
+                    <div class="media-body">
+                      <h6 class="media-heading">24 Unread Text Messages</h6>
+                      <div class="text-muted f-s-11">104161 minutes ago</div>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="media">
+                  <a href="javascript:;">
+                    <div class="media-left"><i class="fa fa-thumbs-o-up media-object bg-green"></i></div>
+                    <div class="media-body">
+                      <h6 class="media-heading">Did you know? You are awesome!</h6>
+                      <div class="text-muted f-s-11">3 minutes ago</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="showEmployeeTimeClock();"><i class="fa fa-clock-o" data-toggle="tooltip" data-placement="bottom" title="Time Clock" id="topBarStaffTimeClockTour"></i></a>
+            </li>
+            <li class="dropdown navbar-user">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="https://app.sparkmembership.com/img/user.png" alt="" />
+                <span class="hidden-xs"> UI Redesign</span> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu animated fadeInLeft">
+                <li class="arrow"></li>
+
+                <!--
+                              <li><a href="javascript:;" onclick="beta()">Edit Profile</a></li>
+                              <li><a href="javascript:;" onclick="beta()"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
+                              <li><a href="javascript:;" onclick="beta()">Settings</a></li>
+                              -->
+                <li><a href="javascript:;" onclick="openCalendar('')">Calendar</a></li>
+                <li><a href="javascript:;" data-click="reset-local-storage">Reset Dashboard</a></li>
+                <li class="divider"></li>
+                <li><a href="logout.html">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- end header navigation right -->
+        </div>
+        <!-- end container-fluid -->
+      </div>
+      <!-- end #header -->
+
+      <!-- begin #sidebar -->
+      <div id="sidebar" class="sidebar">
+        <!-- begin sidebar scrollbar -->
+        <div data-scrollbar="true" data-height="100%">
+          <!-- begin sidebar user -->
+          <ul class="nav">
+            <li class="nav-profile">
+              <div class="info">
+                Super Star Martial Arts
+
+                <small>Your Account ID: 1133</small>
+              </div>
+            </li>
+          </ul>
+          <!-- end sidebar user -->
+          <!-- begin sidebar nav -->
+          <ul class="nav">
+            <li class="nav-header">Navigation</li>
+
+            <li>
+              <a href="index.html"><i class="fa fa-laptop"></i><span>Dashboard</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-star" style="color: yellow;"></i>
+                <span>New? START HERE!</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="index.html?tour=start">Dashboard Tour</a></li>
+                <li><a href="javascript:;" onclick="reinstateOnboardingChecklist()">Onboarding Checklist</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="Contact_Add.html"><i class="fa fa-user"></i><span>ADD A NEW CONTACT</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-group"></i>
+                <span>Contacts</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Contact_Add.html">ADD A NEW CONTACT</a></li>
+                <li><a href="Contacts.html">All Contacts</a></li>
+
+                <li>
+                  <a href="Trial_Member_Maximizer.html">Lead & Trials Maximizer<sup>TM</sup></a>
+                </li>
+                <li>
+                  <a href="New_Member_Maximizer.html">New Member Maximizer<sup>TM</sup></a>
+                </li>
+
+                <li><a href="Contacts.html?contactType=P">Prospects</a></li>
+                <li><a href="Contacts.html?contactType=T">Trials</a></li>
+                <li><a href="Contacts.html?contactType=U">Former Trials</a></li>
+                <li><a href="Contacts.html?contactType=C">Students</a></li>
+                <li><a href="Contacts.html?contactType=I">Inactive Students</a></li>
+                <li><a href="Contacts.html?contactType=F">Former Students</a></li>
+                <li><a href="Contacts.html?contactType=V">Vendors</a></li>
+                <li><a href="Contacts.html?contactType=B">Businesses</a></li>
+                <li><a href="Contacts.html?contactType=O">Other</a></li>
+                <li><a href="Contacts.html?starred=true">Starred Contacts</a></li>
+                <li><a href="Contacts.html?contactType=Imported">Imported</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="openCalendar('')"><i class="fa fa-calendar"></i><span>Calendar</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-check-circle-o"></i>
+                <span>Attendance</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Attendance_Scan_Barcode.html">Scan Barcode</a></li>
+                <li><a href="Attendance_Rosters_Add_Attendance.html">Add by Roster</a></li>
+                <li><a href="Attendance_Guided_Access.html" target="_blank">Self Check-In/Membership</a></li>
+                <li><a href="Self_Checkin_Roster.html" target="_blank">Self Check-In/Roster</a></li>
+                <li><a href="Attendance_Rosters.html">Roster Setup</a></li>
+                <li><a href="Attendance_Rosters_All_by_Date.html">Roster Report</a></li>
+                <li><a href="Attendance_Rosters_Contacts.html">Roster Contacts</a></li>
+                <li><a href="Report_Attendance_Who_Attended.html">Attendance Report</a></li>
+                <li><a href="Report_Attendance_Count.html">Attendance Counts</a></li>
+                <li><a href="Report_Attendance_Rosters2.html">Attendance by Roster</a></li>
+                <li><a href="Report_Perfect_Attendance.html">Perfect Attendance Report</a></li>
+                <li><a href="Report_MIA.html">MIA Maximizer</a></li>
+
+                <li><a href="MailingLabels_AttendanceBarcodes_Avery_5160_Membership.html">Print Barcodes</a></li>
+              </ul>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-bullseye"></i>
+                <span>Ranks</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Rank_System_Mass_Promotions.html">Mass Rank Promote</a></li>
+                <li><a href="Report_Current_Ranks.html">Report: Current Ranks</a></li>
+                <li><a href="Report_Rank_History.html">Report: Rank History</a></li>
+                <li><a href="Settings_Rank_Systems.html">Rank/Style Setup</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="Tasks.html"><i class="fa fa-check-square-o"></i><span>Tasks</span></a>
+            </li>
+
+            <li>
+              <a href="Register.html" id="sideNavigationTour"><i class="fa fa-bank"></i><span>Cash Register / Invoices</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-cogs"></i>
+                <span>Point of Sale Settings</span>
+              </a>
+
+              <ul class="sub-menu">
+                <li><a href="Settings_POS_Quick_Inventory.html">Adjust Inventory</a></li>
+                <li><a href="Settings_POS_Income_Categories.html">Income Categories</a></li>
+                <li><a href="Settings_POS_Packages.html">Packages</a></li>
+                <li><a href="Settings_POS_Products.html">Products</a></li>
+                <li><a href="Settings_POS_Product_Categories.html">Product Categories</a></li>
+                <li><a href="Report_Scheduled_Payments.html">Scheduled Payments</a></li>
+                <li><a href="Settings_POS.html">Settings</a></li>
+                <li><a href="Settings_POS_Suppliers.html">Suppliers</a></li>
+                <li><a href="Reports_POS_OpenInvoices.html">Unpaid Invoices</a></li>
+              </ul>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-comments-o"></i>
+                <span>Communication Center</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="EmailCampaigns.html">Email Campaign</a></li>
+                <li><a href="Email_Logs.html">Email Logs</a></li>
+                <li><a href="Email_Unsubscribers.html">Email Unsubscribers</a></li>
+
+                <li><a href="SMSCampaigns.html">SMS Text Message Campaign</a></li>
+                <li><a href="SMSMessages.html?action=veiwLogs">SMS Logs</a></li>
+
+                <li>
+                  <!-- <a href="javascript:;" onclick="beta()">Print Letters</a> -->
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="SalesPages.html"><i class="fa fa-shopping-cart"></i><span>Checkout Pages</span></a>
+            </li>
+
+            <li>
+              <a href="Funnels.html">
+                <i class="fa fa-filter"></i><span>Funnels <span class="label label-theme m-l-5">NEW</span></span>
+              </a>
+            </li>
+
+            <li>
+              <a href="SparkPageBuilder.html" target="_blank"><i class="fa fa-filter"></i><span>Spark Page Builder</span></a>
+            </li>
+
+            <li>
+              <a href="Automation.html"><i class="fa fa-bolt"></i><span>Automation</span></a>
+            </li>
+
+            <li>
+              <a href="SparkIgnite.html">🔥 <span>Spark Ignite</span></a>
+            </li>
+
+            <li>
+              <a href="Projects.html"><i class="fa fa-list-alt"></i><span>Projects</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-area-chart"></i>
+                <span>Reports</span>
+              </a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="Report_Duplicate.html">Duplicate Profiles<span class="label label-theme m-l-5">NEW!</span></a>
+                </li>
+
+                <li><a href="Report_Financial_Transactions.html">Financial Transactions</a></li>
+                <li><a href="Report_Financial_Income_Category.html">Transactions by Category</a></li>
+                <li><a href="Report_Financial_Enrollment.html">Transactions by Membership</a></li>
+                <li><a href="Report_Financial_Forecast.html">Financial Forecast Report</a></li>
+                <li><a href="Report_Financial_Refunds.html">Financial Refund Report</a></li>
+                <li><a href="Report_Gross_Income_History.html">Gross Financial History (chart)</a></li>
+                <li><a href="Report_autoCharge.html">autoCharge Report</a></li>
+                <li><a href="Report_Extrenal_Billing_Company_Update.html">External Billing Report</a></li>
+                <li><a href="Report_Returned_ACH.html">autoCharge EFT Status</a></li>
+                <li><a href="Report_Staff_Activity.html">Staff Activity Logs</a></li>
+
+                <li><a href="Report_TimeSlips.html">Staff Time Slips</a></li>
+
+                <li><a href="Report_Tax_Detail.html">Sales Tax Report</a></li>
+
+                <li class="has-sub">
+                  <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <span>POS</span>
+                  </a>
+                  <ul class="sub-menu">
+                    <li><a href="Report_POS_Daily_Renconcile.html">Daily Reconcile</a></li>
+                    <li><a href="Report_Inventory_Reorder.html">Inventory Reorder</a></li>
+                    <li><a href="Report_Items_Sold.html">Items Sold</a></li>
+                    <li><a href="Report_Items_Sold_Sum.html">Items Sold Summary</a></li>
+                    <li><a href="Report_Inventory_Onhand.html">On Hand Inventory</a></li>
+                    <li><a href="POS_Orders_To_Place.html">Orders to Place</a></li>
+                    <li><a href="Report_Scheduled_Payments.html">Scheduled Payments</a></li>
+                    <li><a href="Reports_POS_OpenInvoices.html">Unpaid Invoices</a></li>
+                  </ul>
+                </li>
+                <li><a href="Report_Memberships.html">All Memberships</a></li>
+                <li><a href="Report_Memberships_Autorenew.html">Auto-Renew Memberships</a></li>
+                <li><a href="Report_Cancelled_Memberships.html">Cancelled Memberships</a></li>
+                <li><a href="Report_Memberships_Missing_Digital_Agreements.html">Missing Digital Agreements</a></li>
+                <li><a href="Report_Members_No_Membership.html">Students Without Memberships</a></li>
+                <li><a href="Report_Memberships_On_Hold.html">On Hold Memberships</a></li>
+                <li><a href="Report_Referrals.html">Referrals</a></li>
+
+                <li><a href="Report_ATAExpiration.html">ATA Expirations</a></li>
+
+                <li><a href="Report_Marketing_Sources.html">Marketing Sources</a></li>
+                <li><a href="Report_UTM.html">Marketing UTM Codes</a></li>
+
+                <li><a href=" Report_Attendance_Who_Attended.html">Attendance Report</a></li>
+                <li><a href="Report_MIA.html">MIA Maximizer</a></li>
+                <li><a href="Report_On_Vacation.html">Vacations</a></li>
+
+                <li><a href="Report_Last4_Credit_Card.html">Credit Card Search</a></li>
+                <li><a href="Report_NeedToSee.html">Need to See</a></li>
+              </ul>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-graduation-cap"></i>
+                <span>University</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="University_Courses.html">Courses</a></li>
+                <li><a href="University_Authors.html">Authors</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="StudentApp_index.html">
+                <i class="fa fa-mobile"></i><span>Member App <span class="label label-theme m-l-5">NEW!</span></span>
+              </a>
+            </li>
+
+            <li>
+              <a href="Tags.html"><i class="fa fa-tags"></i><span>Tags</span></a>
+            </li>
+
+            <li>
+              <a href="Forms.html"><i class="fa fa-list-ul"></i><span>Forms & Surveys</span></a>
+            </li>
+
+            <li>
+              <a href="LandingPages.html"><i class="fa fa-globe"></i><span>Landing Pages</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-cogs"></i>
+                <span>Settings</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Settings_General.html">General Settings</a></li>
+                <li><a href="Settings_Api_Key.html">API Key / Tracking Codes</a></li>
+                <li><a href="Settings_Attendance.html">Attendance</a></li>
+                <li><a href="Settings_Calendar.html">Calendar</a></li>
+                <li><a href="Settings_Collection_Companies.html">Collection Companies</a></li>
+                <li><a href="Settings_Groups.html">Contact Groups</a></li>
+                <li><a href="Settings_LeadManager_Phases.html">Contact Phases</a></li>
+                <li><a href="Settings_Custom_Fields.html">Custom Fields</a></li>
+                <li><a href="Settings_Optin_Forms.html">Email Capture Forms</a></li>
+                <li><a href="Settings_Email_Templates.html">Email Templates</a></li>
+                <li><a href="Settings_Global_Merge_Tags.html">Global Merge Tags</a></li>
+                <li><a href="Goals_You_Set_Are_Goals_You_Get.html">Goals</a></li>
+                <li><a href="ImageManager.html">Image Manager</a></li>
+                <li><a href="ImportContacts.html">Import Contacts</a></li>
+                <li><a href="Settings_Marketing_Sources.html">Marketing Sources</a></li>
+                <li><a href="Settings_Add_MemberShipType.html">Memberships</a></li>
+                <li><a href="Settings_Optin_Forms.html">Opt-In WebForms</a></li>
+                <li><a href="Settings_PaymentGateway.html">Payment Gateway</a></li>
+                <li><a href="Settings_POS.html">POS Settings</a></li>
+
+                <li><a href="Settings_Rank_Systems.html">Rank/Style Setup</a></li>
+
+                <li><a href="Settings_Refer_A_Friend.html">Refer-A-Friend</a></li>
+
+                <li><a href="Settings_Users.html">Staff Logins</a></li>
+
+                <li><a href="Settings_SmartLinks.html">smartLinks</a></li>
+                <li><a href="Settings_SMS_BuyNumber.html">SMS Phone Number</a></li>
+                <li><a href="SMS_Saved_Replies.html">SMS Saved Replies</a></li>
+                <li><a href="Tags.html">Tags</a></li>
+                <li><a href="WordTemplateManager.html">Word Doc Template Manager</a></li>
+                <li><a href="javascript:;" onclick="resetTours()">Reset Tours</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript:;" data-elevio-article="index"><i class="fa fa-life-ring"></i><span>Help</span></a>
+            </li>
+
+            <!-- begin sidebar minify button -->
+            <li>
+              <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a>
+            </li>
+            <!-- end sidebar minify button -->
+          </ul>
+          <!-- end sidebar nav -->
+        </div>
+        <!-- end sidebar scrollbar -->
+      </div>
+      <div class="sidebar-bg"></div>
+      <!-- end #sidebar -->
+
+      <!-- begin #content -->
+
+      <!-- begin #content -->
+      <div id="content" class="content">
+        <h1 class="page-header">Point of Sale / Invoice</h1>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form">
+              <div class="form-group">
+                <div class="typeahead-container">
+                  <input type="text" class="form-control" placeholder="Search for contacts, company names, products or '*' for top 40" id="txtPOSSearch" autocomplete="off" />
+                </div>
+              </div>
+            </div>
+            <div style="padding-bottom: 20px;">
+              <div id="startHereBubble" class="tipso_bubble bottom" style="background: rgb(85, 181, 85); color: rgb(255, 255, 255); margin: 0 auto; width: 97%;">
+                <div class="tipso_title" style="background: rgb(51, 51, 51); color: rgb(255, 255, 255); text-align: center; font-size: 110%;">Start Here</div>
+                <div class="tipso_content" style="text-align: left; font-size: 120%;">
+                  <i id="addContactCheckMark" class="fa fa-circle-o"></i>Add a Contact by searching above.<br />
+                  <i id="addProductsCheckMark" class="fa fa-circle-o"></i>Add Products and Services by searching above
+                </div>
+                <div class="tipso_arrow" style="display: block; margin-left: -8px; border-color: transparent transparent rgb(51, 51, 51);"></div>
+              </div>
+            </div>
+            <!-- Packages -->
+            <div class="row" style="margin-top: 60px;">
+              <h3>Packages</h3>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><a href="javascript:;" class="btn btn-primary btn-block" onclick="setPackage('5882,5882,12968',10.00)" style="white-space: normal;">My Lovely Test Package</a></div>
+              <div class="col-md-4"><a href="javascript:;" class="btn btn-primary btn-block" onclick="setPackage('36911,12511,12509',50.00)" style="white-space: normal;">Snack & beverage </a></div>
+              <div class="col-md-4"><a href="javascript:;" class="btn btn-primary btn-block" onclick="setPackage('34197,34198,34199',15.00)" style="white-space: normal;">Sparring Gear (Black)</a></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><a href="javascript:;" class="btn btn-primary btn-block" onclick="setPackage('34197,34199',20.00)" style="white-space: normal;">sparring Gear Package (Delux)</a></div>
+              <div class="col-md-4"><a href="javascript:;" class="btn btn-primary btn-block" onclick="setPackage('12837,9111,9112',19.24)" style="white-space: normal;">T-Shirt Package</a></div>
+              <div class="col-md-4"><a href="javascript:;" class="btn btn-primary btn-block" onclick="setPackage('34198,12837',0.00)" style="white-space: normal;">Wrestling gear</a></div>
+            </div>
+            <br />
+            <a href="Settings_POS_Packages.html">Edit Packages</a>
+
+            <!-- Add Recent Products Here -->
+            <div class="row" style="margin-top: 60px;">
+              <h3>
+                Quick List Products <img alt="Help" data-toggle="tooltip" data-placement="right" title="The Quick List is a list of products/services you can easily add to this invoice with one click." src="https://app.sparkmembership.com/img/question.png" border="0" />
+              </h3>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(5842);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="A shirt to wear">
+                  A shirt<br />
+                  <small>FREE</small>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(12968);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="Blue hyper shirt">
+                  Blue hyper shirt<br />
+                  <small>1.00</small>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(4692);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="Hyper Martial Arts Red Hat">
+                  Hyper Martial Arts Red Hat<br />
+                  <small>20.00</small>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(1210);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="Kickboxing Trial">
+                  Kickboxing Trial<br />
+                  <small>29.00</small>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(1208);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="Kids Trial Membership">
+                  Kids Trial Membership<br />
+                  <small>69.00</small>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(25641);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="Leadership Uniform">
+                  Leadership Uniform<br />
+                  <small>45.00</small>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(1211);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="Membership Down Payment">
+                  Membership Down Payment<br />
+                  <small>FREE</small>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(127680);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="test">
+                  prod<br />
+                  <small>120.00</small>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(86065);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="Uniform">
+                  Spark Logo Polo<br />
+                  <small>30.00</small>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(15421);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="T Shirt">
+                  T Shirt<br />
+                  <small>45.00</small>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(21688);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="tshirt for kids">
+                  Tshirt<br />
+                  <small>10.00</small>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="javascript:;" class="btn btn-inverse btn-block btn-lg favButton" onclick="getFavoriteProduct(1218);" style="white-space: normal;" data-toggle="tooltip" data-placement="top" title="White Student Uniform">
+                  White Student Uniform<br />
+                  <small>11.00 to 25.00</small>
+                </a>
+              </div>
+            </div>
+            <br />
+            <a href="Settings_POS_Products.html">Edit Quick List</a>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><strong>Checkout</strong></h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-3">
+                    <strong>Invoice Date:</strong>
+                  </div>
+                  <div class="col-md-9">
+                    <input name="ctl00$contentPageHolder$txtInvoiceDate" type="text" value="07/30/2020" id="contentPageHolder_txtInvoiceDate" class="form-control" />
+                  </div>
+                </div>
+                <div class="row space-above">
+                  <div class="col-md-3">
+                    <strong>Staff</strong>
+                  </div>
+                  <div class="col-md-9">
+                    <select name="ctl00$contentPageHolder$ddlStaff" id="contentPageHolder_ddlStaff" class="form-control">
+                      <option value="0">None</option>
+                      <option value="4395">Edkins, Amy</option>
+                      <option value="1593">Flair, Rick</option>
+                      <option value="1835">Gomez, Nelson</option>
+                      <option value="4337">gomez, nelson</option>
+                      <option value="5883">Nolasco, Jodie</option>
+                      <option value="4422">Poole, Randy</option>
+                      <option selected="selected" value="7901">Redesign, UI</option>
+                      <option value="2869">S, Scott</option>
+                      <option value="2421">Sell, Maddox</option>
+                      <option value="1204">Sell, Ron</option>
+                      <option value="4397">TestAccount, Zapier</option>
+                      <option value="1587">Tester, Test</option>
+                    </select>
+                  </div>
+                </div>
+                <br />
+                <div id="checkout-contact">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="alert alert-info fade in">choose a contact for this invoice<br /></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="checkout-items" data-scrollbar="true" data-height="200px" style="overflow: hidden; height: 200px; width: 100%;">
+                  <table id="checkout-items-table" style="width: 98%;">
+                    <tr>
+                      <th></th>
+                      <th>Qty</th>
+                      <th></th>
+                      <th>Description</th>
+                      <th>Price</th>
+                      <th></th>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <!-- List group -->
+              <ul class="list-group">
+                <li class="list-group-item">Discount<span id="discount" class="pull-right">0.00</span></li>
+                <li class="list-group-item">Sub-total<span id="subtotal" class="pull-right">0.00</span></li>
+                <li class="list-group-item">
+                  <span class="salesTax1Name">Sales Tax</span> <span id="taxPercentage"></span>&nbsp;<span data-elevio-article="84663"><i class="fa fa-question-circle"></i></span><span id="tax" class="pull-right">0.00</span>
+                </li>
+                <li class="list-group-item salesTax2">
+                  <span class="salesTax2Name">Sales Tax</span> <span id="taxPercentage2"></span>&nbsp;<span data-elevio-article="84663"><i class="fa fa-question-circle"></i></span><span id="tax2" class="pull-right">0.00</span>
+                </li>
+                <li class="list-group-item salesTax3">
+                  <span class="salesTax3Name">Sales Tax</span> <span id="taxPercentage3"></span>&nbsp;<span data-elevio-article="84663"><i class="fa fa-question-circle"></i></span><span id="tax3" class="pull-right">0.00</span>
+                </li>
+                <li class="list-group-item salesTax4">
+                  <span class="salesTax4Name">Sales Tax</span> <span id="taxPercentage4"></span>&nbsp;<span data-elevio-article="84663"><i class="fa fa-question-circle"></i></span><span id="tax4" class="pull-right">0.00</span>
+                </li>
+                <li class="list-group-item adminFee">Admin Fee<span id="adminFee" class="pull-right">0.00</span></li>
+                <li class="list-group-item"><strong>TOTAL</strong><span id="total" class="pull-right">0.00</span></li>
+                <li class="list-group-item"><strong>AMOUNT OWED</strong><span id="amountowed" class="pull-right">0.00</span></li>
+              </ul>
+
+              <div class="row space-left space-right space-above">
+                <div class="col-md-12">
+                  <label><strong>Invoice Notes</strong></label>
+                  <textarea name="ctl00$contentPageHolder$txtInvoiceNotes" rows="3" cols="20" id="contentPageHolder_txtInvoiceNotes" class="form-control"></textarea>
+                  <br />
+                  <input id="contentPageHolder_cbxAllowPartialPayments" type="checkbox" name="ctl00$contentPageHolder$cbxAllowPartialPayments" />
+                  <label for="contentPageHolder_cbxAllowPartialPayments"> Allow Partial Payments Online?</label>&nbsp;<span data-elevio-article="84664"><i class="fa fa-question-circle"></i></span>&nbsp;
+                  <input id="contentPageHolder_cbxAllowPaymentByCC" type="checkbox" name="ctl00$contentPageHolder$cbxAllowPaymentByCC" checked="checked" />
+                  Allow Online Payment By Credit Card&nbsp;
+                </div>
+              </div>
+
+              <div class="row space-left space-right space-above">
+                <div class="col-md-12"><a href="javascript:void(0);" class="btn btn-success btn-lg btn-block" onclick="pay();">Pay</a></div>
+              </div>
+
+              <div class="row space-above space-below space-left space-right">
+                <div class="col-md-6">
+                  <a href="javascript:;" onclick="saveInvoice()" class="btn btn-default btn-block">Save / Email Link</a>
+                </div>
+                <div class="col-md-6">
+                  <a href="javascript:void(0);" class="btn btn-default btn-block" onclick="discardCart();">Discard</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-product" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header modal-header-black">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #ffffff;">×</button>
+                <h4 class="modal-title" style="color: #ffffff;">SPARK</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="col-md-4">
+                      <div class="alert alert-info">
+                        <h4><span id="modal-productName"></span></h4>
+                        <h4><span id="modal-variantName"></span></h4>
+                        <p><span id="modal-productDescription"></span></p>
+                        <p><span class="modal-qtyOnHand"></span></p>
+                        <p><strong>Retail Cost: </strong><span id="modal-price"></span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="form">
+                        <div class="form-group">
+                          <label class="control-label"><strong>Income Category</strong></label>
+
+                          <select name="ctl00$contentPageHolder$ddlIncomeCategory" id="contentPageHolder_ddlIncomeCategory" class="form-control">
+                            <option value="1188">Apparel</option>
+                            <option value="1187">Equipment</option>
+                            <option value="1186">Events</option>
+                            <option value="1167">Membership</option>
+                            <option value="1190">Summer Camp</option>
+                            <option value="1168">Trial Memberships</option>
+                            <option value="1221">Trial Programs</option>
+                            <option value="1189">Uniforms</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label"><strong>Price:</strong></label>
+                          <div class="input-group">
+                            <span class="input-group-addon"> $</span>
+                            <input id="txtPrice" type="text" class="form-control" value="0.00" />
+                          </div>
+                        </div>
+
+                        <div class="form-group variantGroup" style="display: none;">
+                          <label class="control-label">
+                            <strong><span id="variantLabel"></span></strong>
+                          </label>
+                          <select id="variantOptions" class="form-control validate[required]"></select>
+                        </div>
+
+                        <div class="form-group">
+                          <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="col-md-3">
+                                  <label class="control-label"><strong>Qty:</strong></label>
+                                </div>
+                                <div class="col-md-9">
+                                  <input id="txtQty" value="1" class="form-control" style="width: 60px;" onblur="checkQtyOnHand()" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-7">
+                            <div class="form-group">
+                              <script></script>
+                              <div class="form-group">
+                                <div id="contentPageHolder_taxrateoptionsp_rRates_trow_0" class="row">
+                                  <div id="contentPageHolder_taxrateoptionsp_rRates_chkdiv_0" class="col-md-4 AR">
+                                    <span class="js-switch"><input id="contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate_0" type="checkbox" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl00$cbkActiveRate" /></span>
+                                    <!--<input name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl00$cbkActiveRate1" type="checkbox" id="contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate1_0" class="js-switch" />-->
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl00$rate" id="contentPageHolder_taxrateoptionsp_rRates_rate_0" value="0.06500" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl00$rateid" id="contentPageHolder_taxrateoptionsp_rRates_rateid_0" value="1" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl00$rateval" id="contentPageHolder_taxrateoptionsp_rRates_rateval_0" value="0" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl00$ratename" id="contentPageHolder_taxrateoptionsp_rRates_ratename_0" value="Forida Sales Tax" />
+                                  </div>
+                                  <div class="col-md-8 AL"><label class="control-label" style="vertical-align: sub;">Forida Sales Tax</label></div>
+                                </div>
+
+                                <div id="contentPageHolder_taxrateoptionsp_rRates_trow_1" class="row">
+                                  <div id="contentPageHolder_taxrateoptionsp_rRates_chkdiv_1" class="col-md-4 AR">
+                                    <span class="js-switch"><input id="contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate_1" type="checkbox" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl01$cbkActiveRate" /></span>
+                                    <!--<input name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl01$cbkActiveRate1" type="checkbox" id="contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate1_1" class="js-switch" />-->
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl01$rate" id="contentPageHolder_taxrateoptionsp_rRates_rate_1" value="0.01200" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl01$rateid" id="contentPageHolder_taxrateoptionsp_rRates_rateid_1" value="2" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl01$rateval" id="contentPageHolder_taxrateoptionsp_rRates_rateval_1" value="0" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl01$ratename" id="contentPageHolder_taxrateoptionsp_rRates_ratename_1" value="Tampa Tax" />
+                                  </div>
+                                  <div class="col-md-8 AL"><label class="control-label" style="vertical-align: sub;">Tampa Tax</label></div>
+                                </div>
+
+                                <div id="contentPageHolder_taxrateoptionsp_rRates_trow_2" class="row">
+                                  <div id="contentPageHolder_taxrateoptionsp_rRates_chkdiv_2" class="col-md-4 AR">
+                                    <span class="js-switch"><input id="contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate_2" type="checkbox" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl02$cbkActiveRate" /></span>
+                                    <!--<input name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl02$cbkActiveRate1" type="checkbox" id="contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate1_2" class="js-switch" />-->
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl02$rate" id="contentPageHolder_taxrateoptionsp_rRates_rate_2" value="0.02100" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl02$rateid" id="contentPageHolder_taxrateoptionsp_rRates_rateid_2" value="3" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl02$rateval" id="contentPageHolder_taxrateoptionsp_rRates_rateval_2" value="0" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl02$ratename" id="contentPageHolder_taxrateoptionsp_rRates_ratename_2" value="BS Tax" />
+                                  </div>
+                                  <div class="col-md-8 AL"><label class="control-label" style="vertical-align: sub;">BS Tax</label></div>
+                                </div>
+
+                                <div id="contentPageHolder_taxrateoptionsp_rRates_trow_3" class="row">
+                                  <div id="contentPageHolder_taxrateoptionsp_rRates_chkdiv_3" class="col-md-4 AR">
+                                    <span class="js-switch"><input id="contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate_3" type="checkbox" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl03$cbkActiveRate" /></span>
+                                    <!--<input name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl03$cbkActiveRate1" type="checkbox" id="contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate1_3" class="js-switch" />-->
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl03$rate" id="contentPageHolder_taxrateoptionsp_rRates_rate_3" value="0.01200" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl03$rateid" id="contentPageHolder_taxrateoptionsp_rRates_rateid_3" value="4" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl03$rateval" id="contentPageHolder_taxrateoptionsp_rRates_rateval_3" value="0" />
+                                    <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsp$rRates$ctl03$ratename" id="contentPageHolder_taxrateoptionsp_rRates_ratename_3" value="City Tax" />
+                                  </div>
+                                  <div class="col-md-8 AL"><label class="control-label" style="vertical-align: sub;">City Tax</label></div>
+                                </div>
+                              </div>
+                              <div id="contentPageHolder_taxrateoptionsp_divapplied" class="form-group row"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group" style="display: none;">
+                          <div class="col-md-7">
+                            <span class="js-switch"><input id="contentPageHolder_cbxChargeTaxz" type="checkbox" name="ctl00$contentPageHolder$cbxChargeTaxz" /></span>
+                            <strong><span class="salesTax1Name">Sales Tax</span></strong>
+                            <div class="salesTax2">
+                              <span class="js-switch"><input id="contentPageHolder_cbxSalesTax22" type="checkbox" name="ctl00$contentPageHolder$cbxSalesTax22" /></span>
+                              <strong><span class="salesTax2Name">Sales Tax</span></strong>
+                            </div>
+                            <div class="salesTax3">
+                              <span class="js-switch"><input id="contentPageHolder_cbxSalesTax32" type="checkbox" name="ctl00$contentPageHolder$cbxSalesTax32" /></span>
+                              <strong><span class="salesTax3Name">Sales Tax</span></strong>
+                            </div>
+                            <div class="salesTax4">
+                              <span class="js-switch"><input id="contentPageHolder_cbxSalesTax42" type="checkbox" name="ctl00$contentPageHolder$cbxSalesTax42" /></span>
+                              <strong><span class="salesTax4Name">Sales Tax</span></strong>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-md-12">
+                            <div class="row space-above space-below">
+                              <div class="col-md-5">
+                                <span class="modal-qtyOnHand"></span>
+                                <br />
+                                <span class="js-switch"><input id="contentPageHolder_cbxOrderIt" type="checkbox" name="ctl00$contentPageHolder$cbxOrderIt" /></span>
+                                <strong>&nbsp;Order It</strong>
+                              </div>
+                              <div class="col-md-7"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label"><strong>Apply Discount?</strong> discount applies to each qty.</label>
+                          <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-default btn-sm active"> <input type="radio" name="discount" value="percent" checked />% Off </label>
+                                  <label class="btn btn-default btn-sm"> <input type="radio" name="discount" value="amount" />$ Off </label>
+                                </div>
+                              </div>
+
+                              <div class="col-md-7">
+                                <div id="divAmountOff" class="input-group">
+                                  <span class="input-group-addon"> $</span>
+                                  <input id="txtAmountOff" type="text" class="form-control" value="0.00" />
+                                </div>
+                                <div id="divPercentOff" class="input-group">
+                                  <input id="txtPercentOff" type="text" class="form-control" value="0" onblur="calculatePercentageDiscount()" />
+                                  <span class="input-group-addon">%</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label"><strong>Notes</strong></label>
+
+                          <textarea name="ctl00$contentPageHolder$txtItemNotes" rows="3" cols="20" id="contentPageHolder_txtItemNotes" class="form-control"></textarea>
+                        </div>
+                        <input type="hidden" name="ctl00$contentPageHolder$hEditItemId" id="contentPageHolder_hEditItemId" />
+                        <input type="hidden" name="ctl00$contentPageHolder$hItemAmount" id="contentPageHolder_hItemAmount" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm btn-danger" id="modal-cancel">Cancel</a>
+                <a href="javascript:;" class="btn btn-sm btn-primary" id="modal-add">Add</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-pay" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-black">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+                <h4 class="modal-title" style="color: #fff;">SPARK</h4>
+              </div>
+              <div class="modal-body">
+                <h2>Pay for Invoice</h2>
+
+                <div>
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation" class="active"><a href="#cc" aria-controls="home" role="tab" data-toggle="tab" class="btn btn-white">Credit Card</a></li>
+                    <li role="presentation"><a href="#eft" aria-controls="eft" role="tab" data-toggle="tab" class="btn btn-white">EFT/ECHECK</a></li>
+                    <li role="presentation"><a href="#cash" aria-controls="cash" role="tab" data-toggle="tab" class="btn btn-white">Cash</a></li>
+                    <li role="presentation"><a href="#check" aria-controls="check" role="tab" data-toggle="tab" class="btn btn-white">Check</a></li>
+                    <li role="presentation"><a href="#ccterminal" aria-controls="check" role="tab" data-toggle="tab" class="btn btn-white">CC Terminal</a></li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <!-- PAY BY CREDIT CARD -->
+                    <div role="tabpanel" class="tab-pane fade in active" id="cc">
+                      &nbsp;<img id="contentPageHolder_imgVisa" class="cards" src="https://app.sparkmembership.com/img/visa.png" /><img id="contentPageHolder_imgMastercard" class="cards" src="https://app.sparkmembership.com/img/mastercard.png" />
+                      <img id="contentPageHolder_imgAmex" class="cards" src="https://app.sparkmembership.com/img/amex.png" /><img id="contentPageHolder_imgDiscover" class="cards" src="https://app.sparkmembership.com/img/discover.png" />
+                      <div class="row">
+                        <br />
+                      </div>
+                      <div class="row existingcards">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <label>Credit Card on File:</label>
+                          <select id="ddlExistingCards" class="form-control"></select>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <label>Amount To Charge Now:</label>
+                          <input name="ctl00$contentPageHolder$txtCCAmount" type="text" id="contentPageHolder_txtCCAmount" class="form-control validate[required,custom[number]]" />
+                        </div>
+                      </div>
+
+                      <div id="contentPageHolder_PanelUSAEPAY">
+                        <div class="row">
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Name on Card</label>
+                            <input name="ctl00$contentPageHolder$txtNameOnCard" type="text" id="contentPageHolder_txtNameOnCard" class="form-control validate[required]" placeholder="Name on the Credit Card" />
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12"></div>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-lg-9 col-md-9 col-sm-9">
+                            <label>Credit Card Number</label>
+                            <input name="ctl00$contentPageHolder$txtCCNumber" type="text" id="contentPageHolder_txtCCNumber" class="form-control validate[required]" placeholder="Credit Card Number" />
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3">
+                            <label>CCV</label>
+                            <input name="ctl00$contentPageHolder$txtCCV" type="text" id="contentPageHolder_txtCCV" class="form-control" placeholder="CCV" />
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Expiration Month</label>
+                            <select name="ctl00$contentPageHolder$ddlExpireMonth" id="contentPageHolder_ddlExpireMonth" class="form-control validate[required]">
+                              <option value="">Expire Month</option>
+                              <option value="01">01 - January</option>
+                              <option value="02">02 - February</option>
+                              <option value="03">03 - March</option>
+                              <option value="04">04 - April</option>
+                              <option value="05">05 - May</option>
+                              <option value="06">06 - June</option>
+                              <option value="07">07 - July</option>
+                              <option value="08">08 - August</option>
+                              <option value="09">09 - September</option>
+                              <option value="10">10 - October</option>
+                              <option value="11">11 - November</option>
+                              <option value="12">12 - December</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <label>Expiration Year</label>
+                            <select name="ctl00$contentPageHolder$ddlExpireYear" id="contentPageHolder_ddlExpireYear" class="form-control validate[required]">
+                              <option value="">Expiration Year</option>
+                              <option value="2020">2020</option>
+                              <option value="2021">2021</option>
+                              <option value="2022">2022</option>
+                              <option value="2023">2023</option>
+                              <option value="2024">2024</option>
+                              <option value="2025">2025</option>
+                              <option value="2026">2026</option>
+                              <option value="2027">2027</option>
+                              <option value="2028">2028</option>
+                              <option value="2029">2029</option>
+                              <option value="2030">2030</option>
+                              <option value="2031">2031</option>
+                              <option value="2032">2032</option>
+                              <option value="2033">2033</option>
+                              <option value="2034">2034</option>
+                              <option value="2035">2035</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                            <label>Billing Zip/Postal Code</label>
+                            <input name="ctl00$contentPageHolder$txtBillingZipCode" type="text" id="contentPageHolder_txtBillingZipCode" class="form-control" placeholder="Billing Zip/Postal Code" />
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                            <a href="javascript:;" onclick="$('.showFullAddress').slideToggle();">show/hide full address</a>
+                          </div>
+                        </div>
+
+                        <div class="row showFullAddress" style="display: none;">
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <label>Address</label>
+                            <input name="ctl00$contentPageHolder$txtBillingAddress" type="text" id="contentPageHolder_txtBillingAddress" class="form-control" placeholder="Address for Payment Method" />
+                          </div>
+                        </div>
+
+                        <div class="row showFullAddress" style="display: none;">
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <label>City</label>
+                            <input name="ctl00$contentPageHolder$txtBillingCity" type="text" id="contentPageHolder_txtBillingCity" class="form-control" placeholder="City for Payment Method" />
+                          </div>
+                        </div>
+
+                        <div class="row showFullAddress" style="display: none;">
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <label>State</label>
+                            <input name="ctl00$contentPageHolder$txtBillingState" type="text" id="contentPageHolder_txtBillingState" class="form-control" placeholder="City for Payment Method" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <input type="hidden" name="ctl00$contentPageHolder$hPaymentMethodID" id="contentPageHolder_hPaymentMethodID" />
+                    </div>
+                    <!-- end PAY BY CREDIT CARD -->
+
+                    <!-- PAY BY CASH -->
+                    <div role="tabpanel" class="tab-pane fade" id="cash">
+                      <h2>Pay with Cash</h2>
+                      <p>Record a cash payment here.</p>
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>Date Received</label>
+                            <input name="ctl00$contentPageHolder$txtCashDate" type="text" value="07/30/2020" id="contentPageHolder_txtCashDate" class="form-control validate[required,custom[date]]" />
+                          </div>
+                          <div class="col-sm-4">
+                            <label>Time Received</label>
+                            <input name="ctl00$contentPageHolder$txtCashTime" type="text" value="07:23 PM" id="contentPageHolder_txtCashTime" class="form-control validate[required]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>
+                              Amount to Pay Now <span class="help" data-toggle="tooltip" data-placement="top" title="This is the amount we are applying to this invoice now."><i class="fa fa-question-circle"></i></span>
+                            </label>
+                            <input name="ctl00$contentPageHolder$txtCashAmount" type="text" id="contentPageHolder_txtCashAmount" class="form-control validate[required,custom[number]]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>
+                              Cash Tendered
+                              <span class="help" data-toggle="tooltip" data-placement="top" title="Cash Tendered: How much money your customer gives you towards the amount to pay now."><i class="fa fa-question-circle"></i></span>
+                            </label>
+                            <input name="ctl00$contentPageHolder$txtCashTendered" type="text" id="contentPageHolder_txtCashTendered" class="form-control validate[required,custom[number]]" /><br />
+                            <a href="javascript:;" onclick="tenderExact()" class="btn btn-inverse btn-xs" style="width: 150px;">Exact Tender</a><br />
+                            <br />
+                            <a href="javascript:;" class="btn btn-inverse btn-xs" style="width: 150px;">Calculate Change</a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row" style="margin-top: 10px;">&nbsp;</div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4 alert alert-success">
+                            <label style="font-weight: bolder;">Change to Give</label>
+                            <h1 id="cashChange">0.00</h1>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end PAY BY CASH -->
+
+                    <!-- PAY BY CHECK -->
+                    <div role="tabpanel" class="tab-pane fade" id="check">
+                      <h2>Pay with Check</h2>
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>Date Received</label>
+
+                            <input name="ctl00$contentPageHolder$txtCheckDate" type="text" value="07/30/2020" id="contentPageHolder_txtCheckDate" class="form-control validate[required,custom[date]]" />
+                          </div>
+                          <div class="col-sm-4">
+                            <label>Time Received</label>
+
+                            <input name="ctl00$contentPageHolder$txtCheckTime" type="text" value="07:23 PM" id="contentPageHolder_txtCheckTime" class="form-control validate[required]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>Amount</label>
+                            <input name="ctl00$contentPageHolder$txtCheckAmount" type="text" id="contentPageHolder_txtCheckAmount" class="form-control validate[required,custom[number]]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>Check #</label>
+                            <input name="ctl00$contentPageHolder$txtCheckNumber" type="text" id="contentPageHolder_txtCheckNumber" class="form-control validate[required,custom[integer]]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-6">
+                            <label>Name on Check</label>
+                            <input name="ctl00$contentPageHolder$txtCheckNameOnCheck" type="text" id="contentPageHolder_txtCheckNameOnCheck" class="form-control validate[required]" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end PAY BY CHECK -->
+
+                    <!-- PAY BY CCTerminal -->
+                    <div role="tabpanel" class="tab-pane fade" id="ccterminal">
+                      <h2>Log a Credit Card Terminal Sale</h2>
+                      <div class="alert alert-danger fade in m-b-15">
+                        <strong>PLEASE NOTE</strong>
+                        This is to record a credit card payment swiped on a credit card terminal connected to a phone line. This transaction will only log the payment, it will not charge the card, no money will deposited from SPARK.
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>Date Received</label>
+                            <input name="ctl00$contentPageHolder$txtTerminalDate" type="text" value="07/30/2020" id="contentPageHolder_txtTerminalDate" class="form-control validate[required,custom[date]]" />
+                          </div>
+                          <div class="col-sm-4">
+                            <label>Time Received</label>
+
+                            <input name="ctl00$contentPageHolder$txtTerminalTime" type="text" value="07:23 PM" id="contentPageHolder_txtTerminalTime" class="form-control validate[required]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>Transaction #</label>
+                            <input name="ctl00$contentPageHolder$txtTerminalTransactionNumber" type="text" id="contentPageHolder_txtTerminalTransactionNumber" class="form-control validate[optional,custom[integer]]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>Amount</label>
+                            <input name="ctl00$contentPageHolder$txtTerminalAmount" type="text" id="contentPageHolder_txtTerminalAmount" class="form-control validate[required,custom[number]]" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end PAY BY CCTerminal -->
+
+                    <!-- PAY BY EFT/ECHECK -->
+                    <div role="tabpanel" class="tab-pane fade" id="eft">
+                      <h2>Pay with Bank Draft / EFT / ECHECK</h2>
+                      <p>Charge a Bank Account payment here.</p>
+
+                      <div class="row existingBankAccounts">
+                        <div class="form-group">
+                          <div class="col-md-12">
+                            <label>Select Existing Account</label>
+                            <select id="ddlExistingBankAccounts" class="form-control"></select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-4">
+                            <label>Amount</label>
+                            <input name="ctl00$contentPageHolder$txtEFTAmount" type="text" id="contentPageHolder_txtEFTAmount" class="form-control validate[required,custom[number]]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row newEFTAccount">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-6">
+                            <label>Bank Name</label>
+                            <input name="ctl00$contentPageHolder$txtEFTBankName" type="text" id="contentPageHolder_txtEFTBankName" class="form-control validate[required]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row newEFTAccount">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-6">
+                            <label>Name on Account</label>
+                            <input name="ctl00$contentPageHolder$txtEFTNameOnAccount" type="text" id="contentPageHolder_txtEFTNameOnAccount" class="form-control validate[required]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row newEFTAccount">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-6">
+                            <label>Checking or Savings?</label>
+                            <select name="ctl00$contentPageHolder$ddlEFTAccountType" id="contentPageHolder_ddlEFTAccountType" class="form-control validate[required]">
+                              <option value="C">Checking Account</option>
+                              <option value="S">Savings Account</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row newEFTAccount">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-6">
+                            <label>Bank Routing #</label>
+                            <input name="ctl00$contentPageHolder$txtEFTRouting" type="text" id="contentPageHolder_txtEFTRouting" class="form-control validate[required,custom[number]]" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row newEFTAccount">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                          <div class="col-sm-6">
+                            <label>Bank Account #</label>
+                            <input name="ctl00$contentPageHolder$txtEFTAccount" type="text" id="contentPageHolder_txtEFTAccount" class="form-control validate[required,custom[number]]" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end PAY BY EFT/ECHECK -->
+                  </div>
+
+                  <div id="schedulePaymentsSection" style="display: none;">
+                    <h3>Schedule Future Payments</h3>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                      <div class="col-sm-6">
+                        <label>How Many Installments Should This Be Broken Into?</label>
+                        <input name="ctl00$contentPageHolder$txtSchedulePaymentInstallments" type="text" id="contentPageHolder_txtSchedulePaymentInstallments" class="form-control validate[required,custom[integer]]" />
+                      </div>
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                      <div class="col-sm-6">
+                        <label>Total Amount Due</label>
+                        <input name="ctl00$contentPageHolder$txtSchedulePaymentsTotalDue" type="text" id="contentPageHolder_txtSchedulePaymentsTotalDue" class="form-control validate[required,custom[number]]" />
+                      </div>
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                      <div class="col-sm-6">
+                        <label>Payment Frequency</label>
+                        <select name="ctl00$contentPageHolder$ddlSchedulePaymentsFrequency" id="contentPageHolder_ddlSchedulePaymentsFrequency" class="form-control">
+                          <option value="">Please select...</option>
+                          <option value="weekly">Weekly</option>
+                          <option value="monthly">Monthly</option>
+                          <option value="manual">Manual Enter Dates</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                      <h3>Payment Schedule</h3>
+                      <div id="schedulePaymentsSchedule">
+                        <!-- here is where payment schedule will go -->
+                      </div>
+                      <div id="amountNotScheduled" style="display: none;">
+                        <span id="amountNotScheduledAmount" style="color: red;"></span>
+                      </div>
+                    </div>
+                    <br />
+                    <br />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input class="btn btn-sm btn-inverse pull-left" type="button" value="Schedule Payments" onclick="schedulePayments()" id="btnSchedulePayments" />
+                <input class="btn btn-sm btn-inverse pull-left" type="button" value="Remove Schedule" onclick="removeSchedulePayments()" id="btnRemoveSchedulePayments" style="display: none;" />
+                <input class="btn btn-sm btn-primary" type="button" value="Pay Now" onclick="pay2()" id="btnPay2" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-save" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-black">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+                <h4 class="modal-title" style="color: #fff;">SPARK</h4>
+              </div>
+              <div class="modal-body">
+                <h2>Invoice Saved</h2>
+                <p>This invoice has been saved. Would you like to send an email with a link to pay online?</p>
+                <div class="form-group">
+                  <label style="font-weight: bolder;">Email From</label>
+                  <select name="ctl00$contentPageHolder$ddlEmailFrom" id="contentPageHolder_ddlEmailFrom" class="form-control">
+                    <option value="success@sparkmembership.com">Nelson Gomez (success@sparkmembership.com)</option>
+                    <option value="aedkins12@icloud.com">Edkins, Amy (aedkins12@icloud.com)</option>
+                    <option value="rick@flair789.com">Flair, Rick (rick@flair789.com)</option>
+                    <option value="nelsonspark2018@gmail.com">Gomez, Nelson (nelsonspark2018@gmail.com)</option>
+                    <option value="ngomez_sports89@yahoo.com">gomez, nelson (ngomez_sports89@yahoo.com)</option>
+                    <option value="jodienolasco@gmail.com">Nolasco, Jodie (jodienolasco@gmail.com)</option>
+                    <option value="rpoole1969@hotmail.com">Poole, Randy (rpoole1969@hotmail.com)</option>
+                    <option value="test2@Sparkmembership.com">Redesign, UI (test2@Sparkmembership.com)</option>
+                    <option value="data2@sparkmembership.com">S, Scott (data2@sparkmembership.com)</option>
+                    <option value="maddoxsell@icloud.com">Sell, Maddox (maddoxsell@icloud.com)</option>
+                    <option value="ronsell@mac.com">Sell, Ron (ronsell@mac.com)</option>
+                    <option value="contact@zapier.com">TestAccount, Zapier (contact@zapier.com)</option>
+                    <option value="test@ufkjefghekfh68.com">Tester, Test (test@ufkjefghekfh68.com)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label style="font-weight: bolder;">Send To</label>
+                  <input name="ctl00$contentPageHolder$txtEmailAddress" type="text" id="contentPageHolder_txtEmailAddress" class="form-control" placeholder="Enter email address" />
+                </div>
+                <div class="form-group">
+                  <label style="font-weight: bolder;">Email Subject</label>
+                  <input name="ctl00$contentPageHolder$txtEmailSubject" type="text" id="contentPageHolder_txtEmailSubject" class="form-control" placeholder="Enter email subject" />
+                </div>
+                <div class="form-group">
+                  <label style="font-weight: bolder;">Email Body</label>
+                  <textarea name="ctl00$contentPageHolder$txtEmailBody" rows="2" cols="20" id="contentPageHolder_txtEmailBody" class="form-control tinyMCEEditor" placeholder="Enter email body" style="height: 290px;"></textarea>
+                </div>
+
+                <input id="contentPageHolder_cbxSendNow" type="checkbox" name="ctl00$contentPageHolder$cbxSendNow" checked="checked" /><label for="contentPageHolder_cbxSendNow"> Send Email Now</label>
+                <div class="row sendLater">
+                  <br />
+                  <h3>Schedule for Later:</h3>
+                  <div class="form-group">
+                    <label class="col-md-2 control-label ui-sortable">Select Date</label>
+                    <div class="col-md-5 ui-sortable">
+                      <div class="input-group date" id="datepicker-disabled-past" data-date-format="mm-dd-yyyy" data-date-start-date="Date.default">
+                        <input name="ctl00$contentPageHolder$txtDateToSend" type="text" id="contentPageHolder_txtDateToSend" class="form-control validate[required,custom[date]]" placeholder="Select Date" />
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br />
+                <div class="row sendLater">
+                  <div class="form-group">
+                    <label class="control-label col-md-2 ui-sortable">Select Time</label>
+                    <div class="col-md-5 ui-sortable">
+                      <div class="input-group bootstrap-timepicker">
+                        <input name="ctl00$contentPageHolder$txtTimeToSend" type="text" id="contentPageHolder_txtTimeToSend" class="form-control" />
+                        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-danger" data-dismiss="modal">CANCEL</a>
+                <a href="javascript:;" onclick="sendEmailLink()" class="btn btn-inverse">Send Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-quickaddcontact" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-black">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+                <h4 class="modal-title" style="color: #fff;">SPARK</h4>
+              </div>
+              <div class="modal-body">
+                <h2>Add Contact</h2>
+                <p>Quickly Add a Contact</p>
+
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Contact Type</label>
+                    <div class="col-md-6">
+                      <select name="ctl00$contentPageHolder$ddlContactType" id="contentPageHolder_ddlContactType" class="form-control validate[required]">
+                        <option value="P">Prospect / Lead</option>
+                        <option value="T">On A Trial</option>
+                        <option value="U">Formerly On A Trial</option>
+                        <option value="Q">Former Prospect</option>
+                        <option value="C">Students</option>
+                        <option value="I">Inactive Students</option>
+                        <option value="F">Former Students</option>
+                        <option value="D">After Schooler</option>
+                        <option value="E">Camper</option>
+                        <option value="Z">Fitness</option>
+                        <option value="V">Vendor / Supplier</option>
+                        <option value="B">Business / Company</option>
+                        <option value="S">Staff / Employee</option>
+                        <option value="O">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Company</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtCompany" type="text" id="contentPageHolder_txtCompany" class="form-control validate[maxSize[100]]" placeholder="Company" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">First Name</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtFirstName" type="text" id="contentPageHolder_txtFirstName" class="form-control validate[required,maxSize[35]]" placeholder="First Name" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Middle Name</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtMiddleName" type="text" id="contentPageHolder_txtMiddleName" class="form-control validate[maxSize[35]]" placeholder="Middle Name" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Last Name</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtLastName" type="text" id="contentPageHolder_txtLastName" class="form-control validate[maxSize[35]]" placeholder="Last Name" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Address1</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtAdd1" type="text" id="contentPageHolder_txtAdd1" class="form-control validate[maxSize[50]]" placeholder="Address1" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Address2</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtAdd2" type="text" id="contentPageHolder_txtAdd2" class="form-control validate[maxSize[50]]" placeholder="Address2" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">City</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtCity" type="text" id="contentPageHolder_txtCity" class="form-control validate[maxSize[50]]" placeholder="City" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">State</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtState" type="text" id="contentPageHolder_txtState" class="form-control validate[maxSize[50]]" placeholder="State" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Zip</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtZip" type="text" id="contentPageHolder_txtZip" class="form-control validate[maxSize[20]]" placeholder="Zip" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Country</label>
+                    <div class="col-md-6">
+                      <select name="ctl00$contentPageHolder$ddlCountry" id="contentPageHolder_ddlCountry" class="form-control validate[required]">
+                        <option value="1">United States</option>
+                        <option value="2">United Kingdom</option>
+                        <option value="3">Germany</option>
+                        <option value="4">Australia</option>
+                        <option value="5">Canada</option>
+                        <option value="6">France</option>
+                        <option value="7">Grenada</option>
+                        <option value="21">Austria</option>
+                        <option value="100">Hong Kong</option>
+                        <option value="107">Ireland</option>
+                        <option value="109">Israel</option>
+                        <option value="110">Italy</option>
+                        <option value="112">Japan</option>
+                        <option value="160">New Zealand</option>
+                        <option value="167">Norway</option>
+                        <option value="199">Singapore</option>
+                        <option value="204">South Africa</option>
+                        <option value="206">Spain</option>
+                        <option value="213">Switzerland</option>
+                        <option value="223">Trinidad and Tobago</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Phone</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtPhone" type="text" id="contentPageHolder_txtPhone" class="form-control validate[maxSize[35]]" placeholder="Phone" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Mobile Phone</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtMobPhone" type="text" id="contentPageHolder_txtMobPhone" class="form-control validate[maxSize[35]]" placeholder="Mobile Phone" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Email Address</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtEmailAdd" type="text" id="contentPageHolder_txtEmailAdd" class="form-control validate[optional,custom[email],maxSize[75]]" placeholder="Email Address" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Gender</label>
+                    <div class="col-md-6">
+                      <table id="contentPageHolder_rbnGender" class="js-switch" style="height: 23px; width: 171px;">
+                        <tr>
+                          <td><input id="contentPageHolder_rbnGender_0" type="radio" name="ctl00$contentPageHolder$rbnGender" value="M" /><label for="contentPageHolder_rbnGender_0">Male</label></td>
+                          <td><input id="contentPageHolder_rbnGender_1" type="radio" name="ctl00$contentPageHolder$rbnGender" value="F" /><label for="contentPageHolder_rbnGender_1">Female</label></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Marketing Source</label>
+                    <div class="col-md-6">
+                      <select name="ctl00$contentPageHolder$ddlMarketingSources" id="contentPageHolder_ddlMarketingSources" class="form-control">
+                        <option value="0">none selected</option>
+                        <option value="283">Booth Event</option>
+                        <option value="289">Buddy Week</option>
+                        <option value="284">Demonstration</option>
+                        <option value="4086">Facebook</option>
+                        <option value="279">Facebook ad</option>
+                        <option value="290">Groupon</option>
+                        <option value="288">Guest of a Current Member</option>
+                        <option value="26948">Ignite Landing Page</option>
+                        <option value="281">Info Call</option>
+                        <option value="282">Magazine Ad</option>
+                        <option value="285">Parent&#39;s Night Out</option>
+                        <option value="287">Rank Promotion Guest</option>
+                        <option value="10430">Referral</option>
+                        <option value="286">School Talk</option>
+                        <option value="280">Walk In</option>
+                        <option value="19059">Website</option>
+                        <option value="19060">Website</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Marketing Source Detail</label>
+                    <div class="col-md-6">
+                      <input name="ctl00$contentPageHolder$txtMrkSourceDetail" type="text" id="contentPageHolder_txtMrkSourceDetail" class="form-control" placeholder="Marketing Source Detail" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-danger" data-dismiss="modal">CANCEL</a>
+                <a href="javascript:;" onclick="quickAddContact2()" class="btn btn-inverse">Create Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-quickaddproduct" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-black">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+                <h4 class="modal-title" style="color: #fff;">SPARK</h4>
+              </div>
+              <div class="modal-body">
+                <h2>Add Product/Service</h2>
+                <p>Quickly add a product here.</p>
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Product Name</label>
+                    <div class="col-md-9">
+                      <input name="ctl00$contentPageHolder$txtProductName" type="text" id="contentPageHolder_txtProductName" class="form-control validate[required]" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Product Description</label>
+                    <div class="col-md-9">
+                      <input name="ctl00$contentPageHolder$txtProductDesc" type="text" id="contentPageHolder_txtProductDesc" class="form-control validate[required]" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Supplier</label>
+                    <div class="col-md-9">
+                      <select name="ctl00$contentPageHolder$ddlSupplier" id="contentPageHolder_ddlSupplier" class="form-control validate[required]">
+                        <option value="">select product supplier</option>
+                        <option value="160">Super Star Martial Arts</option>
+                        <option value="161">Century Martial Arts Supply</option>
+                        <option value="162">John</option>
+                        <option value="223">Macho</option>
+                        <option value="224">Century Martial Arts</option>
+                        <option value="225">Hyper Martial Arts</option>
+                        <option value="234">Century Martial Arts</option>
+                        <option value="236">Century Martial Arts</option>
+                        <option value="237">Hyper Martial Arts</option>
+                        <option value="474">Century Martial Arts</option>
+                        <option value="475">Hyper Martial Arts</option>
+                        <option value="2019">Century Martial Arts</option>
+                        <option value="2020">Hyper Martial Arts</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Product Category</label>
+                    <div class="col-md-9">
+                      <select name="ctl00$contentPageHolder$ddlProductCategory" id="contentPageHolder_ddlProductCategory" class="form-control validate[required]">
+                        <option value="">select product category</option>
+                        <option value="243">Down Payments</option>
+                        <option value="244">Martial Arts Lessons</option>
+                        <option value="245">Sparring Gear</option>
+                        <option value="246">Hyper T-Shirts</option>
+                        <option value="247">Trial Lessons</option>
+                        <option value="258">Uniforms</option>
+                        <option value="282">T-Shirts</option>
+                        <option value="952">belt testing</option>
+                        <option value="2642">Food &amp; Beverage </option>
+                        <option value="2644">Shoes</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Income Category</label>
+                    <div class="col-md-9">
+                      <select name="ctl00$contentPageHolder$ddlIncomeCategory2" id="contentPageHolder_ddlIncomeCategory2" class="form-control validate[required]">
+                        <option value="1188">Apparel</option>
+                        <option value="1187">Equipment</option>
+                        <option value="1186">Events</option>
+                        <option value="1167">Membership</option>
+                        <option value="1190">Summer Camp</option>
+                        <option value="1168">Trial Memberships</option>
+                        <option value="1221">Trial Programs</option>
+                        <option value="1189">Uniforms</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Product SKU</label>
+                    <div class="col-md-9">
+                      <input name="ctl00$contentPageHolder$txtProductSKU" type="text" id="contentPageHolder_txtProductSKU" class="form-control validate[required]" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <script></script>
+                    <div class="form-group">
+                      <div id="contentPageHolder_taxrateoptionsadd_rRates_trow_0" class="row">
+                        <div class="col-md-4 AR"><label class="control-label" style="vertical-align: sub;">Forida Sales Tax</label></div>
+                        <div id="contentPageHolder_taxrateoptionsadd_rRates_chkdiv_0" class="col-md-8 AL">
+                          <span class="js-switch"><input id="contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate_0" type="checkbox" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl00$cbkActiveRate" /></span>
+                          <!--<input name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl00$cbkActiveRate1" type="checkbox" id="contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate1_0" class="js-switch" />-->
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl00$rate" id="contentPageHolder_taxrateoptionsadd_rRates_rate_0" value="0.06500" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl00$rateid" id="contentPageHolder_taxrateoptionsadd_rRates_rateid_0" value="1" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl00$rateval" id="contentPageHolder_taxrateoptionsadd_rRates_rateval_0" value="0" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl00$ratename" id="contentPageHolder_taxrateoptionsadd_rRates_ratename_0" value="Forida Sales Tax" />
+                        </div>
+                      </div>
+
+                      <div id="contentPageHolder_taxrateoptionsadd_rRates_trow_1" class="row">
+                        <div class="col-md-4 AR"><label class="control-label" style="vertical-align: sub;">Tampa Tax</label></div>
+                        <div id="contentPageHolder_taxrateoptionsadd_rRates_chkdiv_1" class="col-md-8 AL">
+                          <span class="js-switch"><input id="contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate_1" type="checkbox" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl01$cbkActiveRate" /></span>
+                          <!--<input name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl01$cbkActiveRate1" type="checkbox" id="contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate1_1" class="js-switch" />-->
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl01$rate" id="contentPageHolder_taxrateoptionsadd_rRates_rate_1" value="0.01200" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl01$rateid" id="contentPageHolder_taxrateoptionsadd_rRates_rateid_1" value="2" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl01$rateval" id="contentPageHolder_taxrateoptionsadd_rRates_rateval_1" value="0" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl01$ratename" id="contentPageHolder_taxrateoptionsadd_rRates_ratename_1" value="Tampa Tax" />
+                        </div>
+                      </div>
+
+                      <div id="contentPageHolder_taxrateoptionsadd_rRates_trow_2" class="row">
+                        <div class="col-md-4 AR"><label class="control-label" style="vertical-align: sub;">BS Tax</label></div>
+                        <div id="contentPageHolder_taxrateoptionsadd_rRates_chkdiv_2" class="col-md-8 AL">
+                          <span class="js-switch"><input id="contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate_2" type="checkbox" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl02$cbkActiveRate" /></span>
+                          <!--<input name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl02$cbkActiveRate1" type="checkbox" id="contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate1_2" class="js-switch" />-->
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl02$rate" id="contentPageHolder_taxrateoptionsadd_rRates_rate_2" value="0.02100" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl02$rateid" id="contentPageHolder_taxrateoptionsadd_rRates_rateid_2" value="3" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl02$rateval" id="contentPageHolder_taxrateoptionsadd_rRates_rateval_2" value="0" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl02$ratename" id="contentPageHolder_taxrateoptionsadd_rRates_ratename_2" value="BS Tax" />
+                        </div>
+                      </div>
+
+                      <div id="contentPageHolder_taxrateoptionsadd_rRates_trow_3" class="row">
+                        <div class="col-md-4 AR"><label class="control-label" style="vertical-align: sub;">City Tax</label></div>
+                        <div id="contentPageHolder_taxrateoptionsadd_rRates_chkdiv_3" class="col-md-8 AL">
+                          <span class="js-switch"><input id="contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate_3" type="checkbox" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl03$cbkActiveRate" /></span>
+                          <!--<input name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl03$cbkActiveRate1" type="checkbox" id="contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate1_3" class="js-switch" />-->
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl03$rate" id="contentPageHolder_taxrateoptionsadd_rRates_rate_3" value="0.01200" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl03$rateid" id="contentPageHolder_taxrateoptionsadd_rRates_rateid_3" value="4" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl03$rateval" id="contentPageHolder_taxrateoptionsadd_rRates_rateval_3" value="0" />
+                          <input type="hidden" name="ctl00$contentPageHolder$taxrateoptionsadd$rRates$ctl03$ratename" id="contentPageHolder_taxrateoptionsadd_rRates_ratename_3" value="City Tax" />
+                        </div>
+                      </div>
+                    </div>
+                    <div id="contentPageHolder_taxrateoptionsadd_divapplied" class="form-group row"></div>
+                  </div>
+                  <div class="form-group" style="display: none;">
+                    <label class="col-md-3 control-label">Taxed</label>
+                    <div class="col-md-9">
+                      <span class="js-switch"><input id="contentPageHolder_chkTaxed" type="checkbox" name="ctl00$contentPageHolder$chkTaxed" /></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Wholesale Price</label>
+                    <div class="col-md-3">
+                      <input name="ctl00$contentPageHolder$txtWholeSalePrice" type="text" id="contentPageHolder_txtWholeSalePrice" class="form-control validate[required,custom[number]]" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Retail Price</label>
+                    <div class="col-md-3">
+                      <input name="ctl00$contentPageHolder$txtRetailPrice" type="text" id="contentPageHolder_txtRetailPrice" class="form-control validate[required,custom[number]]" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Employee Price</label>
+                    <div class="col-md-3">
+                      <input name="ctl00$contentPageHolder$txtEmployeePrice" type="text" value="0" id="contentPageHolder_txtEmployeePrice" class="form-control validate[required,custom[number]]" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Track Inventory</label>
+                    <div class="col-md-9">
+                      <span class="js-switch"><input id="contentPageHolder_chkTrackInventory" type="checkbox" name="ctl00$contentPageHolder$chkTrackInventory" /></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Quantity on Hand </label>
+                    <div class="col-md-3">
+                      <input name="ctl00$contentPageHolder$txtQuantityonHand" type="text" value="0" id="contentPageHolder_txtQuantityonHand" class="form-control validate[required,custom[integer]]" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Reorder Point Quantity</label>
+                    <div class="col-md-3">
+                      <input name="ctl00$contentPageHolder$txtReorderPoint" type="text" value="0" id="contentPageHolder_txtReorderPoint" class="form-control validate[required,custom[integer]]" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Reorder Max Quantity </label>
+                    <div class="col-md-3">
+                      <input name="ctl00$contentPageHolder$txtReordermax" type="text" value="0" id="contentPageHolder_txtReordermax" class="form-control validate[required,custom[integer]]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-danger" data-dismiss="modal">CANCEL</a>
+                <a href="javascript:;" onclick="quickAddProduct2()" class="btn btn-inverse">Add Product</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-selectmembership" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-black">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+                <h4 class="modal-title" style="color: #fff;">Memberships Found</h4>
+              </div>
+              <div class="modal-body">
+                <h2>Memberships</h2>
+                <p>This contact has memberships, do you want to make a payment on a membership?</p>
+                <p><strong>Please Note: </strong>If paying for a downpayment, do not choose a membership here.</p>
+                <ul id="membershipFound"></ul>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-danger" data-dismiss="modal">CLOSE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-openinvoicesfound" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-black">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+                <h4 class="modal-title" style="color: #fff;">Open Invoices Found</h4>
+              </div>
+              <div class="modal-body">
+                <h2>Open Invoices Found</h2>
+                <p>There are open invoices for this contact. Instead of creating a new invoice, you may be able to apply a payment to an already created invoice.</p>
+                <div id="openinvoicesfound"></div>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-danger" data-dismiss="modal">CLOSE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal-accountcredit" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-black">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+                <h4 class="modal-title" style="color: #fff;">Account Credit</h4>
+              </div>
+              <div class="modal-body">
+                <h2>Account Credit</h2>
+                <p>This contact has an account credit applied to them.</p>
+                <div id="accountCreditreason"></div>
+                <br />
+                <br />
+                <div class="form-group">
+                  <label class="control-label">Remaining Credit </label>
+                  <div>
+                    <label id="lblRemainCredit"></label>
+                  </div>
+                </div>
+                <br />
+                <br />
+                <div class="form-group">
+                  <label class="control-label">How much do you want to apply? </label>
+                  <div>
+                    <input name="ctl00$contentPageHolder$txtAccountCreditAmount" type="text" id="contentPageHolder_txtAccountCreditAmount" class="form-control validate[required,custom[number]]" />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-inverse" data-dismiss="modal">CLOSE</a>
+                <a href="javascript:;" class="btn btn-primary" onclick="applyAccountCredit2()">Apply Credit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- A modal-style message that appears while scanning -->
+        <div id="overlay">
+          <div id="scanning" class="dialog">
+            <p>Scanning...</p>
+          </div>
+        </div>
+
+        <div id="failure" class="dialog">
+          <p>Unrecognized card.</p>
+        </div>
+
+        <div id="success" class="dialog">
+          <p>Successful scan!</p>
+
+          <div id="properties"></div>
+        </div>
+      </div>
+      <!-- end #content -->
+
+      <input type="hidden" name="ctl00$contentPageHolder$contactID" id="contentPageHolder_contactID" />
+      <input type="hidden" name="ctl00$contentPageHolder$hShortContactID" id="contentPageHolder_hShortContactID" />
+
+      <input type="hidden" name="ctl00$contentPageHolder$hTax" id="contentPageHolder_hTax" value="0.065" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTax2" id="contentPageHolder_hTax2" value="0.012" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTax3" id="contentPageHolder_hTax3" value="0.021" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTax4" id="contentPageHolder_hTax4" value="0.012" />
+
+      <input type="hidden" name="ctl00$contentPageHolder$hTaxForDisplay" id="contentPageHolder_hTaxForDisplay" value="6.500" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTax2ForDisplay" id="contentPageHolder_hTax2ForDisplay" value="1.200" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTax3ForDisplay" id="contentPageHolder_hTax3ForDisplay" value="2.100" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTax4ForDisplay" id="contentPageHolder_hTax4ForDisplay" value="1.200" />
+
+      <input type="hidden" name="ctl00$contentPageHolder$hTaxName" id="contentPageHolder_hTaxName" value="Forida Sales Tax" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTaxName2" id="contentPageHolder_hTaxName2" value="Tampa Tax" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTaxName3" id="contentPageHolder_hTaxName3" value="BS Tax" />
+      <input type="hidden" name="ctl00$contentPageHolder$hTaxName4" id="contentPageHolder_hTaxName4" value="City Tax" />
+
+      <input type="hidden" name="ctl00$contentPageHolder$hHowPay" id="contentPageHolder_hHowPay" />
+      <input type="hidden" name="ctl00$contentPageHolder$hInvoiceID" id="contentPageHolder_hInvoiceID" />
+      <input type="hidden" name="ctl00$contentPageHolder$hShortInvoiceID" id="contentPageHolder_hShortInvoiceID" />
+      <input type="hidden" name="ctl00$contentPageHolder$hMembershipDownpaymentAmount" id="contentPageHolder_hMembershipDownpaymentAmount" />
+      <input type="hidden" name="ctl00$contentPageHolder$hContactCreditID" id="contentPageHolder_hContactCreditID" />
+      <input type="hidden" name="ctl00$contentPageHolder$hCreditAmountRemaining" id="contentPageHolder_hCreditAmountRemaining" />
+      <input type="hidden" name="ctl00$contentPageHolder$hCreditDescription" id="contentPageHolder_hCreditDescription" />
+      <input type="hidden" name="ctl00$contentPageHolder$hPaymentGateway" id="contentPageHolder_hPaymentGateway" value="usaepay" />
+
+      <input type="hidden" name="ctl00$contentPageHolder$hPassOnCCFeesPOS" id="contentPageHolder_hPassOnCCFeesPOS" value="False" />
+      <input type="hidden" name="ctl00$contentPageHolder$hPassOnCCFeesPercentage" id="contentPageHolder_hPassOnCCFeesPercentage" value="2.900" />
+      <input type="hidden" name="ctl00$contentPageHolder$hPassOnCCFeesTransactionFee" id="contentPageHolder_hPassOnCCFeesTransactionFee" value="0.35" />
+
+      <input type="hidden" id="qtyonhand" value="" />
+      <input type="hidden" id="qtytrack" value="0" />
+
+      <!-- end #content -->
+
+      <!-- begin scroll to top btn -->
+      <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+      <!-- end scroll to top btn -->
+      <!-- begin scroll to top btn -->
+      <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-bottom fade" data-click="scroll-bottom"><i class="fa fa-angle-down"></i></a>
+      <!-- end scroll to top btn -->
+    </div>
+    <!-- end page container -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://app.sparkmembership.com/assets/crossbrowserjs/html5shiv.js"></script>
+      <script src="https://app.sparkmembership.com/assets/crossbrowserjs/respond.min.js"></script>
+      <script src="https://app.sparkmembership.com/assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="https://app.sparkmembership.com/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="https://app.sparkmembership.com/assets/js/apps.min.js?v=637317424992872164"></script>
+    <!-- ================== END BASE JS ================== -->
+
+    <link href="https://app.sparkmembership.com/plugins/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css" rel="stylesheet" />
+    <script src="https://app.sparkmembership.com/plugins/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js"></script>
+
+    <script src="https://app.sparkmembership.com/plugins/iCheck-2.0/icheck.min.js"></script>
+    <script src="https://app.sparkmembership.com/plugins/bootstrap-tour-0.10.2/build/js/bootstrap-tour.min.js"></script>
+    <script src="https://app.sparkmembership.com/plugins/select2-4.0.0/dist/js/select2.full.min.js?v=637317424992872164"></script>
+
+    <script src="https://app.sparkmembership.com/plugins/characterCounter/jquery.jqEasyCharCounter.min.js?v=637317424992872164"></script>
+
+    <!-- Bootstrap DatePicker -->
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-datetimepicker-master/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="https://app.sparkmembership.com/plugins/tabletoCSV/jquery.tabletoCSV.js"></script>
+
+    <script src="https://app.sparkmembership.com/assets/plugins/gritter/js/jquery.gritter.min.js"></script>
+
+    <input type="hidden" name="ctl00$hContactIDRankPromotion" id="hContactIDRankPromotion" />
+
+    <script>
+      var domainName = "sparkpages.io";
+    </script>
+
+    <link href="https://app.sparkmembership.com/plugins/jquery.cardswipe/demo-events.css" rel="stylesheet" />
+    <script>
+      var stripeAPIKey = "";
+    </script>
+
+    <script>
+      var uploadpath = "https://app.sparkmembership.com/locationFiles/1133/UploadedImages";
+    </script>
+    <link href="https://app.sparkmembership.com/plugins/jQuery-Validation-Engine/css/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="https://app.sparkmembership.com/plugins/jQuery-Validation-Engine/js/languages/jquery.validationEngine-en.js"></script>
+    <script src="https://app.sparkmembership.com/plugins/jQuery-Validation-Engine/js/jquery.validationEngine.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/switchery/switchery.min.js"></script>
+    <script src="https://app.sparkmembership.com/plugins/tinymce/plugins/moxiemanager/js/moxman.loader.min.js"></script>
+    <script src="https://app.sparkmembership.com/plugins/tinymce_4.6.3/tinymce.min.js"></script>
+
+    <!-- Page Level Javascript -->
+    <script src="https://app.sparkmembership.com/plugins/accounting.js/accounting.js"></script>
+    <script src="https://app.sparkmembership.com/plugins/jquery.cardswipe/dist/jquery.cardswipe.min.js"></script>
+    <script src="https://app.sparkmembership.com/Register.min.js?v=637317424992872164"></script>
+    <script>
+      var toptionsadd = new TaxRatesWorker();
+      var toptionsp = new TaxRatesWorker();
+      $(document).ready(function () {
+        hideICWin();
+      });
+      function hideICWin() {
+        var k = false;
+        if (window.Intercom != undefined) {
+          if (window.Intercom.booted != undefined) {
+            if ($(".intercom-app").length > 0) k = true;
+          }
+        }
+        if (k) {
+          setTimeout(function () {
+            $(".intercom-app").hide();
+          }, 5000);
+        } else {
+          setTimeout(hideICWin, 250);
+        }
+      }
+    </script>
+
+    <script type="text/javascript">
+      //<![CDATA[
+      if (isU(toptionsp)) var toptionsp = null;
+      toptionsp = new TaxRatesWorker(null, "lbltaxrate");
+      toptionsp.addrate("contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate_0", 1, "Forida Sales Tax", "0.06500", "contentPageHolder_taxrateoptionsp_rRates_trow_0");
+      toptionsp.addrate("contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate_1", 2, "Tampa Tax", "0.01200", "contentPageHolder_taxrateoptionsp_rRates_trow_1");
+      toptionsp.addrate("contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate_2", 3, "BS Tax", "0.02100", "contentPageHolder_taxrateoptionsp_rRates_trow_2");
+      toptionsp.addrate("contentPageHolder_taxrateoptionsp_rRates_cbkActiveRate_3", 4, "City Tax", "0.01200", "contentPageHolder_taxrateoptionsp_rRates_trow_3");
+
+      toptionsp.calctaxper();
+      if (isU(toptionsadd)) var toptionsadd = null;
+      toptionsadd = new TaxRatesWorker(null, "lbltaxrate");
+      toptionsadd.addrate("contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate_0", 1, "Forida Sales Tax", "0.06500", "contentPageHolder_taxrateoptionsadd_rRates_trow_0");
+      toptionsadd.addrate("contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate_1", 2, "Tampa Tax", "0.01200", "contentPageHolder_taxrateoptionsadd_rRates_trow_1");
+      toptionsadd.addrate("contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate_2", 3, "BS Tax", "0.02100", "contentPageHolder_taxrateoptionsadd_rRates_trow_2");
+      toptionsadd.addrate("contentPageHolder_taxrateoptionsadd_rRates_cbkActiveRate_3", 4, "City Tax", "0.01200", "contentPageHolder_taxrateoptionsadd_rRates_trow_3");
+
+      toptionsadd.calctaxper();
+      //]]>
+    </script>
+  </form>
+
+  <!-- page level javascript -->
+  <script src="https://app.sparkmembership.com/Normal.Master.min.js?v=637317424992872164"></script>
+
+  <script>
+    var elevfirstName = userName.split(" ")[0];
+    var elevlastName = userName.split(" ")[1];
+    var elevUserHash = "";
+    /* */
+    /* elev.io STRACK[True] */
+    /*  */
+    var _elev = window._elev || {};
+    (function () {
+      var i, e;
+      (i = document.createElement("script")), (i.type = "text/javascript");
+      (i.async = 1), (i.src = "https://static.elev.io/js/v3.js"), (e = document.getElementsByTagName("script")[0]), e.parentNode.insertBefore(i, e);
+    })();
+    _elev.account_id = "56526556ec449";
+
+    _elev.user = {
+      first_name: elevfirstName,
+      last_name: elevlastName,
+      email: userEmail,
+      phone_number: "", // used by some of the live chat clients
+      user_hash: "04e0c0dab1468fb5dfa0e9ef7ff56858e089db4d5e06b4e9c9932eb9d289db6c",
+      groups: [plan],
+      traits: {
+        Plan: plan,
+      },
+    };
+  </script>
+
+  <script>
+    var appInsights =
+      window.appInsights ||
+      (function (config) {
+        function r(config) {
+          t[config] = function () {
+            var i = arguments;
+            t.queue.push(function () {
+              t[config].apply(t, i);
+            });
+          };
+        }
+        var t = { config: config },
+          u = document,
+          e = window,
+          o = "script",
+          s = u.createElement(o),
+          i,
+          f;
+        for (
+          s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"];
+          i.length;
+
+        )
+          r("track" + i.pop());
+        return (
+          r("setAuthenticatedUserContext"),
+          r("clearAuthenticatedUserContext"),
+          config.disableExceptionTracking ||
+            ((i = "onerror"),
+            r("_" + i),
+            (f = e[i]),
+            (e[i] = function (config, r, u, e, o) {
+              var s = f && f(config, r, u, e, o);
+              return s !== !0 && t["_" + i](config, r, u, e, o), s;
+            })),
+          t
+        );
+      })({
+        instrumentationKey: "4f9d664b-08e0-4a5a-9829-514f7f80bc8d",
+      });
+
+    window.appInsights = appInsights;
+    appInsights.trackPageView();
+  </script>
+
+  <!-- Canny SDK -->
+  <script>
+    !(function (w, d, i, s) {
+      function l() {
+        if (!d.getElementById(i)) {
+          var f = d.getElementsByTagName(s)[0],
+            e = d.createElement(s);
+          (e.type = "text/javascript"), (e.async = !0), (e.src = "https://canny.io/sdk.js"), f.parentNode.insertBefore(e, f);
+        }
+      }
+      if ("function" != typeof w.Canny) {
+        var c = function () {
+          c.q.push(arguments);
+        };
+        (c.q = []), (w.Canny = c), "complete" === d.readyState ? l() : w.attachEvent ? w.attachEvent("onload", l) : w.addEventListener("load", l, !1);
+      }
+    })(window, document, "canny-jssdk", "script");
+  </script>
+  <script>
+    Canny("identify", {
+      appID: "5cad0ae8c39b5b492197f640",
+      user: {
+        email: userEmail,
+        name: userName,
+        id: userID,
+        created: new Date(startDate).toISOString(),
+      },
+    });
+  </script>
+  <!-- END Canny SDK -->
+
+  <script>
+    /*
+      <!-- intercom.io -->
+      */
+    window.intercomSettings = {
+      app_id: "oqx7t0mu",
+      name: userName, // Full name
+      email: userEmail, // Email address
+      user_id: userID,
+      membershipPlan: plan, //membership plan
+      locationID: locationID,
+      locationName: locName,
+      created_at: theDate, // Signup date as a Unix timestamp
+    };
+
+    (function () {
+      var w = window;
+      var ic = w.Intercom;
+      if (typeof ic === "function") {
+        ic("reattach_activator");
+        ic("update", intercomSettings);
+      } else {
+        var d = document;
+        var i = function () {
+          i.c(arguments);
+        };
+        i.q = [];
+        i.c = function (args) {
+          i.q.push(args);
+        };
+        w.Intercom = i;
+        function l() {
+          var s = d.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://widget.intercom.io/widget/oqx7t0mu";
+          var x = d.getElementsByTagName("script")[0];
+          x.parentNode.insertBefore(s, x);
+        }
+        if (w.attachEvent) {
+          w.attachEvent("onload", l);
+        } else {
+          w.addEventListener("load", l, false);
+        }
+      }
+    })();
+    /*
+      * <!-- /intercom -->
+      */
+  </script>
+
+  <script>
+    (function (c, o, v, i, e, w) {
+      c[v] =
+        c[v] ||
+        function () {
+          (c[v].a = c[v].a || []).push(arguments);
+        };
+      var s = o.createElement(i);
+      s.src = e;
+      s.async = 1;
+      var h = o.getElementsByTagName(i)[0];
+      h.parentNode.insertBefore(s, h);
+      c.addEventListener("error", function (err) {
+        c[v]("error", err);
+      });
+      c.addEventListener("message", function (msg) {
+        c[v]("message", msg);
+      });
+    })(window, document, "coview", "script", "https://cdn.coview.com/coview.js");
+    coview("start", {
+      projectKey: "I4JB1pjWWAs",
+    });
+  </script>
+  <script>
+    var appointmentsShowed = [];
+    setTimeout(function () {
+      askAboutAppointments();
+    }, 3000);
+  </script>
+</body>
+</html>
