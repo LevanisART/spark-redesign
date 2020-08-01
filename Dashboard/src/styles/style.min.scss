@@ -987,7 +987,8 @@ input, select {
 .page-header {
   + br + br + .row .panel.panel-inverse > .panel-heading:first-child,
   + br + br + .panel.panel-inverse > .panel-heading:first-child, 
-  + br + .row .panel.panel-inverse > .panel-heading:first-child {
+  + br + .row .panel.panel-inverse > .panel-heading:first-child, 
+  + br + br + .row + .row .panel.panel-inverse > .panel-heading:first-child {
     display: none;
   }
   + br {
@@ -1121,6 +1122,10 @@ fieldset[disabled] .form-control:focus {
 
 label {
   font-weight: 500
+}
+
+.label.container-border {
+  border: none !important;
 }
 
 .has-success .form-control,
@@ -1998,10 +2003,18 @@ table {
 }
 
 .btn.btn-inverse {
-  color: #fff;
-  background: $red;
-  border-color: $red;
-  padding: 8px 15px;
+  color: $textColor;
+  background: #fff;
+  border-color: #fff;
+  padding: 10px 15px;
+  font-weight: 500;
+}
+
+.panel {
+  .btn.btn-inverse {
+    background: #f5f5f5;
+    border-color: #f0f0f0;
+  }
 }
 
 .btn-group .btn.btn-inverse:not(.active)+.btn.btn-inverse,
