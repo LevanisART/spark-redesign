@@ -1321,6 +1321,7 @@ legend {
   .btn {
     background: #28b061;
     border: none;
+    color: #FFF;
   }
 }
 
@@ -2373,11 +2374,13 @@ table {
 .panel-body {
   padding: 10px 28px 28px;
   color: #76809E;
-  > h2, h1 {
+  > h1, h2, h3 {
     line-height: 29px;
     font-size: 19px;
     font-weight: 700;
     letter-spacing: .4px;
+  }
+  > h1, h2 {
     margin: 16px 0 0;
   }
   > h2:first-child + .row {
@@ -4088,7 +4091,7 @@ a.text-white:focus {
 }
 
 .bg-black {
-  background: #2d353c !important
+  background: #3A465E !important
 }
 
 .bg-black-darker {
@@ -4160,7 +4163,7 @@ a.text-white:focus {
 }
 
 .bg-blue {
-  background: #348fe2 !important
+  background: #3B76EF !important
 }
 
 .bg-blue-darker {
@@ -4184,7 +4187,7 @@ a.text-white:focus {
 }
 
 .bg-purple {
-  background: #727cb6 !important
+  background: #6462BC !important
 }
 
 .bg-purple-darker {
@@ -5306,7 +5309,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   text-align: center;
   line-height: 56px;
   margin-left: 15px;
-  color: #85A5C1;
+  color: #FFF;
   position: absolute;
   right: 15px;
   top: 15px;
@@ -8131,6 +8134,23 @@ body.flat-black {
   }
 }
 
+#contentPageHolder_PanelCreateEmail {
+  > h2, > h3 {
+    line-height: 29px;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: .4px;
+  }
+}
+
+.mce-panel {
+  border-color: #f0f0f0 !important;
+}
+
+.mce-btn, .mce-panel {
+  background-color: #f7f7f7 !important;
+}
+
 .row .col-md-12 .btn.btn-default {
   background: #f9f9f9;
   border-color: #f2f2f2;
@@ -8484,4 +8504,37 @@ body.flat-black {
 .icheckbox_flat.checked {
   filter: invert(71%) sepia(83%) saturate(4094%) hue-rotate(189deg) brightness(101%) contrast(101%);
   opacity: 1;
+}
+
+#statBoxProspects {
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $green !important;
+  }
+}
+
+
+.bs-wizard > .bs-wizard-step > .progress {
+  background: #f4f4f4 !important;
+}
+
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {
+  background-color: #f4f4f4 !important;
+}
+
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {
+  background: #FFF !important;
+}
+
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {
+  background: #329aff !important;
+}
+
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+  background: #329aff !important;
 }
