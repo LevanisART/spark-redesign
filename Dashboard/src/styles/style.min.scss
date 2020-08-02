@@ -5315,6 +5315,11 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   position: relative
 }
 
+.widget.widget-stats.bg-white {
+  background: #f5f9fc !important;
+  border: 1px solid #EDF2F6;
+}
+
 .widget-stats .stats-info h4 {
   font-size: 12px;
   margin: 5px 0;

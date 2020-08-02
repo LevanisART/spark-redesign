@@ -1,0 +1,2249 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+  <title>
+    SPARK
+  </title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <meta name="description" />
+  <meta name="author" />
+  <link rel="shortcut icon" href="https://app.sparkmembership.com/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="https://app.sparkmembership.com/favicon.ico" type="image/x-icon" />
+  <noscript>
+    <!-- javascript detect -->
+    <meta http-equiv="refresh" content="0;url=/javascriptDisabled.html" />
+  </noscript>
+  <script src="https://app.sparkmembership.com/js/abundance-common.min.js?v=637319498124196516"></script>
+  <script type="text/javascript">
+    var locationID = getUserInfoCookie("locationID");
+    var appInsights =
+      window.appInsights ||
+      (function (a) {
+        function b(a) {
+          c[a] = function () {
+            var b = arguments;
+            c.queue.push(function () {
+              c[a].apply(c, b);
+            });
+          };
+        }
+        var c = { config: a },
+          d = document,
+          e = window;
+        setTimeout(function () {
+          var b = d.createElement("script");
+          (b.src = a.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"), d.getElementsByTagName("script")[0].parentNode.appendChild(b);
+        });
+        try {
+          c.cookie = d.cookie;
+        } catch (a) {}
+        c.queue = [];
+        for (var f = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; f.length; ) b("track" + f.pop());
+        if ((b("setAuthenticatedUserContext"), b("clearAuthenticatedUserContext"), b("startTrackEvent"), b("stopTrackEvent"), b("startTrackPage"), b("stopTrackPage"), b("flush"), !a.disableExceptionTracking)) {
+          (f = "onerror"), b("_" + f);
+          var g = e[f];
+          e[f] = function (a, b, d, e, h) {
+            var i = g && g(a, b, d, e, h);
+            return !0 !== i && c["_" + f](a, b, d, e, h), i;
+          };
+        }
+        return c;
+      })({
+        instrumentationKey: "6135f29f-c7cb-4863-bf40-d10e672bad7a",
+        accountId: locationID,
+      });
+
+    (window.appInsights = appInsights), appInsights.queue && 0 === appInsights.queue.length && appInsights.trackPageView();
+  </script>
+
+  <!-- BEGIN TRACKJS -->
+  <script type="text/javascript">
+    window._trackJs = { token: "a82d752d41374ff5aa6b02fb6af75b23" };
+  </script>
+  <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+  <!-- END TRACKJS -->
+
+  <!-- ================== BEGIN BASE CSS STYLE ==========w======== -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/css/animate.min.css?v20190920a" rel="stylesheet" />
+  <link href="assets/css/style.min.css?v=637319498124196516" rel="stylesheet" />
+  <link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+  <link href="assets/css/theme/red.css?v=637319498124196516" rel="stylesheet" id="theme" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+
+  <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+  <link href="https://app.sparkmembership.com/assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/gritter/css/jquery.gritter.min.css?v=20190125a" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/morris/morris.css" rel="stylesheet" />
+  <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+
+  <script src="https://app.sparkmembership.com/assets/plugins/jquery/jquery-1.12.0.min.js?v=637319498124196516"></script>
+  <script src="https://app.sparkmembership.com/assets/plugins/jquery/jquery-migrate-1.3.0.min.js?v=637319498124196516"></script>
+  <script src="https://app.sparkmembership.com/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+
+  <!-- ================== END BASE JS ================== -->
+
+  <link href="https://app.sparkmembership.com/plugins/jquery-typeahead-2.0.0-rc.6/dist/jquery.typeahead.min.css" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/jquery-typeahead-2.0.0-rc.6/dist/jquery.typeahead.min.js"></script>
+  <!--
+  <link href="https://app.sparkmembership.com/plugins/jquery-typeahead-2.10.6/dist/jquery.typeahead.min.css" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/jquery-typeahead-2.10.6/dist/jquery.typeahead.min.js"></script>
+    -->
+  <style>
+    .typeahead-list {
+      max-height: 600px !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+  </style>
+
+  <!-- fancybox2 -->
+  <!--
+  <link href="https://app.sparkmembership.com/plugins/fancybox2/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/fancybox2/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="https://app.sparkmembership.com/plugins/fancybox2/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+  -->
+
+  <!-- SweetAlert2 -->
+  <link href="https://app.sparkmembership.com/plugins/sweetalert2/dist/sweetalert2.css?v=637319498124196516" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/sweetalert2/src/sweetalert2.js?v=637319498124196516"></script>
+
+  <!-- Bootstrap DatePicker -->
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+  <link href="https://app.sparkmembership.com/assets/plugins/bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+  <!-- Page Level CSS -->
+  <link href="Normal.Master.min.css?v=637319498124196516" rel="stylesheet" />
+
+  <!-- Tipso -->
+  <link href="https://app.sparkmembership.com/plugins/tipso/src/tipso.min.css" rel="stylesheet" />
+  <script src="https://app.sparkmembership.com/plugins/tipso/src/tipso.min.js"></script>
+
+  <!-- iCheck -->
+  <link href="https://app.sparkmembership.com/plugins/icheck-1.x/skins/flat/flat.css" rel="stylesheet" />
+
+  <!-- moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+
+  <!-- Select2 -->
+  <link href="https://app.sparkmembership.com/plugins/select2-4.0.0/dist/css/select2.min.css?v=637319498124196516" rel="stylesheet" />
+
+  <!-- Bootstrap Tour -->
+  <link href="https://app.sparkmembership.com/plugins/bootstrap-tour-0.10.2/build/css/bootstrap-tour.min.css" rel="stylesheet" />
+
+  <!-- Keep the session alive so no logouts -->
+  <script src="https://app.sparkmembership.com/SessionKeepAlive.js"></script>
+
+  <link href="Dashboard.min.css?v=637319498124196516" rel="stylesheet" />
+
+  <script>
+    var userName = getUserInfoCookie("userName");
+    var userEmail = getUserInfoCookie("userEmail");
+    var userID = getUserInfoCookie("userID");
+
+    var plan = getUserInfoCookie("plan");
+    var locName = getUserInfoCookie("locationName");
+    var startDate = getUserInfoCookie("startDate");
+    var theDate = Math.round(new Date(startDate).getTime(startDate) / 1000);
+    var siteName = "SPARK";
+    var datepickerDateFormat;
+
+    switch (getUserInfoCookie("df")) {
+      case "DMY":
+        datepickerDateFormat = "dd/mm/yyyy";
+        break;
+
+      case "YMD":
+        datepickerDateFormat = "yyyy/mm/dd";
+        break;
+
+      case "MDY":
+        datepickerDateFormat = "mm/dd/yyyy";
+        break;
+
+      default:
+        datepickerDateFormat = "mm/dd/yyyy";
+        break;
+    }
+  </script>
+
+  <script>
+    trackJs.addMetadata("locationID", locationID);
+    trackJs.addMetadata("userName", userName);
+    trackJs.addMetadata("userID", userID);
+    trackJs.addMetadata("plan", plan);
+    trackJs.addMetadata("locName", locName);
+  </script>
+  <link href="Spark.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="calendarModal" class="calendarContainer" style="display: none;">
+    <div class="frameLoading">Please wait</div>
+    <div class="navbar-logo-abundance" style="left: 10px !important;">
+      <img id="imgLogoCalendar" src="https://app.sparkmembership.com/img/Spark-Logo-Top-Left.png" />
+    </div>
+    <div id="calendarClose"><i class="fa fa-3x fa-times-circle"></i></div>
+    <iframe width="630" height="700" src="" seamless="seamless" frameborder="0"></iframe>
+  </div>
+  <form method="post" action="./Report_Dashboard_Stats.html" id="form1">
+    <div class="aspNetHidden">
+      <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+      <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+      <input
+        type="hidden"
+        name="__VIEWSTATE"
+        id="__VIEWSTATE"
+        value="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"
+      />
+    </div>
+
+    <script type="text/javascript">
+      //<![CDATA[
+      var theForm = document.forms["form1"];
+      if (!theForm) {
+        theForm = document.form1;
+      }
+      function __doPostBack(eventTarget, eventArgument) {
+        if (!theForm.onsubmit || theForm.onsubmit() != false) {
+          theForm.__EVENTTARGET.value = eventTarget;
+          theForm.__EVENTARGUMENT.value = eventArgument;
+          theForm.submit();
+        }
+      }
+      //]]>
+    </script>
+
+    <script src="https://app.sparkmembership.com/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZIP9G2H5IG4X1Ql--AlM4lJIcYGjRS4Dlem_eYSOW9Uog_9kOA2&amp;t=637248193626673092" type="text/javascript"></script>
+
+    <script
+      src="https://app.sparkmembership.com/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvjkQUIkPNfEe2IfmNXJ83NIqNk_BH0ou1r9VSaAk0eCK9TVp3RKzjnodmyZ6zWgpXWK8rh3_x0sOF0TCsIJomTb2cOLWcCkVeo3LaG58pbHYBhhSThjUDNHcEWvCurEgVxJuoso1&amp;t=ffffffffecf19baa"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://app.sparkmembership.com/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8ONDQI1R8KfFOQGz88gDUQz8gcZgM-ZBgkzRlkqFrgvtAy8ZbXkfgDN6MzaXaL4MfJ9d4LTIujvs6rl5cJqEqx8F6B8IRD3tNmvvosIXEPuxoA_bCa3Ji6rVJTdOtox0yXK3v1J41&amp;t=ffffffffecf19baa"
+      type="text/javascript"
+    ></script>
+    <div class="aspNetHidden">
+      <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B5802964" />
+      <input
+        type="hidden"
+        name="__EVENTVALIDATION"
+        id="__EVENTVALIDATION"
+        value="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"
+      />
+    </div>
+    <script type="text/javascript">
+      //<![CDATA[
+      Sys.WebForms.PageRequestManager._initialize("ctl00$ctl31", "form1", [], [], [], 90, "ctl00");
+      //]]>
+    </script>
+
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+      <!-- begin #header -->
+      <div id="header" class="header navbar navbar-default navbar-fixed-top">
+        <!-- begin container-fluid -->
+        <div class="container-fluid">
+          <!-- begin mobile sidebar expand / collapse button -->
+          <div class="navbar-header">
+            <a href="Dashboard.html">
+              <span class="navbar-logo-abundance"> <img id="imgLogo" src="https://app.sparkmembership.com/img/Spark-Logo-Top-Left.png" /></span>
+            </a>
+            <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!-- end mobile sidebar expand / collapse button -->
+
+          <!-- begin header navigation right -->
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <div class="navbar-form full-width">
+                <div class="form-group">
+                  <div class="typeahead-container"><input type="text" class="form-control" placeholder="Search contacts" id="txtTopSearch" autocomplete="off" /><br /></div>
+                  <button type="submit" class="btn btn-search"><i class="fa fa-search" style="margin-top: 8px;"></i></button>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="topMenuQuickAddContact()" data-toggle="tooltip" data-placement="bottom" title="Add Contact" id="topBarQuickAddContactTour"><i class="fa fa-user-plus"></i></a>
+            </li>
+            <li>
+              <a href="Contacts.html" data-toggle="tooltip" data-placement="bottom" title="View All Contacts"><i class="fa fa-group"></i></a>
+            </li>
+            <li>
+              <a href="Register.html" data-toggle="tooltip" data-placement="bottom" title="Point of Sale"><i class="fa fa-bank"></i></a>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="openCalendar('')" data-toggle="tooltip" data-placement="bottom" title="Calendar" id="topBarCalendarTour"><i class="fa fa-calendar-o"></i></a>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="topBarPageIntakeForm('Eastern Standard Time')" data-toggle="tooltip" data-placement="bottom" title="Intake/Checkin Screen" id="topBarPageIntakeForm"><i class="fa fa fa-handshake-o"></i></a>
+            </li>
+
+            <li>
+              <a href="SMSMessages.html" data-toggle="tooltip" data-placement="bottom" title="View SMS Messages" id="topBarPageSMS"><i class="fa fa-comments"></i></a>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="getTodaysCheckins();" data-toggle="tooltip" data-placement="bottom" title="Today's Attendance"><i class="fa fa-list-alt" style="color: gray;"></i></a>
+            </li>
+
+            <li>
+              <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="Help" id="topBarPageHelpTour" data-elevio-article="index"><i class="fa fa-question-circle"></i></a>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle f-s-14" id="topBarNotificationsTour">
+                <i class="fa fa-bell-o"></i>
+
+                <span class="label animated infinite pulse slower" id="notificationsCount">24</span>
+              </a>
+              <ul class="dropdown-menu media-list pull-right animated fadeInDown" id="notificationsUL">
+                <li class="dropdown-header" id="notificationsTopLine">Notifications (24)</li>
+                <li class="media">
+                  <a href="SMSMessages.html">
+                    <div class="media-left"><i class="fa fa-comments media-object bg-red"></i></div>
+                    <div class="media-body">
+                      <h6 class="media-heading">24 Unread Text Messages</h6>
+                      <div class="text-muted f-s-11">108098 minutes ago</div>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="media">
+                  <a href="javascript:;">
+                    <div class="media-left"><i class="fa fa-thumbs-o-up media-object bg-green"></i></div>
+                    <div class="media-body">
+                      <h6 class="media-heading">Did you know? You are awesome!</h6>
+                      <div class="text-muted f-s-11">3 minutes ago</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="showEmployeeTimeClock();"><i class="fa fa-clock-o" data-toggle="tooltip" data-placement="bottom" title="Time Clock" id="topBarStaffTimeClockTour"></i></a>
+            </li>
+
+            <li class="dropdown navbar-user">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="https://app.sparkmembership.com/img/user.png" alt="" />
+                <span class="hidden-xs"> UI Redesign</span> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu animated fadeInLeft">
+                <li class="arrow"></li>
+
+                <!--
+                              <li><a href="javascript:;" onclick="beta()">Edit Profile</a></li>
+                              <li><a href="javascript:;" onclick="beta()"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
+                              <li><a href="javascript:;" onclick="beta()">Settings</a></li>
+                              -->
+                <li><a href="javascript:;" onclick="showSparkUpdates();">Latest Spark Updates</a></li>
+                <li><a href="javascript:;" onclick="openCalendar('')">Calendar</a></li>
+                <li><a href="javascript:;" data-click="reset-local-storage">Reset Dashboard</a></li>
+                <li class="divider"></li>
+                <li><a href="logout.html">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- end header navigation right -->
+        </div>
+        <!-- end container-fluid -->
+      </div>
+      <!-- end #header -->
+
+      <!-- begin #sidebar -->
+      <div id="sidebar" class="sidebar">
+        <!-- begin sidebar scrollbar -->
+        <div data-scrollbar="true" data-height="100%">
+          <!-- begin sidebar user -->
+          <ul class="nav">
+            <li class="nav-profile">
+              <div class="info">
+                Super Star Martial Arts
+
+                <small>Your Account ID: 1133</small>
+              </div>
+            </li>
+          </ul>
+          <!-- end sidebar user -->
+          <!-- begin sidebar nav -->
+          <ul class="nav">
+            <li class="nav-header">Navigation</li>
+
+            <li>
+              <a href="Dashboard.html"><i class="fa fa-laptop"></i><span>Dashboard</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-star" style="color: yellow;"></i>
+                <span>New? START HERE!</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Dashboard.html?tour=start">Dashboard Tour</a></li>
+                <li><a href="javascript:;" onclick="reinstateOnboardingChecklist()">Onboarding Checklist</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="Contact_Add.html"><i class="fa fa-user"></i><span>ADD A NEW CONTACT</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-group"></i>
+                <span>Contacts</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Contact_Add.html">ADD A NEW CONTACT</a></li>
+                <li><a href="Contacts.html">All Contacts</a></li>
+
+                <li>
+                  <a href="Trial_Member_Maximizer.html">Lead & Trials Maximizer<sup>TM</sup></a>
+                </li>
+                <li>
+                  <a href="New_Member_Maximizer.html">New Member Maximizer<sup>TM</sup></a>
+                </li>
+
+                <li><a href="Contacts.html?contactType=P">Prospects</a></li>
+                <li><a href="Contacts.html?contactType=T">Trials</a></li>
+                <li><a href="Contacts.html?contactType=U">Former Trials</a></li>
+                <li><a href="Contacts.html?contactType=C">Students</a></li>
+                <li><a href="Contacts.html?contactType=I">Inactive Students</a></li>
+                <li><a href="Contacts.html?contactType=F">Former Students</a></li>
+                <li><a href="Contacts.html?contactType=Z">Fitness</a></li>
+                <li><a href="Contacts.html?contactType=V">Vendors</a></li>
+                <li><a href="Contacts.html?contactType=B">Businesses</a></li>
+                <li><a href="Contacts.html?contactType=O">Other</a></li>
+                <li><a href="Contacts.html?starred=true">Starred Contacts</a></li>
+                <li><a href="Contacts.html?contactType=Imported">Imported</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript:;" onclick="openCalendar('')"><i class="fa fa-calendar"></i><span>Calendar</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-check-circle-o"></i>
+                <span>Attendance</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Attendance_Scan_Barcode.html">Scan Barcode</a></li>
+                <li><a href="Attendance_Rosters_Add_Attendance.html">Add by Roster</a></li>
+                <li><a href="Attendance_Guided_Access.html" target="_blank">Self Check-In/Membership</a></li>
+                <li><a href="Self_Checkin_Roster.html" target="_blank">Self Check-In/Roster</a></li>
+                <li><a href="Attendance_Rosters.html">Roster Setup</a></li>
+                <li><a href="Attendance_Rosters_All_by_Date.html">Roster Report</a></li>
+                <li><a href="Attendance_Rosters_Contacts.html">Roster Contacts</a></li>
+                <li><a href="Report_Attendance_Who_Attended.html">Attendance Report</a></li>
+                <li><a href="Report_Attendance_Count.html">Attendance Counts</a></li>
+                <li><a href="Report_Attendance_Rosters2.html">Attendance by Roster</a></li>
+                <li><a href="Report_Perfect_Attendance.html">Perfect Attendance Report</a></li>
+                <li><a href="Report_MIA.html">MIA Maximizer</a></li>
+
+                <li><a href="MailingLabels_AttendanceBarcodes_Avery_5160_Membership.html">Print Barcodes</a></li>
+              </ul>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-bullseye"></i>
+                <span>Ranks</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Rank_System_Mass_Promotions.html">Mass Rank Promote</a></li>
+                <li><a href="Report_Current_Ranks.html">Report: Current Ranks</a></li>
+                <li><a href="Report_Rank_History.html">Report: Rank History</a></li>
+                <li><a href="Settings_Rank_Systems.html">Rank/Style Setup</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="Tasks.html"><i class="fa fa-check-square-o"></i><span>Tasks</span></a>
+            </li>
+
+            <li>
+              <a href="Register.html" id="sideNavigationTour"><i class="fa fa-bank"></i><span>Cash Register / Invoices</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-cogs"></i>
+                <span>Point of Sale Settings</span>
+              </a>
+
+              <ul class="sub-menu">
+                <li><a href="Settings_POS_Quick_Inventory.html">Adjust Inventory</a></li>
+                <li><a href="Settings_POS_Income_Categories.html">Income Categories</a></li>
+                <li><a href="Settings_POS_Packages.html">Packages</a></li>
+                <li><a href="Settings_POS_Products.html">Products</a></li>
+                <li><a href="Settings_POS_Product_Categories.html">Product Categories</a></li>
+                <li><a href="Report_Scheduled_Payments.html">Scheduled Payments</a></li>
+                <li><a href="Settings_POS.html">Settings</a></li>
+                <li><a href="Settings_POS_Suppliers.html">Suppliers</a></li>
+                <li><a href="Reports_POS_OpenInvoices.html">Unpaid Invoices</a></li>
+              </ul>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-comments-o"></i>
+                <span>Communication Center</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="EmailCampaigns.html">Email Campaign</a></li>
+                <li><a href="Email_Logs.html">Email Logs</a></li>
+                <li><a href="Email_Unsubscribers.html">Email Unsubscribers</a></li>
+
+                <li><a href="SMSCampaigns.html">SMS Text Message Campaign</a></li>
+                <li><a href="SMSMessages.html?action=veiwLogs">SMS Logs</a></li>
+
+                <li>
+                  <!-- <a href="javascript:;" onclick="beta()">Print Letters</a> -->
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="SalesPages.html"><i class="fa fa-shopping-cart"></i><span>Checkout Pages</span></a>
+            </li>
+
+            <li>
+              <a href="Funnels.html">
+                <i class="fa fa-filter"></i><span>Funnels <span class="label label-theme m-l-5">NEW</span></span>
+              </a>
+            </li>
+
+            <li>
+              <a href="SparkPageBuilder.html" target="_blank"><i class="fa fa-filter"></i><span>Spark Page Builder</span></a>
+            </li>
+
+            <li>
+              <a href="Automation.html"><i class="fa fa-bolt"></i><span>Automation</span></a>
+            </li>
+
+            <li>
+              <a href="SparkIgnite.html">🔥 <span>Spark Ignite</span></a>
+            </li>
+
+            <li>
+              <a href="Projects.html"><i class="fa fa-list-alt"></i><span>Projects</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-area-chart"></i>
+                <span>Reports</span>
+              </a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="Report_Duplicate.html">Duplicate Profiles<span class="label label-theme m-l-5">NEW!</span></a>
+                </li>
+
+                <li><a href="Report_Financial_Transactions.html">Financial Transactions</a></li>
+                <li><a href="Report_Financial_Income_Category.html">Transactions by Category</a></li>
+                <li><a href="Report_Financial_Enrollment.html">Transactions by Membership</a></li>
+                <li><a href="Report_Financial_Forecast.html">Financial Forecast Report</a></li>
+                <li><a href="Report_Financial_Refunds.html">Financial Refund Report</a></li>
+                <li><a href="Report_Gross_Income_History.html">Gross Financial History (chart)</a></li>
+                <li><a href="Report_autoCharge.html">autoCharge Report</a></li>
+                <li><a href="Report_Extrenal_Billing_Company_Update.html">External Billing Report</a></li>
+                <li><a href="Report_Returned_ACH.html">autoCharge EFT Status</a></li>
+                <li><a href="Report_Staff_Activity.html">Staff Activity Logs</a></li>
+
+                <li><a href="Report_TimeSlips.html">Staff Time Slips</a></li>
+
+                <li><a href="Report_Tax_Detail.html">Sales Tax Report</a></li>
+
+                <li class="has-sub">
+                  <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <span>POS</span>
+                  </a>
+                  <ul class="sub-menu">
+                    <li><a href="Report_POS_Daily_Renconcile.html">Daily Reconcile</a></li>
+                    <li><a href="Report_Inventory_Reorder.html">Inventory Reorder</a></li>
+                    <li><a href="Report_Items_Sold.html">Items Sold</a></li>
+                    <li><a href="Report_Items_Sold_Sum.html">Items Sold Summary</a></li>
+                    <li><a href="Report_Inventory_Onhand.html">On Hand Inventory</a></li>
+                    <li><a href="POS_Orders_To_Place.html">Orders to Place</a></li>
+                    <li><a href="Report_Scheduled_Payments.html">Scheduled Payments</a></li>
+                    <li><a href="Reports_POS_OpenInvoices.html">Unpaid Invoices</a></li>
+                  </ul>
+                </li>
+                <li><a href="Report_Memberships.html">All Memberships</a></li>
+                <li><a href="Report_Memberships_Autorenew.html">Auto-Renew Memberships</a></li>
+                <li><a href="Report_Cancelled_Memberships.html">Cancelled Memberships</a></li>
+                <li><a href="Report_Memberships_Missing_Digital_Agreements.html">Missing Digital Agreements</a></li>
+                <li><a href="Report_Members_No_Membership.html">Students Without Memberships</a></li>
+                <li><a href="Report_Memberships_On_Hold.html">On Hold Memberships</a></li>
+                <li><a href="Report_Referrals.html">Referrals</a></li>
+
+                <li><a href="Report_ATAExpiration.html">ATA Expirations</a></li>
+
+                <li><a href="Report_Marketing_Sources.html">Marketing Sources</a></li>
+                <li><a href="Report_UTM.html">Marketing UTM Codes</a></li>
+
+                <li><a href=" Report_Attendance_Who_Attended.html">Attendance Report</a></li>
+                <li><a href="Report_MIA.html">MIA Maximizer</a></li>
+                <li><a href="Report_On_Vacation.html">Vacations</a></li>
+
+                <li><a href="Report_Last4_Credit_Card.html">Credit Card Search</a></li>
+                <li><a href="Report_NeedToSee.html">Need to See</a></li>
+              </ul>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-graduation-cap"></i>
+                <span>University</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="University_Courses.html">Courses</a></li>
+                <li><a href="University_Authors.html">Authors</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="StudentApp_Dashboard.html">
+                <i class="fa fa-mobile"></i><span>Member App <span class="label label-theme m-l-5">NEW!</span></span>
+              </a>
+            </li>
+
+            <li>
+              <a href="Tags.html"><i class="fa fa-tags"></i><span>Tags</span></a>
+            </li>
+
+            <li>
+              <a href="Forms.html"><i class="fa fa-list-ul"></i><span>Forms & Surveys</span></a>
+            </li>
+
+            <li>
+              <a href="LandingPages.html"><i class="fa fa-globe"></i><span>Landing Pages</span></a>
+            </li>
+
+            <li class="has-sub">
+              <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-cogs"></i>
+                <span>Settings</span>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="Settings_General.html">General Settings</a></li>
+                <li><a href="Settings_Api_Key.html">API Key / Tracking Codes</a></li>
+                <li><a href="Settings_Attendance.html">Attendance</a></li>
+                <li><a href="Settings_Calendar.html">Calendar</a></li>
+                <li><a href="Settings_Collection_Companies.html">Collection Companies</a></li>
+                <li><a href="Settings_Groups.html">Contact Groups</a></li>
+                <li><a href="Settings_LeadManager_Phases.html">Contact Phases</a></li>
+                <li><a href="Settings_Custom_Fields.html">Custom Fields</a></li>
+                <li><a href="Settings_Optin_Forms.html">Email Capture Forms</a></li>
+                <li><a href="Settings_Email_Templates.html">Email Templates</a></li>
+                <li><a href="Settings_Global_Merge_Tags.html">Global Merge Tags</a></li>
+                <li><a href="Goals_You_Set_Are_Goals_You_Get.html">Goals</a></li>
+                <li><a href="ImageManager.html">Image Manager</a></li>
+                <li><a href="ImportContacts.html">Import Contacts</a></li>
+                <li><a href="Settings_Marketing_Sources.html">Marketing Sources</a></li>
+                <li><a href="Settings_Add_MemberShipType.html">Memberships</a></li>
+                <li><a href="Settings_Optin_Forms.html">Opt-In WebForms</a></li>
+                <li><a href="Settings_PaymentGateway.html">Payment Gateway</a></li>
+                <li><a href="Settings_POS.html">POS Settings</a></li>
+
+                <li><a href="Settings_Rank_Systems.html">Rank/Style Setup</a></li>
+
+                <li><a href="Settings_Refer_A_Friend.html">Refer-A-Friend</a></li>
+
+                <li><a href="Settings_Users.html">Staff Logins</a></li>
+
+                <li><a href="Settings_SmartLinks.html">smartLinks</a></li>
+                <li><a href="Settings_SMS_BuyNumber.html">SMS Phone Number</a></li>
+                <li><a href="SMS_Saved_Replies.html">SMS Saved Replies</a></li>
+                <li><a href="Tags.html">Tags</a></li>
+                <li><a href="WordTemplateManager.html">Word Doc Template Manager</a></li>
+                <li><a href="javascript:;" onclick="resetTours()">Reset Tours</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="javascript:;" data-elevio-article="index"><i class="fa fa-life-ring"></i><span>Help</span></a>
+            </li>
+
+            <!-- begin sidebar minify button -->
+            <li>
+              <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a>
+            </li>
+            <!-- end sidebar minify button -->
+          </ul>
+          <!-- end sidebar nav -->
+        </div>
+        <!-- end sidebar scrollbar -->
+      </div>
+      <div class="sidebar-bg"></div>
+      <!-- end #sidebar -->
+
+      <!-- begin #content -->
+
+      <div id="content" class="content">
+        <!-- begin breadcrumb -->
+        <ol class="breadcrumb pull-right">
+          <li><a href="/Dashboard.html">Dashboard</a></li>
+          <li><a href="javascript:;">Dashboard Stats History</a></li>
+        </ol>
+        <!-- end breadcrumb -->
+        <!-- begin page-header -->
+        <h1 class="page-header">Contacts <small>all of your contacts in one place...</small></h1>
+        <br />
+        <br />
+
+        <!-- end page-header -->
+        <!-- begin row -->
+        <div class="row">
+          <div class="panel panel-inverse">
+            <div class="panel-heading">
+              <h4 class="panel-title">Dashboard Stats History</h4>
+            </div>
+            <div class="panel-body">
+              <h2>Dashboard Stats History</h2>
+              <div class="note note-info">
+                <h4>What is Dashboard Stats History?</h4>
+                <p>
+                  You can go back in time and see what your stats were during a specific time period. Need to know what your stats were from last year compared to this same time this year? Want to know what your stats were last month?
+                  This is the perfect report.
+                </p>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-3 col-sm-12">
+                  <span id="contentPageHolder_lblYear">Year</span>
+                  <select name="ctl00$contentPageHolder$ddYear" id="contentPageHolder_ddYear" class="form-control">
+                    <option selected="selected" value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6 col-sm-12">
+                  <span id="contentPageHolder_lblMonth">Month</span>
+                  <select name="ctl00$contentPageHolder$ddMonth" id="contentPageHolder_ddMonth" class="form-control">
+                    <option value="01">01 - January</option>
+                    <option value="02">02 - February</option>
+                    <option value="03">03 - March</option>
+                    <option value="04">04 - April</option>
+                    <option value="05">05 - May</option>
+                    <option value="06">06 - June</option>
+                    <option value="07">07 - July</option>
+                    <option selected="selected" value="08">08 - August</option>
+                    <option value="09">09 - September</option>
+                    <option value="10">10 - October</option>
+                    <option value="11">11 - November</option>
+                    <option value="12">12 - December</option>
+                  </select>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  <a href="javascript:;" onclick="getDashboardStats();" class="btn btn-primary">Update Stats</a>
+                  <div style="display: none;">
+                    <input type="submit" name="ctl00$contentPageHolder$btnGo" value="Run Report" id="contentPageHolder_btnGo" class="btn btn-primary" />
+                  </div>
+                </div>
+              </div>
+              <br />
+              <br />
+
+              <!-- First Stats Row -->
+              <!-- begin row -->
+              <div class="row">
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats statBoxWebsiteVisitors" style="background: #2b59c3 none repeat scroll 0 0 !important;">
+                    <div class="stats-icon stats-icon-lg"><i class="fa fa-globe fa-fw"></i></div>
+                    <div class="stats-title">THIS MONTH WEBSITE VISITS</div>
+                    <div class="stats-number">
+                      <span class="statsWebsiteVisitors counter">0</span>
+                    </div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      Today's Visits:
+                      <span class="statsWebsiteVisitorsToday counter">0</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-black statBoxNewContacts" style="background: #253c78 none repeat scroll 0 0 !important;">
+                    <div class="stats-icon stats-icon-lg"><i class="fa fa-comments fa-fw"></i></div>
+                    <div class="stats-title">THIS MONTH NEW CONTACTS</div>
+                    <div class="stats-number">
+                      <span class="statsNewContacts counter">0</span>&nbsp;&nbsp;<small>Web Leads: <span class="statsNewWebLeads counter">0</span></small>
+                    </div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      Today's New Contacts:
+                      <span class="statsNewContactsToday counter">0</span>&nbsp;&nbsp;Web Leads: <span class="statsNewWebLeadsToday counter">0</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+
+                <!-- ACTIVE CONTACTS -- >
+          <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats statBoxContacts" style="background: #223843 none repeat scroll 0 0 !important;">
+                    <div class="stats-icon stats-icon-lg"><i class="fa fa-users fa-fw"></i></div>
+                    <div class="stats-title">ACTIVE STUDENTS</div>
+                    <div class="stats-number">
+                      <span class="statsContacts counter">0</span>
+                    </div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      &nbsp;
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+
+                <!-- Attendance 30 -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats statBoxAttendance30" style="background-color: #ff5a52;">
+                    <div class="stats-icon stats-icon-lg"><i class="fa fa-check-square-o fa-fw"></i></div>
+                    <div class="stats-title">ATTENDANCE DURING TIME SPAN</div>
+                    <div class="stats-number">
+                      <span class="statsAttended30 counter">0</span>
+                    </div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      &nbsp;
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+
+                <!-- Attendance 7 -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats statBoxAttendance7" style="background-color: #a93f55;">
+                    <div class="stats-icon stats-icon-lg"><i class="fa fa-check-square-o fa-fw"></i></div>
+                    <div class="stats-title">ATTENDANCE DURING TIME SPAN</div>
+                    <div class="stats-number">
+                      <span class="statsAttended7 counter">0</span>
+                    </div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      &nbsp;
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+              </div>
+              <!-- end first stats row -->
+
+              <!-- Martial Arts Program Stats -->
+              <div class="row">
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxTrialMemberships">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">TRIAL MEMBERSHIPS</div>
+                    <div class="stats-number"><span class="statsTrialMemberships counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      <!--Better than last week (70.1%)-->
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxNewMemberships">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">NEW MEMBERSHIPS</div>
+                    <div class="stats-number"><span class="statsNewMemberships counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      <!--Better than last week (40.5%)-->
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxUpgradedMemberships">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">UPGRADED MEMBERSHIPS</div>
+                    <div class="stats-number"><span class="statsUpgradedMemberships counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      <!--Better than last week (76.3%)-->
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxRenewalMemberships">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">RENEWAL MEMBERSHIPS</div>
+                    <div class="stats-number"><span class="statsRenewalMemberships counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      <!--Better than last week (54.9%)-->
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxAddOnMemberships">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">ADD ON MEMBERSHIPS</div>
+                    <div class="stats-number"><span class="statsAddOnMemberships counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      <!--Better than last week (54.9%)-->
+                    </div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+              </div>
+              <!-- END ROW Program Stats -->
+
+              <!-- Stats ROW 3 -->
+              <div class="row">
+                <!-- NET BILLING -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxNetBilling">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">NET BILLING</div>
+                    <div class="stats-number"><span class="currencySymbol"></span><span class="statsNetBilling counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">
+                      Loss: <span class="currencySymbol"></span><span class="statsNetBillingLoss counter">0</span>, Gain: <span class="currencySymbol"></span><span class="statsNetBillingGain counter">0</span>
+                      <span data-elevio-article="91207" class="pull-right"><i class="fa fa-question-circle"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- end NET BILLING -->
+
+                <!-- THIS MONTHS/TODAY INCOME -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxMTDMoney">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">THIS MONTH INCOME</div>
+                    <div class="stats-number"><span class="currencySymbol"></span><span class="statsMTDIncome counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">Today's Income: <span class="statsTodayMoney">n/a</span></div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+
+                <!-- EXPECTED/PAST DUE INCOME -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">EXPECTED INCOME</div>
+                    <div class="stats-number"><span class="statsExpectedIncome">n/a</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">Past Due: <span class="statsPastDueIncome">n/a</span></div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+
+                <!-- INTRO APPOINTMENTS -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxIntroAppointments">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">INTRO APPOINTMENTS</div>
+                    <div class="stats-number"><span class="statsIntroAppointments counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">Show: <span class="statsIntroAppointmentsShow counter">0</span>, No Show: <span class="statsIntroAppointmentsNoShow counter">0</span></div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+
+                <!-- UPGRADE APPOINTMENTS -->
+                <!-- begin col-3 -->
+                <div class="col-md-5ths col-xs-6">
+                  <div class="widget widget-stats bg-white text-inverse statBoxUpgradeAppointments">
+                    <div class="stats-icon stats-icon-lg stats-icon-square bg-gradient-red"><i class="fa fa-line-chart"></i></div>
+                    <div class="stats-title">UPGRADE APPOINTMENTS</div>
+                    <div class="stats-number"><span class="statsUpgradeAppointments counter">0</span></div>
+                    <div class="stats-progress progress">
+                      <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="stats-desc">Show: <span class="statsUpgradeAppointmentsShow counter">0</span>, No Show: <span class="statsUpgradeAppointmentsNoShow counter">0</span></div>
+                  </div>
+                </div>
+                <!-- end col-3 -->
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+        <!-- end row -->
+      </div>
+
+      <!-- end #content -->
+
+      <!-- begin scroll to top btn -->
+      <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+      <!-- end scroll to top btn -->
+      <!-- begin scroll to top btn -->
+      <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-bottom fade" data-click="scroll-bottom"><i class="fa fa-angle-down"></i></a>
+      <!-- end scroll to top btn -->
+    </div>
+    <!-- end page container -->
+
+    <div class="modal fade" id="modal-editrank2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; z-index: 400000;" data-backdrop="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header modal-header-black">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+            <h4 class="modal-title" style="color: #fff;">Rank Achievement</h4>
+          </div>
+          <div class="modal-body">
+            <h2>Promote <span id="whosPromoting"></span></h2>
+            <div class="row">
+              <div class="form-group col-lg-9 col-md-9 col-sm-9">
+                <label>Select The Rank System</label>
+                <select name="ctl00$ddlRankSystem2" id="ddlRankSystem2" class="form-control validate[required]">
+                  <option value="">select rank system...</option>
+                  <option value="4">Taekwondo</option>
+                  <option value="6">Muay Thai</option>
+                  <option value="7">Kickboxing</option>
+                  <option value="8">Brazilian Jiu-jitsu</option>
+                  <option value="9">Krav Maga</option>
+                  <option value="10">Karate</option>
+                  <option value="11">Kung Fu</option>
+                  <option value="12">Jujutsu</option>
+                  <option value="13">Aikido</option>
+                  <option value="14">Kenpo</option>
+                  <option value="15">Capoeira</option>
+                  <option value="16">Hapkido</option>
+                  <option value="17">Jeet Kune Do</option>
+                  <option value="18">Gojo-Ryu</option>
+                  <option value="19">Isshin-Ryu</option>
+                  <option value="20">Shotokan</option>
+                  <option value="21">Kuk Sool Won</option>
+                  <option value="22">Mixed Martial Arts (MMA)</option>
+                  <option value="23">Ninjutsu</option>
+                  <option value="24">Silat</option>
+                  <option value="25">Tai Chi</option>
+                  <option value="26">Tang Soo Do</option>
+                  <option value="27">Hyper Martial Arts</option>
+                  <option value="1859">Hapkido</option>
+                  <option value="1869">Jeff Speakman 5.0</option>
+                  <option value="2108">John</option>
+                  <option value="2488">Karate</option>
+                  <option value="3125">John</option>
+                  <option value="4573">The &amp; sign system</option>
+                </select>
+                <input type="hidden" name="ctl00$hRankAssignedID2" id="hRankAssignedID2" />
+              </div>
+            </div>
+            <div id="editRankStep2">
+              <div class="row">
+                <div class="form-group col-lg-9 col-md-9 col-sm-9">
+                  <label>Choose Rank</label>
+                  <div id="ranks2"></div>
+                  <input type="hidden" name="ctl00$hRankID2" id="hRankID2" />
+                  <input type="hidden" name="ctl00$hRankName2" id="hRankName2" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                  <label>Rank Size</label>
+                  <input name="ctl00$txtRankSize2" type="text" id="txtRankSize2" class="form-control validate[required,custom[integer]]" style="max-width: 75px;" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                  <label>Date of Promotion</label>
+                  <input name="ctl00$txtDateOfRankPromotion2" type="text" id="txtDateOfRankPromotion2" class="form-control uplevelDatePicker validate[required]" />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-white" data-dismiss="modal" aria-hidden="true">Close</button>
+              <a href="javascript:;" onclick="promoteIndividualRank();" class="btn btn-primary">Promote Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-todayscheckins" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content" style="width: 768px !important;">
+          <div class="modal-header modal-header-black">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: #fff;">×</button>
+            <h4 class="modal-title" style="color: #fff;">SPARK</h4>
+          </div>
+
+          <div class="modal-body">
+            <h2>Today's Check-ins</h2>
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label style="font-weight: bolder;">Class Date</label>
+                  <input name="ctl00$txtTodaysCheckinsClassDate" type="text" value="08/02/2020" id="txtTodaysCheckinsClassDate" class="form-control uplevelDatePicker" placeholder="Class Date" />
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label style="font-weight: bolder;">Which Rosters</label>
+                  <select name="ctl00$ddlTodaysCheckinsRosters" id="ddlTodaysCheckinsRosters" class="form-control">
+                    <option value="">All Attendance/Rosters</option>
+                    <option value="5073">Muay Thai</option>
+                    <option value="7389">Krav Maga</option>
+                    <option value="12530">Instructor</option>
+                    <option value="73343">testing camp</option>
+                    <option value="73633">test new camp</option>
+                    <option value="73898">camp test</option>
+                    <option value="75920">RGP Test</option>
+                    <option value="2584">Kids Grasshoppers</option>
+                    <option value="7301">Picture Roster</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label style="font-weight: bolder; color: white;">Take Action!</label>
+                  <a href="javascript:;" onclick="getTodaysCheckins();" class="btn btn-primary">Refresh</a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                <a href="javascript:;" onclick="PrintCheckinsReport('#todayscheckins table');" class="btn btn-default">
+                  <i class="fa fa-print">&nbsp;<span style="font-family: 'Myriad Pro', 'PT Sans', sans-serif;">Print</span></i>
+                </a>
+              </div>
+              <!--
+                          <div class="col-md-2">
+                              <a href="javascript:;" class="btn btn-default" id="exportCheckins"><i class="fa fa-file-excel-o">&nbsp;<span style="font-family: 'Myriad Pro', 'PT Sans', sans-serif;">Export</span></i></a>
+                          </div>
+                          -->
+            </div>
+            <br />
+            <br />
+            <div id="todayscheckins"></div>
+          </div>
+          <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-time-clock" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;" data-keyboard="false" data-backdrop="static">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-black">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+            <h4 class="modal-title" style="color: #fff;">Time Clock</h4>
+          </div>
+          <div class="modal-body">
+            <h2>Staff Time Clock</h2>
+            <p><strong>Please Note: </strong>This is currently in Beta.</p>
+
+            <div id="employeeTimeClockEnterPin">
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Staff Pin #</label>
+                  <div class="col-md-6">
+                    <input type="text" id="employeePin" class="form-control" />
+                    <small>* Find Staff Pin: Settings > Staff Logins</small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label class="col-md-3 control-label"></label>
+                  <div class="col-md-6">
+                    <a href="javascript:;" onclick="employeeTimeClockSubmitPin()" class="btn btn-primary">Next</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="employeeTimeClockClockInClockOut" style="display: none;">
+              <div id="employeeTimeClockStaffName"></div>
+              <div id="employeeTimeClockClockInClockOutClockedInTime"></div>
+              <div id="employeeTimeClockClockInClockOutAction"></div>
+            </div>
+
+            <input type="hidden" name="ctl00$hEmployeeTimeClockUserID" id="hEmployeeTimeClockUserID" />
+            <input type="hidden" name="ctl00$hEmployeeTimeClockTimeSlipID" id="hEmployeeTimeClockTimeSlipID" />
+          </div>
+          <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-sm btn-inverse" data-dismiss="modal">close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-QuickAddContact" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;" data-keyboard="false" data-backdrop="static">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-black">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span style="color: #fff;">×</span></button>
+            <h4 class="modal-title" style="color: #fff;">SPARK</h4>
+          </div>
+          <div class="modal-body">
+            <h2>Quickly Add a Contact</h2>
+
+            <div class="form-horizontal">
+              <div class="form-group">
+                <label class="col-md-3 control-label">Contact Type</label>
+                <div class="col-md-6">
+                  <select name="ctl00$ddlContactTypeQuickAdd" id="ddlContactTypeQuickAdd" class="form-control validate[required]">
+                    <option value="P">Prospect / Lead</option>
+                    <option value="T">On A Trial</option>
+                    <option value="U">Formerly On A Trial</option>
+                    <option value="Q">Former Prospect</option>
+                    <option value="C">Students</option>
+                    <option value="I">Inactive Students</option>
+                    <option value="F">Former Students</option>
+                    <option value="D">After Schooler</option>
+                    <option value="E">Camper</option>
+                    <option value="Z">Fitness</option>
+                    <option value="V">Vendor / Supplier</option>
+                    <option value="B">Business / Company</option>
+                    <option value="S">Staff / Employee</option>
+                    <option value="O">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group prospectPhase">
+                <label class="col-md-3 control-label">Prospect Phase</label>
+                <div class="col-md-6">
+                  <select name="ctl00$ddlProspectPhase" id="ddlProspectPhase" class="form-control validate[required]">
+                    <option value="4723">3rd Class Progress Check</option>
+                    <option value="4721">Set Appointment</option>
+                    <option value="4725">Presented Program - Denied Enrollment</option>
+                    <option value="4724">Presented Program - Waiting for Commitment</option>
+                    <option value="4727">Keep Following Up</option>
+                    <option value="4720">Hasn&#39;t Set Appointment</option>
+                    <option value="4722">In Trial - Took First Class</option>
+                    <option value="18470">Do not follow up</option>
+                    <option value="4726">Enrolled</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group contactPhase">
+                <label class="col-md-3 control-label">Students Phase</label>
+                <div class="col-md-6">
+                  <select name="ctl00$ddlContactPhase" id="ddlContactPhase" class="form-control validate[required]">
+                    <option value="4728">Started Regular Program</option>
+                    <option value="4729">2nd Week Mat Chat</option>
+                    <option value="4730">4th Week Mat Chat</option>
+                    <option value="4731">6th Week Mat Chat</option>
+                    <option value="4732">2 Month - PG1 Meeting</option>
+                    <option value="4733">10 Week - PG2 Meeting</option>
+                    <option value="4734">11 Week - PG3 Meeting</option>
+                    <option value="4735">12 Week Upgrade Conference</option>
+                    <option value="4736">Presented Upgrade - Waiting on Commitment</option>
+                    <option value="4737">Presented Upgrade - Denied Enrollment</option>
+                    <option value="4738">Presented Upgrade - Stop Following Up</option>
+                    <option value="4739">Enrolled In Upgrade</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Assign them to any groups -->
+              <div class="form-group">
+                <label class="col-md-3 control-label">Age Group</label>
+                <div class="col-md-6">
+                  <select id="sparkGroup100" class="form-control">
+                    <option></option>
+                    <option value="100">Pre-Schoolers</option>
+                    <option value="101">Kids</option>
+                    <option value="102">Teens</option>
+                    <option value="103">Adults</option>
+                    <option value="104">Seniors</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">XYZ Group</label>
+                <div class="col-md-6">
+                  <select id="sparkGroup101" class="form-control">
+                    <option></option>
+                    <option value="105">X Group</option>
+                    <option value="106">Y Group</option>
+                    <option value="107">Z Group</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Staff And Employees</label>
+                <div class="col-md-6">
+                  <select id="sparkGroup260" class="form-control">
+                    <option></option>
+                    <option value="551">Managers</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Why did they not enroll</label>
+                <div class="col-md-6">
+                  <select id="sparkGroup1453" class="form-control">
+                    <option></option>
+                    <option value="3269">Went to competitor</option>
+                    <option value="3270">Didnt like instructor</option>
+                    <option value="3271">Couldnt afford</option>
+                    <option value="3272">got bored</option>
+                    <option value="3273">Couldnt take the pain</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Company</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtCompany" type="text" id="txtCompany" class="form-control" placeholder="Company" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Title</label>
+                <div class="col-md-6">
+                  <div class="typeahead-container" style="z-index: 1041; position: relative;">
+                    <input name="ctl00$txtTitle" type="text" id="txtTitle" class="form-control" placeholder="Title" autocomplete="off" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">First Name</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtFirstName" type="text" id="txtFirstName" class="form-control validate[required]" placeholder="First Name" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Middle Name</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtMiddleName" type="text" id="txtMiddleName" class="form-control" placeholder="Middle Name" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Last Name</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtLastName" type="text" id="txtLastName" class="form-control" placeholder="Last Name" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Mother's/Guardian's Name</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtMom" type="text" id="txtMom" class="form-control" placeholder="Mother&#39;s/Guardian&#39;s first and last name" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Father's/Guardian's Name</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtDad" type="text" id="txtDad" class="form-control" placeholder="Father&#39;s/Guardian&#39;s first and last name" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Birthday (DOB)</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtDOB" type="text" id="txtDOB" class="form-control validate[optional,custom[date]]" placeholder="" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Gender</label>
+                <div class="col-md-6">
+                  <table id="rbnGender" class="js-switch" style="height: 23px; width: 171px;">
+                    <tr>
+                      <td><input id="rbnGender_0" type="radio" name="ctl00$rbnGender" value="M" /><label for="rbnGender_0"> Male</label></td>
+                      <td><input id="rbnGender_1" type="radio" name="ctl00$rbnGender" value="F" /><label for="rbnGender_1"> Female</label></td>
+                      <td><input id="rbnGender_2" type="radio" name="ctl00$rbnGender" value="O" /><label for="rbnGender_2"> Other</label></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Email Address</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtEmailAdd" type="text" id="txtEmailAdd" class="form-control validate[optional,custom[email]]" placeholder="Email Address" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Phone</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtPhone" type="text" id="txtPhone" class="form-control" placeholder="Phone" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Mobile Phone</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtMobPhone" type="text" id="txtMobPhone" class="form-control" placeholder="Mobile Phone" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Tags</label>
+                <div class="col-md-6">
+                  <select name="ctl00$ddlTags" id="ddlTags" class="form-control">
+                    <option value="82602"></option>
+                    <option value="76178">[]</option>
+                    <option value="152732">[]-no-show</option>
+                    <option value="158372">[]-no-show-no-show</option>
+                    <option value="162232">[]slakdf[]</option>
+                    <option value="112931">{{TAGS}}</option>
+                    <option value="140140">10-things</option>
+                    <option value="140144">2018-Main-Event</option>
+                    <option value="51098">3565</option>
+                    <option value="50913">4-star-review</option>
+                    <option value="160415">4-star-review-no-show</option>
+                    <option value="50912">5-star-review</option>
+                    <option value="160414">5-star-review-no-show</option>
+                    <option value="40560">60-day-cancellation</option>
+                    <option value="160428">60-day-cancellation-no-show</option>
+                    <option value="37991">a-big-dawg</option>
+                    <option value="75311">addTags--&gt;-4-star-review</option>
+                    <option value="162230">adsf</option>
+                    <option value="76185">afsdkhmasdjfkh</option>
+                    <option value="54231">appointment-cancelled</option>
+                    <option value="158563">appointment-cancelled-no-show</option>
+                    <option value="54230">appointment-noshow</option>
+                    <option value="158564">appointment-noshow-no-show</option>
+                    <option value="22186">asap</option>
+                    <option value="22183">asdf</option>
+                    <option value="22184">asdf</option>
+                    <option value="155740">asdf-no-show</option>
+                    <option value="38352">Asus</option>
+                    <option value="57922">bday-guest-maddoxsell</option>
+                    <option value="43195">bday-guests-grayson-sell</option>
+                    <option value="54932">bday-party-guest-attended</option>
+                    <option value="16475">benefits-adults-fitness</option>
+                    <option value="16476">benefits-adults-selfdefense</option>
+                    <option value="16477">benefits-adults-stress-relief</option>
+                    <option value="16469">benefits-kids-confidence</option>
+                    <option value="16472">benefits-kids-discipline</option>
+                    <option value="16474">benefits-kids-fitness</option>
+                    <option value="16470">benefits-kids-focus</option>
+                    <option value="16471">benefits-kids-respect</option>
+                    <option value="16473">benefits-kids-selfdefense</option>
+                    <option value="22591">blue-stripe</option>
+                    <option value="22592">blue-stripe</option>
+                    <option value="79699">bought-2nd-location</option>
+                    <option value="79700">bought-3rd-location</option>
+                    <option value="79701">bought-4th-location</option>
+                    <option value="79702">bought-5th-location</option>
+                    <option value="79703">bought-6th-location</option>
+                    <option value="11267">bought-birthday-party</option>
+                    <option value="3569">bought-gear</option>
+                    <option value="3706">bought-kids-ma-trial</option>
+                    <option value="3574">bought-summer-camp</option>
+                    <option value="3571">bought-trial-adult-kb</option>
+                    <option value="3570">bought-trial-adult-ma</option>
+                    <option value="3572">bought-trial-kids-ma</option>
+                    <option value="3573">bought-trial-preschool-ma</option>
+                    <option value="85441">camp-week-1</option>
+                    <option value="85450">camp-week-10</option>
+                    <option value="85442">camp-week-2</option>
+                    <option value="85443">camp-week-3</option>
+                    <option value="85444">camp-week-4</option>
+                    <option value="85445">camp-week-5</option>
+                    <option value="85446">camp-week-6</option>
+                    <option value="85447">camp-week-7</option>
+                    <option value="85448">camp-week-8</option>
+                    <option value="85449">camp-week-9</option>
+                    <option value="57245">cancelled-appointment</option>
+                    <option value="32658">Chad-leads</option>
+                    <option value="27334">Christmas-event</option>
+                    <option value="27808">christmas-party</option>
+                    <option value="22185">df</option>
+                    <option value="43928">Do-not-communicate</option>
+                    <option value="155753">double-send</option>
+                    <option value="43861">Fire</option>
+                    <option value="29962">form-tag</option>
+                    <option value="24084">Guest</option>
+                    <option value="24171">halloween-event</option>
+                    <option value="153984">ignite-adult-bjj</option>
+                    <option value="153985">ignite-adult-kickboxing</option>
+                    <option value="153986">ignite-adult-krav-maga</option>
+                    <option value="153987">ignite-adult-ma</option>
+                    <option value="153991">ignite-after-school</option>
+                    <option value="80429">ignite-appointment-no-show-adult-bjj</option>
+                    <option value="80430">ignite-appointment-no-show-adult-kb</option>
+                    <option value="80426">ignite-appointment-no-show-adult-ma</option>
+                    <option value="80427">ignite-appointment-no-show-after-school-ma</option>
+                    <option value="80425">ignite-appointment-no-show-kids-kb</option>
+                    <option value="78222">ignite-appointment-no-show-kids-ma</option>
+                    <option value="80431">ignite-appointment-no-show-krav-maga</option>
+                    <option value="80428">ignite-appointment-no-show-preschool</option>
+                    <option value="109666">ignite-inspired</option>
+                    <option value="153988">ignite-kids-kickboxing</option>
+                    <option value="153989">ignite-kids-ma</option>
+                    <option value="50525">ignite-lp-lead</option>
+                    <option value="140424">ignite-lp-lead-no-show</option>
+                    <option value="140335">ignite-no-show</option>
+                    <option value="153990">ignite-preschool-ma</option>
+                    <option value="117091">ignite-trial-1-days</option>
+                    <option value="117100">ignite-trial-4-classes</option>
+                    <option value="117106">ignite-trial-4-days</option>
+                    <option value="117093">ignite-trial-7-days</option>
+                    <option value="113673">ignite-virtual-adult-ma</option>
+                    <option value="113869">ignite-virtual-adult-ma-no-show</option>
+                    <option value="113674">ignite-virtual-kickboxing</option>
+                    <option value="113719">ignite-virtual-kickboxing-no-show</option>
+                    <option value="113675">ignite-virtual-kids-ma</option>
+                    <option value="113676">ignite-virtual-kids-ma-no-show</option>
+                    <option value="3433">in-summer-camp</option>
+                    <option value="34945">interested-in-adult-BJJ</option>
+                    <option value="3564">interested-in-adult-kb</option>
+                    <option value="113664">interested-in-adult-kb-no-show</option>
+                    <option value="34946">Interested-in-adult-kickboxing</option>
+                    <option value="3563">interested-in-adult-ma</option>
+                    <option value="39508">interested-in-adult-program-any</option>
+                    <option value="6882">interested-in-after-school-ma</option>
+                    <option value="3568">interested-in-bday-party</option>
+                    <option value="14142">interested-in-bjj</option>
+                    <option value="3341">Interested-in-Kickboxing</option>
+                    <option value="47106">interested-in-kids-kickboxing</option>
+                    <option value="3565">interested-in-kids-ma</option>
+                    <option value="109431">interested-in-kids-ma-online</option>
+                    <option value="14144">interested-in-krav-maga</option>
+                    <option value="14145">interested-in-kungfu</option>
+                    <option value="3566">interested-in-preschool-ma</option>
+                    <option value="3432">interested-in-summer-camp</option>
+                    <option value="14146">interested-in-taichi</option>
+                    <option value="14143">interested-in-teens-ma</option>
+                    <option value="3567">interested-in-upgrade</option>
+                    <option value="76186">jh</option>
+                    <option value="40612">Josh</option>
+                    <option value="76180">khkasdf</option>
+                    <option value="17578">Kids-age-group</option>
+                    <option value="28787">kids-karate</option>
+                    <option value="3707">kids-ma-trial-waiting-list</option>
+                    <option value="28786">Kids-membership</option>
+                    <option value="29581">mailchimp</option>
+                    <option value="15610">marketmuscles</option>
+                    <option value="79698">member-app</option>
+                    <option value="57785">My-S/L/A/S/H/-tag</option>
+                    <option value="162920">Nelson&#39;s-Birthday-Party</option>
+                    <option value="24200">nelson&#39;s-tag</option>
+                    <option value="155928">-no-show</option>
+                    <option value="57244">no-show</option>
+                    <option value="157756">Pardeep-SMS-testing</option>
+                    <option value="140793">pardeeptagtest</option>
+                    <option value="112996">pause-test</option>
+                    <option value="155893">pizza-party</option>
+                    <option value="43560">please-delete-me</option>
+                    <option value="22593">red-stripe</option>
+                    <option value="32011">referral</option>
+                    <option value="30174">run</option>
+                    <option value="76179">safdl</option>
+                    <option value="21690">scheduled-appointment</option>
+                    <option value="36261">secondtag!@#134</option>
+                    <option value="162229">slakdf</option>
+                    <option value="162918">spark-birthday</option>
+                    <option value="22727">stop-following-up</option>
+                    <option value="162418">string</option>
+                    <option value="36260">TAG!@#134</option>
+                    <option value="161308">tag_test</option>
+                    <option value="34939">tag1</option>
+                    <option value="154913">tag12</option>
+                    <option value="155114">tag1212</option>
+                    <option value="36192">tag2</option>
+                    <option value="34940">tag2Zapier</option>
+                    <option value="34941">tag3</option>
+                    <option value="36193">tag3and4</option>
+                    <option value="34942">tag4</option>
+                    <option value="34943">tag5</option>
+                    <option value="34944">tag6</option>
+                    <option value="31319">tagssdk234fh!@#</option>
+                    <option value="154916">tag-testNew</option>
+                    <option value="154917">tag-testNew1</option>
+                    <option value="19094">Tasks</option>
+                    <option value="161369">teesting</option>
+                    <option value="161370">teesting1</option>
+                    <option value="32369">temporary-tag</option>
+                    <option value="30173">test</option>
+                    <option value="155234">test2Tag</option>
+                    <option value="162366">tester2</option>
+                    <option value="155113">testerABC1</option>
+                    <option value="19218">testing</option>
+                    <option value="41136">Test-Member-SMS</option>
+                    <option value="50973">Test-tag</option>
+                    <option value="19687">test-tag</option>
+                    <option value="155738">Test-tag-no-show</option>
+                    <option value="32368">undesired-tag</option>
+                    <option value="8410">university-basic-program</option>
+                    <option value="27716">university-bjj</option>
+                    <option value="43557">university-course-1944</option>
+                    <option value="43558">university-course-1944</option>
+                    <option value="43559">university-course-1944</option>
+                    <option value="44576">university-course-2067</option>
+                    <option value="44580">university-course-2069</option>
+                    <option value="46546">university-course-2180</option>
+                    <option value="159824">university-course-27945</option>
+                    <option value="160409">university-course-27992</option>
+                    <option value="160917">university-course-28019</option>
+                    <option value="161039">university-course-28037</option>
+                    <option value="161040">university-course-28038</option>
+                    <option value="161041">university-course-28039</option>
+                    <option value="161042">university-course-28040</option>
+                    <option value="161241">university-course-28072</option>
+                    <option value="58359">university-course-2947</option>
+                    <option value="112211">university-course-2948</option>
+                    <option value="32630">university-course-9999</option>
+                    <option value="27696">university-orange-belt</option>
+                    <option value="116763">Virtual-Seminar</option>
+                    <option value="112131">Virtual-Student</option>
+                    <option value="140698">virtual-training-kids-trial</option>
+                    <option value="20044">website-lead</option>
+                    <option value="22594">yellow-stripe</option>
+                    <option value="30171">Zapier</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Marketing Source</label>
+                <div class="col-md-6">
+                  <select name="ctl00$ddlMarketingSources" id="ddlMarketingSources" class="form-control">
+                    <option value="0">unknown</option>
+                    <option value="283">Booth Event</option>
+                    <option value="289">Buddy Week</option>
+                    <option value="284">Demonstration</option>
+                    <option value="4086">Facebook</option>
+                    <option value="279">Facebook ad</option>
+                    <option value="290">Groupon</option>
+                    <option value="288">Guest of a Current Member</option>
+                    <option value="26948">Ignite Landing Page</option>
+                    <option value="281">Info Call</option>
+                    <option value="282">Magazine Ad</option>
+                    <option value="285">Parent&#39;s Night Out</option>
+                    <option value="287">Rank Promotion Guest</option>
+                    <option value="10430">Referral</option>
+                    <option value="286">School Talk</option>
+                    <option value="280">Walk In</option>
+                    <option value="19059">Website</option>
+                    <option value="19060">Website</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label">Marketing Source Detail</label>
+                <div class="col-md-6">
+                  <input name="ctl00$txtMrkSourceDetail" type="text" id="txtMrkSourceDetail" class="form-control" placeholder="Marketing Source Detail" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">&nbsp;</label>
+                <div class="col-md-6">
+                  <a href="javascript:;" onclick="$('#advancedAddContact').slideToggle('slow');">more fields</a>
+                </div>
+              </div>
+              <div id="advancedAddContact">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Address1</label>
+                  <div class="col-md-6">
+                    <input name="ctl00$txtAdd1" type="text" id="txtAdd1" class="form-control" placeholder="Address1" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Address2</label>
+                  <div class="col-md-6">
+                    <input name="ctl00$txtAdd2" type="text" id="txtAdd2" class="form-control" placeholder="Address2" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">City</label>
+                  <div class="col-md-6">
+                    <input name="ctl00$txtCity" type="text" id="txtCity" class="form-control" placeholder="City" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Country</label>
+                  <div class="col-md-6">
+                    <select name="ctl00$ddlCountry" id="ddlCountry" class="form-control">
+                      <option selected="selected" value="1">United States</option>
+                      <option value="2">United Kingdom</option>
+                      <option value="3">Germany</option>
+                      <option value="4">Australia</option>
+                      <option value="5">Canada</option>
+                      <option value="6">France</option>
+                      <option value="7">Grenada</option>
+                      <option value="21">Austria</option>
+                      <option value="100">Hong Kong</option>
+                      <option value="107">Ireland</option>
+                      <option value="109">Israel</option>
+                      <option value="110">Italy</option>
+                      <option value="112">Japan</option>
+                      <option value="160">New Zealand</option>
+                      <option value="167">Norway</option>
+                      <option value="199">Singapore</option>
+                      <option value="204">South Africa</option>
+                      <option value="206">Spain</option>
+                      <option value="213">Switzerland</option>
+                      <option value="223">Trinidad and Tobago</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label" id="stateLabel">State</label>
+                  <div class="col-md-6">
+                    <div id="manualStates">
+                      <input name="ctl00$txtState" type="text" id="txtState" class="form-control" placeholder="State/Province" />
+                    </div>
+                    <div id="dropDownStates">
+                      <select name="ctl00$ddlStates" id="ddlStates" class="form-control">
+                        <option value="0">Choose state</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Zip</label>
+                  <div class="col-md-6">
+                    <input name="ctl00$txtZip" type="text" id="txtZip" class="form-control" placeholder="Zip" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="javascript:;" class="btn btn-danger" data-dismiss="modal">CANCEL</a>
+            <a href="javascript:;" onclick="topMenuQuickAddContact2()" class="btn btn-inverse">Create Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" id="hTodaysClassesReport" name="hTodaysClassesReport" value="" />
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://app.sparkmembership.com/assets/crossbrowserjs/html5shiv.js"></script>
+      <script src="https://app.sparkmembership.com/assets/crossbrowserjs/respond.min.js"></script>
+      <script src="https://app.sparkmembership.com/assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="https://app.sparkmembership.com/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="https://app.sparkmembership.com/assets/js/apps.min.js?v=637319498124196516"></script>
+    <!-- ================== END BASE JS ================== -->
+
+    <link href="https://app.sparkmembership.com/plugins/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css" rel="stylesheet" />
+    <script src="https://app.sparkmembership.com/plugins/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js"></script>
+
+    <script src="https://app.sparkmembership.com/plugins/iCheck-2.0/icheck.min.js"></script>
+    <script src="https://app.sparkmembership.com/plugins/bootstrap-tour-0.10.2/build/js/bootstrap-tour.min.js"></script>
+    <script src="https://app.sparkmembership.com/plugins/select2-4.0.0/dist/js/select2.full.min.js?v=637319498124196516"></script>
+
+    <script src="https://app.sparkmembership.com/plugins/characterCounter/jquery.jqEasyCharCounter.min.js?v=637319498124196516"></script>
+
+    <!-- Bootstrap DatePicker -->
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="https://app.sparkmembership.com/assets/plugins/bootstrap-datetimepicker-master/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="https://app.sparkmembership.com/plugins/tabletoCSV/jquery.tabletoCSV.js"></script>
+
+    <script src="https://app.sparkmembership.com/assets/plugins/gritter/js/jquery.gritter.min.js"></script>
+
+    <input type="hidden" name="ctl00$hContactIDRankPromotion" id="hContactIDRankPromotion" />
+
+    <script>
+      function getDashboardStats() {
+        //gets our dashboard stats and animates the numbers
+
+        var getMartialArtsStats = $(".statsTrialMemberships").length;
+        var hMonth = $("#contentPageHolder_ddMonth").val();
+        var hYear = $("#contentPageHolder_ddYear").val();
+        var historyStart = hMonth + "/1/" + hYear;
+
+        var ajaxdata = "action=getDashboardStats&getMartialArtsStats=" + getMartialArtsStats + "&historyStart=" + historyStart;
+
+        $.ajax({
+          type: "POST",
+          async: false,
+          url: "Dashboard.ashx",
+          data: ajaxdata,
+          dataType: "json",
+          error: function (json) {
+            //swal('Something Went Wrong', 'There was a problem, try again.', 'warning');
+
+            return false;
+          },
+          success: function (json) {
+            if (json.result === "success") {
+              //contacts row
+              $(".statsWebsiteVisitors").attr("data-count", json.websiteVistorsMTD);
+              $(".statsWebsiteVisitorsToday").attr("data-count", json.websiteVisitorsToday);
+              $(".statsNewContacts").attr("data-count", json.newContactsMTD);
+              $(".statsNewContactsToday").attr("data-count", json.newContactsToday);
+              $(".statsNewWebLeads").attr("data-count", json.webLeadsMTD);
+              $(".statsNewWebLeadsToday").attr("data-count", json.webLeadsToday);
+              $(".statsContacts").attr("data-count", json.activeContacts);
+              $(".statsAttended7").attr("data-count", json.activeAttendance7);
+              $(".statsAttended30").attr("data-count", json.activeAttendance30);
+
+              //membership row
+              $(".statsTrialMemberships").attr("data-count", json.trialMemberships);
+              $(".statsNewMemberships").attr("data-count", json.newMemberships);
+              $(".statsUpgradedMemberships").attr("data-count", json.upgradedMemberships);
+              $(".statsRenewalMemberships").attr("data-count", json.renewalMemberships);
+              $(".statsAddOnMemberships").attr("data-count", json.addOnMemberships);
+
+              //financial row
+              $(".statsNetBilling").attr("data-count", json.netBilling);
+              $(".statsNetBillingLoss").attr("data-count", json.netBillingLoss);
+              $(".statsNetBillingGain").attr("data-count", json.netBillingGain);
+
+              $(".statsMTDIncome").attr("data-count", json.incomeMTD);
+              $(".statsTodayMoney").attr("data-count", "n/a");
+              $(".statsExpectedIncome").attr("data-count", "n/a");
+              $(".statsPastDueIncome").attr("data-count", "n/a");
+
+              $(".statsIntroAppointments").attr("data-count", json.introAppointments);
+              $(".statsIntroAppointmentsShow").attr("data-count", json.introAppointmentsShow);
+              $(".statsIntroAppointmentsNoShow").attr("data-count", json.introAppointmentsNoShow);
+
+              $(".statsUpgradeAppointments").attr("data-count", json.upgradeAppointments);
+              $(".statsUpgradeAppointmentsShow").attr("data-count", json.upgradeAppointmentsShow);
+              $(".statsUpgradeAppointmentsNoShow").attr("data-count", json.upgradeAppointmentsNoShow);
+
+              $(".currencySymbol").html(json.currencySymbol);
+
+              //GOALS: (10/40)*100
+
+              //trials
+              var trialGoal = $("#contentPageHolder_hGoalsTrials").val();
+              var trialsPercentage = parseInt((parseFloat(json.trialMemberships) / parseFloat(trialGoal)) * 100);
+              if (isNaN(trialsPercentage)) {
+                trialsPercentage = 0;
+              }
+              $("#circleStatsTrials").attr("stroke-dasharray", trialsPercentage + ", 100");
+              $("#circleStatsTrialsPercentage").html(trialsPercentage + "%");
+              $("#circleStatsTrialsGoal").html("Goal: " + trialGoal);
+
+              //new memberships
+              var newMemberGoal = $("#contentPageHolder_hGoalsNewMemberships").val();
+              var newMembershipsPercentage = parseInt((parseFloat(json.newMemberships) / parseFloat(newMemberGoal)) * 100);
+              if (isNaN(newMembershipsPercentage)) {
+                newMembershipsPercentage = 0;
+              }
+
+              $("#circleStatsNewMemberships").attr("stroke-dasharray", newMembershipsPercentage + ", 100");
+              $("#circleStatsNewMembershipsPercentage").html(newMembershipsPercentage + "%");
+              $("#circleStatsNewMemberGoal").html("Goal: " + newMemberGoal);
+
+              //upgrades
+              var upgradesGoal = $("#contentPageHolder_hGoalsUpgrades").val();
+              var upgradesPercentage = parseInt((parseFloat(json.upgradedMemberships) / parseFloat(upgradesGoal)) * 100);
+              if (isNaN(upgradesPercentage)) {
+                upgradesPercentage = 0;
+              }
+
+              $("#circleStatsUpgrades").attr("stroke-dasharray", upgradesPercentage + ", 100");
+              $("#circleStatsUpgradesPercentage").html(upgradesPercentage + "%");
+              $("#circleStatsUpgradesGoal").html("Goal: " + upgradesGoal);
+
+              //renewals
+              var renewalsGoal = $("#contentPageHolder_hGoalsRenewals").val();
+              var renewalPercentage = parseInt((parseFloat(json.renewalMemberships) / parseFloat(renewalsGoal)) * 100);
+              if (isNaN(renewalPercentage)) {
+                renewalPercentage = 0;
+              }
+
+              $("#circleStatsRenewals").attr("stroke-dasharray", renewalPercentage + ", 100");
+              $("#circleStatsRenewalsPercentage").html(renewalPercentage + "%");
+              $("#circleStatsRenewalsGoal").html("Goal: " + renewalsGoal);
+
+              //add on memberships
+              var addOnGoal = $("#contentPageHolder_hGoalsAddOnMemberships").val();
+              var addOnPercentage = parseInt((parseFloat(json.addOnMemberships) / parseFloat(addOnGoal)) * 100);
+              if (isNaN(addOnPercentage)) {
+                addOnPercentage = 0;
+              }
+
+              $("#circleStatsAddOn").attr("stroke-dasharray", addOnPercentage + ", 100");
+              $("#circleStatsAddOnPercentage").html(addOnPercentage + "%");
+              $("#circleStatsAddOnGoal").html("Goal: " + addOnGoal);
+
+              //net billing
+              var netBillingGoal = $("#contentPageHolder_hGoalsNetBilling").val();
+              var netBillingPercentage = parseInt((parseFloat(json.netBilling) / parseFloat(netBillingGoal)) * 100);
+              if (isNaN(netBillingPercentage)) {
+                netBillingPercentage = 0;
+              }
+
+              $("#circleStatsNetBilling").attr("stroke-dasharray", netBillingPercentage + ", 100");
+              $("#circleStatsNetBillingPercentage").html(netBillingPercentage + "%");
+              $("#circleStatsNetBillingGoal").html("Goal: " + netBillingGoal);
+
+              //gross income
+              var grossIncomeGoal = $("#contentPageHolder_hGoalsGrossIncome").val();
+              var grossIncomePercentage = parseInt((parseFloat(json.incomeMTD) / parseFloat(grossIncomeGoal)) * 100);
+              if (isNaN(grossIncomePercentage)) {
+                grossIncomePercentage = 0;
+              }
+
+              $("#circleStatsGrossIncome").attr("stroke-dasharray", grossIncomePercentage + ", 100");
+              $("#circleStatsGrossIncomePercentage").html(grossIncomePercentage + "%");
+              $("#circleStatsGrossIncomeGoal").html("Goal: " + grossIncomeGoal);
+
+              //    <input type="hidden" name="ctl00$EndOfPagePlaceHolder$hGoalsNetBilling" id="EndOfPagePlaceHolder_hGoalsNetBilling" />
+              //    <input type="hidden" name="ctl00$EndOfPagePlaceHolder$hGoalsGrossIncome" id="EndOfPagePlaceHolder_hGoalsGrossIncome" />
+
+              //animate the stats
+              $(".counter").each(function () {
+                var $this = $(this),
+                  countTo = $this.attr("data-count");
+
+                if (countTo.length === 0) {
+                  countTo = 0;
+                }
+
+                $({ countNum: $this.text() }).animate(
+                  {
+                    countNum: countTo,
+                  },
+                  {
+                    duration: 1000,
+                    easing: "linear",
+                    step: function () {
+                      $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                      $this.text(countTo);
+                      //alert('finished');
+                    },
+                  }
+                );
+              });
+            }
+          },
+        });
+      }
+
+      $(document).ready(function () {
+        getDashboardStats();
+      });
+    </script>
+  </form>
+
+  <!-- page level javascript -->
+  <script src="https://app.sparkmembership.com/Normal.Master.min.js?v=637319498124196516"></script>
+
+  <script>
+    var elevfirstName = userName.split(" ")[0];
+    var elevlastName = userName.split(" ")[1];
+    var elevUserHash = "";
+    /* */
+    /* elev.io STRACK[True] */
+    /*  */
+    var _elev = window._elev || {};
+    (function () {
+      var i, e;
+      (i = document.createElement("script")), (i.type = "text/javascript");
+      (i.async = 1), (i.src = "https://static.elev.io/js/v3.js"), (e = document.getElementsByTagName("script")[0]), e.parentNode.insertBefore(i, e);
+    })();
+    _elev.account_id = "56526556ec449";
+
+    _elev.user = {
+      first_name: elevfirstName,
+      last_name: elevlastName,
+      email: userEmail,
+      phone_number: "", // used by some of the live chat clients
+      user_hash: "04e0c0dab1468fb5dfa0e9ef7ff56858e089db4d5e06b4e9c9932eb9d289db6c",
+      groups: [plan],
+      traits: {
+        Plan: plan,
+      },
+    };
+  </script>
+
+  <script>
+    var appInsights =
+      window.appInsights ||
+      (function (config) {
+        function r(config) {
+          t[config] = function () {
+            var i = arguments;
+            t.queue.push(function () {
+              t[config].apply(t, i);
+            });
+          };
+        }
+        var t = { config: config },
+          u = document,
+          e = window,
+          o = "script",
+          s = u.createElement(o),
+          i,
+          f;
+        for (
+          s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"];
+          i.length;
+
+        )
+          r("track" + i.pop());
+        return (
+          r("setAuthenticatedUserContext"),
+          r("clearAuthenticatedUserContext"),
+          config.disableExceptionTracking ||
+            ((i = "onerror"),
+            r("_" + i),
+            (f = e[i]),
+            (e[i] = function (config, r, u, e, o) {
+              var s = f && f(config, r, u, e, o);
+              return s !== !0 && t["_" + i](config, r, u, e, o), s;
+            })),
+          t
+        );
+      })({
+        instrumentationKey: "4f9d664b-08e0-4a5a-9829-514f7f80bc8d",
+      });
+
+    window.appInsights = appInsights;
+    appInsights.trackPageView();
+  </script>
+
+  <!-- Canny SDK -->
+  <script>
+    !(function (w, d, i, s) {
+      function l() {
+        if (!d.getElementById(i)) {
+          var f = d.getElementsByTagName(s)[0],
+            e = d.createElement(s);
+          (e.type = "text/javascript"), (e.async = !0), (e.src = "https://canny.io/sdk.js"), f.parentNode.insertBefore(e, f);
+        }
+      }
+      if ("function" != typeof w.Canny) {
+        var c = function () {
+          c.q.push(arguments);
+        };
+        (c.q = []), (w.Canny = c), "complete" === d.readyState ? l() : w.attachEvent ? w.attachEvent("onload", l) : w.addEventListener("load", l, !1);
+      }
+    })(window, document, "canny-jssdk", "script");
+  </script>
+  <script>
+    Canny("identify", {
+      appID: "5cad0ae8c39b5b492197f640",
+      user: {
+        email: userEmail,
+        name: userName,
+        id: userID,
+        created: new Date(startDate).toISOString(),
+      },
+    });
+  </script>
+  <!-- END Canny SDK -->
+
+  <script>
+    /*
+      <!-- intercom.io -->
+      */
+    window.intercomSettings = {
+      app_id: "oqx7t0mu",
+      name: userName, // Full name
+      email: userEmail, // Email address
+      user_id: userID,
+      membershipPlan: plan, //membership plan
+      locationID: locationID,
+      locationName: locName,
+      created_at: theDate, // Signup date as a Unix timestamp
+    };
+
+    (function () {
+      var w = window;
+      var ic = w.Intercom;
+      if (typeof ic === "function") {
+        ic("reattach_activator");
+        ic("update", intercomSettings);
+      } else {
+        var d = document;
+        var i = function () {
+          i.c(arguments);
+        };
+        i.q = [];
+        i.c = function (args) {
+          i.q.push(args);
+        };
+        w.Intercom = i;
+        function l() {
+          var s = d.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://widget.intercom.io/widget/oqx7t0mu";
+          var x = d.getElementsByTagName("script")[0];
+          x.parentNode.insertBefore(s, x);
+        }
+        if (w.attachEvent) {
+          w.attachEvent("onload", l);
+        } else {
+          w.addEventListener("load", l, false);
+        }
+      }
+    })();
+    /*
+      * <!-- /intercom -->
+      */
+  </script>
+
+  <script>
+    (function (c, o, v, i, e, w) {
+      c[v] =
+        c[v] ||
+        function () {
+          (c[v].a = c[v].a || []).push(arguments);
+        };
+      var s = o.createElement(i);
+      s.src = e;
+      s.async = 1;
+      var h = o.getElementsByTagName(i)[0];
+      h.parentNode.insertBefore(s, h);
+      c.addEventListener("error", function (err) {
+        c[v]("error", err);
+      });
+      c.addEventListener("message", function (msg) {
+        c[v]("message", msg);
+      });
+    })(window, document, "coview", "script", "https://cdn.coview.com/coview.js");
+    coview("start", {
+      projectKey: "I4JB1pjWWAs",
+    });
+  </script>
+  <script>
+    var appointmentsShowed = [];
+    setTimeout(function () {
+      askAboutAppointments();
+    }, 3000);
+  </script>
+</body>
+</html>
