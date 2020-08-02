@@ -1341,6 +1341,8 @@ legend {
   .btn {
     width: auto !important;
     margin-right: 10px;
+    background: $red;
+    color: #FFF;
   }
   .close {
     line-height: 1.7;
@@ -5393,7 +5395,6 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 .widget-stats .stats-progress {
   height: 1px;
   margin: 0 0 18px;
-  background: none !important;
 }
 
 .widget-stats .stats-progress .progress-bar {
@@ -6056,10 +6057,8 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 .timeline-footer {
   margin: -20px -30px;
   padding: 20px 30px;
-  background: #e8ecf1;
-  -webkit-border-radius: 0 0 4px 4px;
-  -moz-border-radius: 0 0 4px 4px;
-  border-radius: 0 0 4px 4px
+  background: #f8f8f8;
+  border-radius: 0 0 4px 4px;
 }
 
 .timeline-footer a:not(.btn) {
