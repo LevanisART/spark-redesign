@@ -994,7 +994,7 @@ input, select {
   + br {
     display: none;
   }
-  + .row .col-md-12 .panel > .panel-heading:first-child {
+  + .row .panel > .panel-heading:first-child {
     display: none;
   }
 } 
@@ -8563,5 +8563,16 @@ body.flat-black {
       font-weight: 600;
       font-size: 17px;
     }
+  }
+}
+
+#divgrp_sec_0 {
+  .btn.btn-xs {
+    background: #f5f5f5;
+    border-color: #f0f0f0;
+    color: $textColor;
+    padding: 10px 15px;
+    font-weight: 500;
+    margin: 15px 0;
   }
 }
