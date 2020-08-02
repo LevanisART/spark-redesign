@@ -1336,23 +1336,39 @@
         <!-- begin row -->
         <div class="row">
           <!-- begin col-4 -->
-          <div class="col-md-4">
+          <div class="col-md-4 ui-sortable">
             <!-- begin panel -->
+
+            <!-- end panel -->
             <div class="panel panel-inverse" data-sortable-id="index-103">
               <div class="panel-heading">
                 <h4 class="panel-title">Last Night's Class Surveys <span class="label label-success pull-right"> </span></h4>
               </div>
               <div class="panel-body bg-silver">
-                <div data-scrollbar="true" data-height="410px">
-                  <table class="taskTable">
-                    No survey Results in last month.
-                  </table>
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 410px;">
+                  <div data-scrollbar="true" data-height="410px" style="overflow: hidden; width: auto; height: 410px;">
+                    <table class="taskTable"></table>
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>05/19/2020</td>
+                          <td><a href="Profile.aspx?id=152763">Chuck Norris</a></td>
+                          <td>
+                            <i class="fa fa-star" style="color: green;"></i><i class="fa fa-star" style="color: green;"></i><i class="fa fa-star" style="color: green;"></i> <i class="fa fa-star" style="color: green;"></i>
+                            <i class="fa fa-star" style="color: green;"></i>
+                          </td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 15px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 410px;"></div>
+                  <div class="slimScrollRail" style="width: 15px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
                 </div>
                 <br />
-                <p>Only showing last 30 days. <a href="Report_Last_Nights_Survey.html">Show all.</a></p>
+                <p>Only showing last 30 days. <a href="Report_Last_Nights_Survey.aspx">Show all.</a></p>
               </div>
             </div>
-            <!-- end panel -->
           </div>
           <!-- end col-4 -->
 
