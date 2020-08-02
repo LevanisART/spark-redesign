@@ -11,7 +11,7 @@ body {
   background: $bodyBg;
   font-size: 12px;
   font-family: 'Montserrat';
-  color: #707478;
+  color: $textColor
 }
 
 .ie8 body {
@@ -5320,6 +5320,10 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   border: 1px solid #EDF2F6;
 }
 
+.statsDashboard .widget.widget-stats.bg-white {
+  background: #FFF !important;
+}
+
 .widget-stats .stats-info h4 {
   font-size: 12px;
   margin: 5px 0;
@@ -5916,9 +5920,9 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   top: 5px;
   bottom: 5px;
   width: 5px;
-  background: #2d353c;
-  left: 20%;
-  margin-left: -2.5px
+  background: $blue;
+  left: 10%;
+  margin-left: -1px
 }
 
 .timeline>li {
@@ -5933,8 +5937,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 .timeline .timeline-time {
   position: absolute;
   left: 0;
-  width: 15%;
-  text-align: right;
+  width: 8%;
   padding-top: 7px
 }
 
@@ -5955,7 +5958,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 }
 
 .timeline .timeline-icon {
-  left: 15%;
+  left: 5%;
   position: absolute;
   width: 10%;
   text-align: center;
@@ -5967,33 +5970,21 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   width: 50px;
   height: 50px;
   display: inline-block;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
   border-radius: 50px;
-  background: #575d63;
+  background: #FFF;
   line-height: 40px;
-  color: #fff;
+  color: $blue;
   font-size: 14px;
-  border: 5px solid #2d353c;
+  border: 5px solid $blue;
   transition: background .2s linear;
-  -moz-transition: background .2s linear;
-  -webkit-transition: background .2s linear
-}
-
-.timeline .timeline-icon a:hover,
-.timeline .timeline-icon a:focus {
-  background: $green
 }
 
 .timeline .timeline-body {
-  margin-left: 25%;
-  margin-right: 15%;
+  margin-left: 15%;
   background: #fff;
   position: relative;
   padding: 20px 30px;
   border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px
 }
 
 .timeline .timeline-body:before {
@@ -6007,7 +5998,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 }
 
 .timeline-header {
-  padding-bottom: 10px;
+  padding-bottom: 10px; 
   border-bottom: 1px solid #e2e7eb;
   line-height: 30px
 }
@@ -6016,8 +6007,6 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   float: left;
   width: 34px;
   height: 34px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
   border-radius: 40px;
   overflow: hidden;
   margin: -2px 10px -2px 0
@@ -8558,4 +8547,21 @@ body.flat-black {
 
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot {
   background: #329aff !important;
+}
+
+.templateThumb {
+  box-shadow: none !important;
+  border: 1px solid #f2f2f2 !important;
+}
+
+#templates {
+  > h2 {
+    margin-bottom: 20px;
+  }
+  .col-md-3 {
+    a {
+      font-weight: 600;
+      font-size: 17px;
+    }
+  }
 }
