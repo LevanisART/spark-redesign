@@ -8576,3 +8576,13 @@ body.flat-black {
     margin: 15px 0;
   }
 }
+
+.checkBox {
+  input, label {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  tr td {
+    padding: 7px 0;
+  }
+}
