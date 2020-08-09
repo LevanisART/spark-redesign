@@ -8601,3 +8601,10 @@ body.flat-black {
     border: none;
   }
 }
+
+.content-container-fluid > .row > .cols-sample-area > #contentPageHolder_Panel1 {
+  margin: 0 10px;
+  > .row {
+    margin-left: 0;
+  }
+}
