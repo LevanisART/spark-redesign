@@ -1940,7 +1940,7 @@ legend {
 }
 
 .btn.btn-default {
-  color: $blue;
+  color: $button;
   background: #FFF;
   border-color: transparent;
   padding: 10px 15px;
@@ -2027,8 +2027,8 @@ table {
   border-left-color: #242a30
 }
 .flex-wrapper + .row .btn.btn-inverse {
-  background: $blue;
-  border-color: $blue;
+  background: $button;
+  border-color: $button;
   color: #FFF;
 }
 
@@ -2142,7 +2142,7 @@ table {
 
 
 .removerosterfromgroup {
-  background: $blue;
+  background: $button;
   border: none;
   box-shadow: none;
   color: #FFF;
@@ -2416,7 +2416,7 @@ table {
   background: #FFF;
   padding: 15px;
   border-radius: 5px;
-  color: $blue;
+  color: $button;
   font-weight: 500;
 }
 
@@ -2480,7 +2480,7 @@ table {
           background: #FFF;
           padding: 10px 15px;
           border-radius: 5px;
-          color: $blue;
+          color: $button;
           border: 1px solid #f2f2f2;
           &:hover {
             text-decoration: none;
@@ -5919,7 +5919,7 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   top: 5px;
   bottom: 5px;
   width: 5px;
-  background: $blue;
+  background: $button;
   left: 10%;
   margin-left: -1px
 }
@@ -5972,9 +5972,9 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   border-radius: 50px;
   background: #FFF;
   line-height: 40px;
-  color: $blue;
+  color: $button;
   font-size: 14px;
-  border: 5px solid $blue;
+  border: 5px solid $button;
   transition: background .2s linear;
 }
 
@@ -8405,7 +8405,7 @@ body.flat-black {
         background: #fff;
         padding: 13px 20px;
         border-radius: 5px;
-        color: $blue;
+        color: $button;
         font-weight: 500;
       }
     }
@@ -8596,7 +8596,7 @@ body.flat-black {
     display: flex;
   }
   .btn.btn-inverse {
-    background: $blue;
+    background: $button;
     color: #FFF;
     border: none;
   }
