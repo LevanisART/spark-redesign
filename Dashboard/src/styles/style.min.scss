@@ -322,9 +322,20 @@ input, select {
   padding: 17px 15px
 }
 
-.navbar-default .navbar-nav>li>a {
-  color: #76809E;
-  font-size: 16px;
+.navbar-default .navbar-nav>li {
+  > a {
+    color: #76809E;
+    font-size: 16px;
+  }
+  &.active > a {
+    background: #FFF !important;
+    border-radius: 7px;
+    padding: 14px 15px;
+    margin: 3px 0;
+    &:hover {
+      background: #FFF !important;
+    }
+  }
 }
 
 .navbar-user > a {
@@ -1262,7 +1273,21 @@ legend {
   margin-top: 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  margin-bottom: -1px
+  margin-bottom: -1px;
+  &.active {
+    a {
+      color: #FFF !important;
+      .media-body {
+        color: #FFF;
+        .media-heading {
+          color: #FFF;
+        }
+        .text-muted {
+          color: #FFF;
+        }
+      }
+    }
+  }
 }
 
 .dropdown-menu.media-list>.media>a {
@@ -8677,4 +8702,8 @@ body.flat-black {
   > .row {
     margin-left: 0;
   }
+}
+
+.sweet-alert button {
+  background: $blue !important;
 }
