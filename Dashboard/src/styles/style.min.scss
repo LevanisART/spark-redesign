@@ -1253,7 +1253,9 @@ legend {
 
 .dropdown-menu.media-list .dropdown-header {
   padding: 10px 20px !important;
-  background: #fafafa
+  background: #fafafa;
+  position: relative;
+  margin-bottom: 0;
 }
 
 .dropdown-menu.media-list>.media {
@@ -1264,7 +1266,8 @@ legend {
 }
 
 .dropdown-menu.media-list>.media>a {
-  display: block;
+  display: flex;
+  white-space: unset;
   padding: 10px 20px !important
 }
 
