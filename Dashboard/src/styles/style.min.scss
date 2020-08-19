@@ -8590,15 +8590,79 @@ body.flat-black {
   border: none !important;
   box-shadow: 0 0 25px 0px rgba(0,0,0,0.12) !important;
   .h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 5px 0 25px !important;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px 0 !important;
+    line-height: 1.3;
     display: flex;
   }
   .btn.btn-inverse {
     background: #3F5360;
     color: #FFF;
     border: none;
+  }
+}
+
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  .col-lg-4 {
+    @media(min-width: 1200px) and (max-width: 1599.98px) {
+      width: 50%;
+    }
+  }
+}
+
+.spark-card {
+  background: #E7EFF4 !important;
+  box-shadow: none !important;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  .card-img {
+    background: #FFF;
+    width: 140px;
+    height: 140px;
+    border-radius: 5px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    @media(max-width: 300px) {
+      width: 100%;
+    }
+  }
+  .card-body {
+    width: calc(100% - 140px) !important;
+    padding-top: 0 !important;
+    padding-left: 20px !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    .heading {
+      color: #2D353C;
+    }
+    .card-text {
+      color: #6A747C;
+      margin: 5px 0;
+    }
+    .btn {
+      width: auto;
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+  }
+  .card-link {
+    display: flex;
+  }
+  @media(max-width: 440px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .card-body {
+      width: 100% !important;
+      margin-top: 15px;
+      align-items: center !important;
+    }
   }
 }
 

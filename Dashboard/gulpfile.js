@@ -9,8 +9,7 @@ var cleanCSS = require('gulp-clean-css');
 
 var paths = {
   mainStyles: {
-    src: 'src/main-styles/**/*.scss',
-    dest: './'
+    src: 'src/main-styles/**/*.scss'
   },
   styles: {
     src: 'src/styles/**/*.scss',
@@ -44,7 +43,8 @@ function mainStyles() {
     .pipe(autoprefixer({
       cascade: false
     }))
-    .pipe(gulp.dest(paths.mainStyles.dest));
+    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./css-root'));
 }
 
 function scripts() {
