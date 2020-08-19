@@ -8634,7 +8634,7 @@ body.flat-black {
 .cards-row {
   display: flex;
   flex-wrap: wrap;
-  .col-lg-4 {
+  .col-lg-4, .col-sm-4 {
     @media(min-width: 1200px) and (max-width: 1599.98px) {
       width: 50%;
     }
@@ -8644,13 +8644,14 @@ body.flat-black {
 .spark-card {
   background: #E7EFF4 !important;
   box-shadow: none !important;
+  align-items: flex-start;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   .card-img {
     background: #FFF;
     width: 140px;
-    height: 140px;
+    // height: 140px;
     border-radius: 5px;
     display: flex !important;
     align-items: center;
@@ -8667,14 +8668,19 @@ body.flat-black {
     padding-top: 0 !important;
     padding-left: 20px !important;
     display: flex !important;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: flex-start;
+    i {
+      margin-bottom: 5px;
+    }
     .heading {
       color: #2D353C;
+      width: 100%;
     }
     .card-text {
       color: #6A747C;
       margin: 5px 0;
+      width: 100%;
     }
     .btn {
       width: auto;
