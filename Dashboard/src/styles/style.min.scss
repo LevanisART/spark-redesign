@@ -423,6 +423,8 @@ input, select {
   border-radius: 0 30px 30px 0;
   color: #707C97;
   margin: 0;
+  display: flex;
+  align-items: center;
   i {
     font-size: 16px;
     margin-top: 0 !important;
@@ -8718,4 +8720,23 @@ body.flat-black {
   font-size: 12px !important ;
   margin: 5px !important;
   padding:5px 10px 5px 10px !important ;
+}
+
+.typeahead-list>li:first-child {
+  position: relative !important;
+}
+
+@media(min-width: 767px) {
+  .typeahead-dropdown, .typeahead-list {
+    min-width: 280px !important;
+  }
+}
+
+.typeahead_labels {
+  > div {
+    margin-bottom: 5px;
+  }
+  > div:last-child {
+    margin-bottom: 0;
+  }
 }
