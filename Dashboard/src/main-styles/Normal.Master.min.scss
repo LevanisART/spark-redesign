@@ -224,3 +224,19 @@ body {
     opacity: 0
   }
 }
+
+.rankstripebox {
+	width: 100%;
+	display: flex;
+	display: inline-flex;
+	justify-content: flex-end;
+	border:  1px solid #000000;
+	border-radius: 3px;
+	padding-right: 22px;
+}
+
+.rankstriperectangle, .rankstriperectangleblank {
+	min-width: 1rem;
+	min-height: 3rem;
+	margin: 0 3px;
+}
