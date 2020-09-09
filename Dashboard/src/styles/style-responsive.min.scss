@@ -54,6 +54,14 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
     overflow-x: scroll;
     > li {
       position: unset !important;
+      background: #FFF;
+      z-index: 1;
+      &:first-child {
+        position: absolute !important;
+      }
+      &:nth-child(2) {
+        margin-left: 263px;
+      }
     }
   }
 
