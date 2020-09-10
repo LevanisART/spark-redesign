@@ -6906,9 +6906,13 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   color: #333;
   display: block;
   margin-left: 62px;
-  margin-bottom: 7px;
+  margin-bottom: 15px;
   font-weight: 600;
   text-decoration: none
+}
+
+.tab-pane .chats .name {
+  margin-top: 10px;
 }
 
 .chats .name .label {
@@ -6931,7 +6935,6 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
   float: left;
   width: 52px;
   height: 52px;
-  margin-top: -14px;
   border-radius: 4px;
   overflow: hidden
 }
@@ -6941,7 +6944,8 @@ ul.tagit.inverse li.tagit-choice .tagit-close:focus .ui-icon-close:before {
 }
 
 .chats .image+.message {
-  margin-left: 62px
+  margin-left: 62px;
+  margin-top: -7px;
 }
 
 .chats .message {
@@ -8736,5 +8740,16 @@ body.flat-black {
   }
   > div:last-child {
     margin-bottom: 0;
+  }
+}
+
+.mce-primary button {
+  background: #017EFE;
+  border-radius: 4px;
+}
+
+#smsMessages {
+  .image {
+    margin-top: 0;
   }
 }
