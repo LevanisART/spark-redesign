@@ -8249,7 +8249,6 @@ body.flat-black {
 }
 
 .profile-image {
-  height: 175px;
   line-height: 175px;
   text-align: center;
   font-size: 72px;
@@ -8261,7 +8260,15 @@ body.flat-black {
 
 .profile-image img {
   display: block;
-  max-width: 100%
+  width: 100%
+}
+
+.rankstripebox {
+  margin: 5px 0;
+}
+
+.rankstriperankname {
+  margin: 7px 0;
 }
 
 .profile-highlight {
@@ -8317,7 +8324,7 @@ body.flat-black {
   display: block;
   font-size: 12px;
   font-weight: normal;
-  margin-top: 5px
+  margin-top: 9px
 }
 
 .table.table-profile>thead>tr>th,
