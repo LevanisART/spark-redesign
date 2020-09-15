@@ -60,7 +60,7 @@ label {
 }
 
 input, select {
-  border: 1px solid #f4f4f4;
+  border: 1px solid #e8ebed;
   box-shadow: none;
   font-size: 12px;
   border-radius: 6px;
@@ -299,7 +299,31 @@ input, select {
   margin-bottom: 10px;
   padding: 10px 0 10px 10px;
   border: none;
+  height: 34px;
+  .icon-bar {
+    transition: 0.3s;
+  }
 }
+
+@media(max-width: 767.98px) {
+  .page-sidebar-toggled {
+    .navbar-toggle {
+      .icon-bar {
+        &:first-child {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+          display: none;
+        }
+        &:last-child {
+          transform: rotate(-45deg);
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+} 
 
 .navbar-toggle.pull-left {
   margin-left: 15px;
@@ -537,6 +561,15 @@ input, select {
     }
     &:last-child {
       position: unset;
+    }
+  }
+  &:nth-child(2) {
+    > li {
+      &:last-child {
+        @media(max-width: 767.98px) {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -1039,12 +1072,18 @@ input, select {
 }
 
 .form-control {
-  border: 1px solid #f4f4f4;
+  border: 1px solid #e8ebed;
   box-shadow: none;
   font-size: 12px;
   border-radius: 6px;
   padding: 13px;
   height: unset;
+}
+
+.modal-body {
+  .form-control {
+    border: 1px solid #e8ebed;
+  }
 }
 
 .form-control.input-white {
@@ -8759,4 +8798,8 @@ body.flat-black {
   .image {
     margin-top: 0;
   }
+}
+
+.taskTable.table-responsive { 
+  height: 100%;
 }
