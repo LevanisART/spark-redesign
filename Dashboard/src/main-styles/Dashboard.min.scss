@@ -253,6 +253,12 @@ div.responsive-calendar div.days div.day.today a {
   float: left
 }
 
+.row.statsDashboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
 @media(min-width:768px) {
   .col-sm-5ths {
     width: 20%;
@@ -260,18 +266,55 @@ div.responsive-calendar div.days div.day.today a {
   }
 }
 
-@media(min-width:992px) {
+@media (max-width: 410px) {
   .col-md-5ths {
-    width: 20%;
+    width: 100%;
+    float: left
+  }
+}
+
+@media(min-width:768px) and (max-width: 830px) {
+  .col-md-5ths {
+    width: 100%;
     float: left
   }
 }
 
 @media(min-width:1200px) {
+  .col-md-5ths {
+    width: 25%;
+    float: left
+  }
+}
+
+@media(min-width:1440px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left
+  }
   .col-lg-5ths {
     width: 20%;
     float: left
   }
+}
+
+@media(min-width: 992px) and (max-width: 1200px) {
+  .row {
+    .col-md-4 {
+      width: 50%;
+    }
+    .col-md-8 {
+      width: 50%;
+      .slimScrollDiv > div:first-child {
+        overflow-x: scroll !important;
+      }
+    }
+  }  
+}
+
+#contentPageHolder_PanelClassCredits .col-md-4 {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .flex-wrapper {

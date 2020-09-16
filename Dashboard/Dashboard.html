@@ -212,7 +212,7 @@
     <div id="calendarClose"><i class="fa fa-3x fa-times-circle"></i></div>
     <iframe width="630" height="700" src="" seamless="seamless" frameborder="0"></iframe>
   </div>
-  <form method="post" action="./Dashboard.html" id="form1">
+  <form method="post" action="./index.html" id="form1">
     <div class="aspNetHidden">
       <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
       <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
@@ -277,7 +277,7 @@
         <div class="container-fluid">
           <!-- begin mobile sidebar expand / collapse button -->
           <div class="navbar-header">
-            <a href="Dashboard.html">
+            <a href="index.html">
               <span class="navbar-logo-abundance"> <img id="imgLogo" src="https://app.sparkmembership.com/img/Spark-Logo-Top-Left.png" /></span>
             </a>
             <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
@@ -409,7 +409,7 @@
             <li class="nav-header">Navigation</li>
 
             <li>
-              <a href="Dashboard.html"><i class="fa fa-laptop"></i><span>Dashboard</span></a>
+              <a href="index.html"><i class="fa fa-laptop"></i><span>Dashboard</span></a>
             </li>
 
             <li class="has-sub">
@@ -419,7 +419,7 @@
                 <span>New? START HERE!</span>
               </a>
               <ul class="sub-menu">
-                <li><a href="Dashboard.html?tour=start">Dashboard Tour</a></li>
+                <li><a href="index.html?tour=start">Dashboard Tour</a></li>
                 <li><a href="javascript:;" onclick="reinstateOnboardingChecklist()">Onboarding Checklist</a></li>
               </ul>
             </li>
@@ -653,7 +653,7 @@
             </li>
 
             <li>
-              <a href="StudentApp_Dashboard.html">
+              <a href="StudentApp_index.html">
                 <i class="fa fa-mobile"></i><span>Member App <span class="label label-theme m-l-5">NEW!</span></span>
               </a>
             </li>
@@ -734,7 +734,7 @@
       <div id="content" class="content">
         <!-- begin breadcrumb -->
         <ol class="breadcrumb pull-right">
-          <li><a href="/Dashboard.html">Dashboard</a></li>
+          <li><a href="/index.html">Dashboard</a></li>
           <li><a href="javascript:;">Dashboard</a></li>
         </ol>
         <!-- end breadcrumb -->
@@ -779,18 +779,18 @@
           <!-- end col-3 -->
           <!-- begin col-3 -->
           <div class="col-md-5ths col-xs-6">
-            <div class="widget widget-stats bg-black statBoxNewContacts" style="background: #253c78 none repeat scroll 0 0 !important;">
+            <div class="widget widget-stats bg-black statBoxNewContacts" style="background: #253C78 none repeat scroll 0 0 !important;">
               <div class="stats-icon stats-icon-lg"><i class="fa fa-comments fa-fw"></i></div>
               <div class="stats-title">THIS MONTH NEW CONTACTS</div>
               <div class="stats-number">
-                <span class="statsNewContacts counter">0</span>&nbsp;&nbsp;<small>Web Leads: <span class="statsNewWebLeads counter">0</span></small>
+                <span class="statsNewContacts counter" data-count="38">38</span>&nbsp;&nbsp;<small style="font-size: 14px;">Web Leads: <span class="statsNewWebLeads counter" data-count="0">0</span></small>
               </div>
               <div class="stats-progress progress">
                 <div class="progress-bar" style="width: 100%;"></div>
               </div>
               <div class="stats-desc">
-                Today's New Contacts:
-                <span class="statsNewContactsToday counter">0</span>&nbsp;&nbsp;Web Leads: <span class="statsNewWebLeadsToday counter">0</span>
+                Today:
+                <span class="statsNewContactsToday counter" data-count="0">0</span>&nbsp;&nbsp;Web Leads: <span class="statsNewWebLeadsToday counter" data-count="0">0</span>
               </div>
             </div>
           </div>
@@ -1347,20 +1347,21 @@
               <div class="panel-body bg-silver">
                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 410px;">
                   <div data-scrollbar="true" data-height="410px" style="overflow: hidden; width: auto; height: 410px;">
-                    <table class="taskTable"></table>
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <td>05/19/2020</td>
-                          <td><a href="Profile.aspx?id=152763">Chuck Norris</a></td>
-                          <td>
-                            <i class="fa fa-star" style="color: green;"></i><i class="fa fa-star" style="color: green;"></i><i class="fa fa-star" style="color: green;"></i> <i class="fa fa-star" style="color: green;"></i>
-                            <i class="fa fa-star" style="color: green;"></i>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="taskTable table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>05/19/2020</td>
+                            <td><a href="Profile.aspx?id=152763">Chuck Norris</a></td>
+                            <td>
+                              <i class="fa fa-star" style="color: green;"></i><i class="fa fa-star" style="color: green;"></i><i class="fa fa-star" style="color: green;"></i> <i class="fa fa-star" style="color: green;"></i>
+                              <i class="fa fa-star" style="color: green;"></i>
+                            </td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                   <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 15px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 410px;"></div>
                   <div class="slimScrollRail" style="width: 15px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
