@@ -8856,3 +8856,7 @@ body.flat-black {
     display: none !important;
   }
 }
+
+.panel.panel-inverse[data-sortable-id] .container {
+  max-width: 100% !important;
+}
