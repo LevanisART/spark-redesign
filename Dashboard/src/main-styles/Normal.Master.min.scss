@@ -4,9 +4,19 @@ body {
 
 .navbar-logo-abundance {
   float: left;
-  margin-right: 5px;
-  margin-top: 6px;
+  margin: 13px 5px 5px 16px;
   max-width: 175px;
+  img {
+    filter: grayscale(1) brightness(6);
+  }
+}
+
+.page-sidebar-minified {
+  .navbar-logo-abundance {
+    max-width: 36px;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
 }
 
 .sparkPopover {

@@ -519,6 +519,8 @@ input, select {
   top: 0;
   bottom: 0;
   z-index: 102;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-bg {
@@ -750,10 +752,10 @@ input, select {
 }
 
 .sidebar .nav>li.nav-profile {
-  padding: 20px 60px 30px 20px;
+  padding: 20px 60px 20px 20px;
   color: #FFF;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 600;
   opacity: .7;
 }
 
