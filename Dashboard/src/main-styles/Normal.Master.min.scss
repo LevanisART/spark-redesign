@@ -13,9 +13,13 @@ body {
 
 .calendarContainer {
   .navbar-logo-abundance {
+    margin: 13px 5px 13px 16px;
     img {
       filter: none;
     }
+  }
+  #calendarClose {
+    top: 15px;
   }
 }
 
